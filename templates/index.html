@@ -233,7 +233,6 @@ bese64コードは非常に長くなるので、トークの構成が固まっ�
 					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " width=\"100%\"/>";
 
 					document.querySelector('#base64').value = base64;
-					document.querySelector("#uploadImageArea").innerHTML = `<img src="${base64}" width="100%" />`;
 				};
 				reader.readAsDataURL(file);
 				base64.readOnly = true;
