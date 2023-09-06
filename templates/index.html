@@ -53,7 +53,7 @@
 画像のアップロードに成功するとbase64形式でコード化されます。
 
 変換後のコードは
-@@@画像@@@タグと共にコピー＆ペーストでご利用ください。
+コピー＆ペーストでご利用ください。
 </textarea></p>
 							<input type="file" class="form-control me-2" id="uploadImage" />
 							<button type="button" class="btn btn-primary form-control w-25" onclick="changeImageToBase64()">base64へ変換</button>
@@ -223,14 +223,13 @@ bese64コードは非常に長くなるので、トークの構成が固まっ�
 			
 			function changeImageToBase64() {
 				base64.readOnly = false;
-				var uploadImage = document.querySelector('#uploadImage')
-				uploadImage.width = 150;
-				const file = uploadImage.files[0].width
-				
+				const uploadImage = document.querySelector('#uploadImage')
+				var file = uploadImage.files[0]
+				file.maxwidth = 500
 
 				const reader = new FileReader()
 				reader.onload = (event) => {
-					const base64 = "@@@画像@@@" + "\n" + "<img id=\"img\" src=" + event.currentTarget.result + " />"
+					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " />"
 
 					document.querySelector('#base64').value = base64
 					document.querySelector("#uploadImageArea").innerHTML = `<img src="${base64}" width="100%" />`
