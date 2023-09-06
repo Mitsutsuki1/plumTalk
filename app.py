@@ -126,7 +126,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
         with open("./images/" + favorStory_backgroundName, mode='rb') as f:
             src = base64.b64encode(f.read()).decode('utf-8')
     except:
-        print("1ERROR:画像のbase64化に失敗しました。設定ファイル上で誤ったファイルが指定されている可能性があります。プログラムを終了します。")
+        print("ERROR:画像のbase64化に失敗しました。設定ファイル上で誤ったファイルが指定されている可能性があります。プログラムを終了します。")
         time.sleep(1)
         sys.exit()
     
@@ -166,7 +166,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
             with open("./images/plum.png", mode='rb') as f:
                 src = base64.b64encode(f.read()).decode('utf-8')
         except Exception as e:
-            print("ERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
+            print("aERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
             print(e)
             time.sleep(1)
             sys.exit()
