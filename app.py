@@ -126,7 +126,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
         with open("./images/" + favorStory_backgroundName, mode='rb') as f:
             src = base64.b64encode(f.read()).decode('utf-8')
     except:
-        print("ERROR:画像のbase64化に失敗しました。設定ファイル上で誤ったファイルが指定されている可能性があります。プログラムを終了します。")
+        print("1ERROR:画像のbase64化に失敗しました。設定ファイル上で誤ったファイルが指定されている可能性があります。プログラムを終了します。")
         time.sleep(1)
         sys.exit()
     
