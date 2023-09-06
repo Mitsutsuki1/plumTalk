@@ -1,0 +1,355 @@
+<style>
+	@charset "UTF-8";
+	header {
+		background: #eb96a6;
+	}
+	strong{
+		font-size:7vw;
+		margin-top: 0px;
+		margin-bottom:0px;
+		line-height: 1.5;
+	}
+	b{
+		font-size:7vw;
+		margin-top: 0px;
+		margin-bottom:0px;
+		line-height: 1.5;
+	}
+	p{
+		margin-top: 0px;
+		margin-bottom: 0px;
+		font-weight: bold;
+		font-size:3.5vw;
+	}
+	.fontExclamation{
+		background-color: #FFFFFF;
+		color:#eb96a6;
+		border-radius: 0.5vw;
+		font-size: 4vw;
+	}
+	.blush{
+		text-shadow: 0vw 0vw 1vw #f99,0vw 0vw 2vw #f99, 0vw 0vw 1vw #f99;
+	}
+	.textRed_left{
+		color:#ff0000
+	}
+	.textRed_right{
+		color:#8b0000
+	}
+	.plumContainer{
+		background:#fefefe;
+		overflow:hidden;
+		max-width:100vw;
+		font-family:"HG丸ｺﾞｼｯｸM-PRO","ヒラギノ丸ゴ ProN","Noto Sans jp","Century Gothic","メイリオ","Meiryo";
+	}
+	.plumContainer .header{
+		margin-bottom:0px;
+		font-size:6vw;
+		background:#eb96a6;
+		padding-left:3%;
+		text-align: left;
+		clear: both;
+		font-weight:bolder;
+		line-height: 2;
+		color: #ffffff;
+	}
+	.plumContainer .footer {
+		margin-top: 5vw;
+		background: #eb96a6;
+		padding: 0%;
+		text-align: left;
+		font-weight: bolder;
+		clear: both;
+		font-size: 2.5vw;
+		line-height: 2;
+		color: #ffffff;
+	}
+	.plumContainer .subtitle {
+		float: right;
+		width:fit-content;
+		margin-right: 8.3vw;
+		margin-top: 15px;
+		font-weight: bolder;
+		font-size: 2vw;
+		color: #4d5b70;
+	}
+	.plumContainer .lineElements {
+		min-height: 100vh;
+		min-height: calc(var(--vh, 1vh) * 100);
+		padding: 2vw 0 2vw 0;
+		width: 100%;
+		overflow: hidden;
+		line-height: 1.5;
+		font-size: 3.9vw;
+	}
+	.plumContainer .lineElements .imageArea {
+		width: 68%;
+		border-radius: 5%;
+		padding-top: 2.0vw;
+		margin-left: auto;
+		margin-right: auto;
+		clear: both;
+	}
+	.plumContainer .lineElements .imageArea #img {
+		max-width: 60vw;
+		min-width: 60vw;
+		object-fit: fill;
+		padding: 20px;
+		background-color: #FFFFFF;
+		border-radius: 1.40vw;
+		border: solid;
+		border-color: #aaaabb;
+	}
+	.plumContainer .lineElements .leftTable {
+		display: block;
+		z-index: 0;
+		position: relative;
+		left: 0%;
+		color: #ffffff;
+		clear: both;
+		padding-top: 2.0vw;
+	}
+	.plumContainer .lineElements .leftTable figure {
+		width: 13.8vw;
+		position: absolute;
+		top: 3.5vw;
+		left: 0%;
+		padding: 0;
+		margin: 0;
+	}
+	.plumContainer .lineElements .leftTable figure img {
+		border-radius: 50%;
+		width: 12.1vw;
+		height: 12.1vw;
+	}
+	.plumContainer .lineElements .leftTable .textfield1 {
+		padding-left: 15vw;
+		padding-right: 7.14vw;
+		width: 69.3vw;
+		word-break: break-all
+	}
+	.plumContainer .lineElements .leftTable .textfield1 .name {
+		font-size: 3.74vw;
+		color: #4d5b70;
+	}
+	.plumContainer .lineElements .leftTable .textfield1 .text {
+		position: relative;
+		width: fit-content;
+		padding: 1.6vw 1.94vw;
+		border-radius: 1.94vw;
+		background-color: #4d5b70;
+	}
+	.plumContainer .lineElements .leftTable .textfield1 .text ::after {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		left: -1.38vw;
+		top: 2.0vw;
+		border-right: 1.7vw solid #4d5b70;
+		border-top: 1.1vw solid transparent;
+		border-bottom: 1.1vw solid transparent;
+	}
+		.plumContainer .lineElements .leftTable .textfield2 {
+		padding-left: 15vw;
+		padding-right: 7.14vw;
+		width: 69.3vw;
+		word-break: break-all
+	}
+	.plumContainer .lineElements .leftTable .textfield2 .text {
+		position: relative;
+		width: fit-content;
+		padding: 1.6vw 1.94vw;
+		border-radius: 1.94vw;
+		background-color: #4d5b70;
+	}
+	.plumContainer .lineElements .rightTable {
+		display: block;
+		z-index: 0;
+		position: relative;
+		padding-top: 2.0vw;
+		color: #ffffff;
+		width: 100vw;
+		float: right;
+		clear: both;
+	}
+	.plumContainer .lineElements .rightTable figure{
+		width: 13.8vw;
+		position: absolute;
+		top: 3.5vw;
+		left: 87.9%;
+		padding: 0;
+		margin: 0;
+	}
+	.plumContainer .lineElements .rightTable figure img {
+		border-radius: 50%;
+		width: 12.1vw;
+		height: 12.1vw;
+	}
+	.plumContainer .lineElements .rightTable .textfield1 {
+		margin-left: 15.6vw;
+		margin-right: -3.2vw;
+		width:fit-content;		
+		float:right;
+		clear: both;
+	}
+	.plumContainer .lineElements .rightTable .textfield1 ::after {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		right: 13.8vw;
+		top: 9.4vw;
+		border-left: 1.6vw solid #5484c4;
+		border-top: 1.1vw solid transparent;
+		border-bottom: 1.1vw solid transparent;
+	}
+	.plumContainer .lineElements .rightTable .textfield1 .name {
+		margin-right: 16.2vw;
+		padding: 0.15vw 1.94vw;
+		border-radius: 1.38vw;
+		text-align: right;
+		font-size: 3.74vw;
+		color: #4d5b70;
+	}
+	.plumContainer .lineElements .rightTable .textfield1 .text {
+		padding: 1.6vw 1.94vw;
+		margin-right: 18.3vw;
+		border-radius: 1.38vw;
+		width: fit-content;
+		background-color: #5484c4;
+		word-break: break-all
+		float:right;
+		clear: both;
+	}
+		.plumContainer .lineElements .rightTable .textfield2 {
+		margin-left: 15.6vw;
+		margin-right: -3.2vw;
+		width:fit-content;		
+		float:right;
+		clear: both;
+	}
+		.plumContainer .lineElements .rightTable .textfield2 .text {
+		padding: 1.6vw 1.94vw;
+		margin-right: 18.3vw;
+		border-radius: 1.38vw;
+		display: flex;
+		justify-content: flex-end;
+		background-color: #5484c4;
+		word-wrap: break-all
+	}
+	.plumContainer .lineElements .rightTable .textfield1_hidden {
+		margin-left: 15.6vw;
+		margin-right: -14.2vw;
+		width:fit-content;
+		float:right;
+		clear: both;
+	}
+	.plumContainer .lineElements .rightTable .textfield1_hidden ::after {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		right: 2.75vw;
+		top: 3.8vw;
+		border-left: 1.6vw solid #5484c4;
+		border-top: 1.1vw solid transparent;
+		border-bottom: 1.1vw solid transparent;
+	}
+	.plumContainer .lineElements .rightTable .textfield1_hidden .text {
+		padding: 1.6vw 1.94vw;
+		margin-right: 18.3vw;
+		border-radius: 1.38vw;
+		width: fit-content;
+		background-color: #5484c4;
+		word-break: break-all
+		clear: both;
+	}
+	.plumContainer .lineElements .rightTable .textfield3 {
+		padding: 1.38vw 5.5vw 5.5vw 1.38vw;
+		text-align: left;
+		border-radius: 1.38vw;
+		width: 70.9vw;
+		
+		/*　！！編集禁止！！　*/
+		background: #dce6e9 url(images/Popup_Img_Deco_2.png) no-repeat right top;
+
+		color: #4d5b70;
+		font-size: 3.6vw;
+		margin-right: 4.1vw;
+		margin-left: 19.2vw;
+	}
+	.plumContainer .lineElements .rightTable .textfield3 u {
+		line-height: 0;
+		color: #aaaabb;
+	}
+	.plumContainer .lineElements .rightTable .textfield3 .text {
+		box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+		padding: 2.7vw 2.7vw;
+		border-radius: 1.38vw;
+		text-align: center;
+		background-color: #ffffff;
+		color: #4d5b70;
+		font-size: 4vw;
+		margin: 2.7vw 1.38vw -1.0vw 2.7vw;
+		left: 0px;
+		word-break: break-all
+	}
+	.plumContainer .lineElements .rightTable .textfield4 {
+		padding: 1.38vw 5.5vw 5vw 1.38vw;
+		text-align: left;
+		width: 70.9vw;
+		border-radius: 1.38vw;
+
+		/*　！！編集禁止！！*/
+		background: #f4d6de url(images/heart_favorStory.png) no-repeat right top;
+
+		background-size: contain;
+		color: #4d5b70;
+		font-size: 3.6vw;
+		margin-right: 4.1vw;
+		margin-left: 19.2vw;
+	}
+	.plumContainer .lineElements .rightTable .textfield4 u {
+		line-height: 0;
+		color: #aaaabb;
+	}
+	.plumContainer .lineElements .rightTable .textfield4 .text {
+		box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+		padding: 1.7vw 2.7vw;
+		border-radius: 1.38vw;
+		text-align: center;
+		background-color: #f092a4;
+		color: #ffffff;
+		font-size: 4vw;
+		margin: 2.7vw 1.38vw -3vw 2.7vw;
+		left: 0px;
+		word-break: break-all
+	}
+	.plumContainer .lineElements .centerTable {
+		display: block;
+		padding-top: 2.0vw;
+		width: 90.5vw;
+		margin-left: auto;
+		margin-right: auto;
+		clear: both;
+	}
+	.plumContainer .lineElements .centerTable .textfield{
+		background-color: #dce6e9;
+		border-radius: 1.38vw;
+	}
+	.plumContainer .lineElements .centerTable .textfield .text {
+		color: #4d5b70;
+		font-size: 3.3vw;
+		
+		text-align: center;
+		padding: 1.60vw;
+		word-break: break-all
+	}
+</style>

@@ -1,0 +1,320 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:WEBServerProperty id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<openFolderFlag>false</openFolderFlag>
+<startFlag>false</startFlag>
+<logSaveFlag>false</logSaveFlag>
+<maxConnectNum>50</maxConnectNum>
+<contentTypeCollection href="#ref-4"/>
+<cgiCollection href="#ref-5"/>
+<cgiRun>false</cgiRun>
+<basicAttestation>false</basicAttestation>
+<personCollection href="#ref-6"/>
+<listViewUpdateTimeinterval>1000</listViewUpdateTimeinterval>
+<firstHTML href="#ref-7"/>
+<lastHTML href="#ref-8"/>
+<rootFileName id="ref-9">index.html</rootFileName>
+<portNumber>80</portNumber>
+<location>
+<x>0</x>
+<y>0</y>
+</location>
+<windowSize>
+<width>400</width>
+<height>350</height>
+</windowSize>
+<mdiFlag>true</mdiFlag>
+<_SavePaths href="#ref-10"/>
+<viewCMFlag>false</viewCMFlag>
+<cMString id="ref-11">本</cMString>
+</a1:WEBServerProperty>
+<a1:ContentTypeCollection id="ref-4" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<CollectionBase_x002B_list href="#ref-12"/>
+</a1:ContentTypeCollection>
+<a2:CGICollection id="ref-5" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<CollectionBase_x002B_list href="#ref-13"/>
+</a2:CGICollection>
+<a1:PersonCollection id="ref-6" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<CollectionBase_x002B_list href="#ref-14"/>
+</a1:PersonCollection>
+<SOAP-ENC:Array id="ref-7" SOAP-ENC:arrayType="xsd:string[29]">
+<item id="ref-15">&#60;html&#62;</item>
+<item id="ref-16">&#60;meta http-equiv=&#34;Content-type&#34; content=&#34;text/html; charset=Shift_JIS&#34;&#62;</item>
+<item id="ref-17">&#60;head&#62;</item>
+<item id="ref-18">&#60;title&#62;KANTAN HTTP Server&#60;/title&#62;</item>
+<item id="ref-19">&#60;style type=&#34;text/css&#34;&#62;</item>
+<item id="ref-20">&#60;!--</item>
+<item id="ref-21">a</item>
+<item id="ref-22">{</item>
+<item id="ref-23"></item>
+<item id="ref-24">}</item>
+<item id="ref-25">.folder</item>
+<item href="#ref-22"/>
+<item id="ref-26">	font-weight: bold; font-size: 14px; color: #ffffff; background: mediumblue; padding: 2px 2px 2px 10px; margin: 2px;</item>
+<item href="#ref-24"/>
+<item id="ref-27">.file</item>
+<item href="#ref-22"/>
+<item id="ref-28">   font-weight: bold; font-size: 16px; color: #000000 ;text-decoration: none;</item>
+<item href="#ref-24"/>
+<item id="ref-29">.filesize</item>
+<item href="#ref-22"/>
+<item id="ref-30">   font-weight: bold; font-size: 12px; color: navy ;</item>
+<item href="#ref-24"/>
+<item id="ref-31">--&#62;</item>
+<item id="ref-32">&#60;/style&#62;</item>
+<item id="ref-33">&#60;/head&#62;</item>
+<item id="ref-34">&#60;body bgcolor=&#34;deepskyblue&#34; LINK=&#34;#FFFFFF&#34; VLINK =&#34;yellow&#34;&#62;</item>
+<item id="ref-35">&#60;div style=&#34; margin: 5px 5px 5px 5px; font-weight: bold; color: #ffffff; font-size: 20px; width: 300px; filter:Shadow(color=blue)&#34;;&#62;</item>
+<item id="ref-36">TTFA HTTP Server</item>
+<item id="ref-37">&#60;/div&#62;</item>
+</SOAP-ENC:Array>
+<SOAP-ENC:Array id="ref-8" SOAP-ENC:arrayType="xsd:string[2]">
+<item id="ref-38">&#60;/body&#62;</item>
+<item id="ref-39">&#60;/html&#62;</item>
+</SOAP-ENC:Array>
+<SOAP-ENC:Array id="ref-10" SOAP-ENC:arrayType="xsd:string[1]">
+<item id="ref-40">C:\Users\User\Desktop\PlumTalk\Plumtalk_WEB</item>
+</SOAP-ENC:Array>
+<a5:ArrayList id="ref-12" xmlns:a5="http://schemas.microsoft.com/clr/ns/System.Collections">
+<_items href="#ref-41"/>
+<_size>34</_size>
+<_version>34</_version>
+</a5:ArrayList>
+<a5:ArrayList id="ref-13" xmlns:a5="http://schemas.microsoft.com/clr/ns/System.Collections">
+<_items href="#ref-42"/>
+<_size>2</_size>
+<_version>2</_version>
+</a5:ArrayList>
+<a5:ArrayList id="ref-14" xmlns:a5="http://schemas.microsoft.com/clr/ns/System.Collections">
+<_items href="#ref-43"/>
+<_size>0</_size>
+<_version>0</_version>
+</a5:ArrayList>
+<SOAP-ENC:Array id="ref-41" SOAP-ENC:arrayType="xsd:anyType[64]">
+<item href="#ref-44"/>
+<item href="#ref-45"/>
+<item href="#ref-46"/>
+<item href="#ref-47"/>
+<item href="#ref-48"/>
+<item href="#ref-49"/>
+<item href="#ref-50"/>
+<item href="#ref-51"/>
+<item href="#ref-52"/>
+<item href="#ref-53"/>
+<item href="#ref-54"/>
+<item href="#ref-55"/>
+<item href="#ref-56"/>
+<item href="#ref-57"/>
+<item href="#ref-58"/>
+<item href="#ref-59"/>
+<item href="#ref-60"/>
+<item href="#ref-61"/>
+<item href="#ref-62"/>
+<item href="#ref-63"/>
+<item href="#ref-64"/>
+<item href="#ref-65"/>
+<item href="#ref-66"/>
+<item href="#ref-67"/>
+<item href="#ref-68"/>
+<item href="#ref-69"/>
+<item href="#ref-70"/>
+<item href="#ref-71"/>
+<item href="#ref-72"/>
+<item href="#ref-73"/>
+<item href="#ref-74"/>
+<item href="#ref-75"/>
+<item href="#ref-76"/>
+<item href="#ref-77"/>
+</SOAP-ENC:Array>
+<SOAP-ENC:Array id="ref-42" SOAP-ENC:arrayType="xsd:anyType[4]">
+<item href="#ref-78"/>
+<item href="#ref-79"/>
+</SOAP-ENC:Array>
+<SOAP-ENC:Array id="ref-43" SOAP-ENC:arrayType="xsd:anyType[0]">
+</SOAP-ENC:Array>
+<a1:ContentType id="ref-44" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-80">application/postscript</contentName>
+<extension id="ref-81">ai</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-45" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-82">audio/aiff</contentName>
+<extension id="ref-83">aif</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-46" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-82"/>
+<extension id="ref-84">aifc</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-47" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-82"/>
+<extension id="ref-85">aiff</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-48" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-86">video/x-ms-asf</contentName>
+<extension id="ref-87">asf</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-49" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-86"/>
+<extension id="ref-88">asx</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-50" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-89">audio/basic</contentName>
+<extension id="ref-90">au</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-51" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-91">video/x-msvideo</contentName>
+<extension id="ref-92">avi</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-52" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-93">image/bmp</contentName>
+<extension id="ref-94">bmp</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-53" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-95">image/pjpeg</contentName>
+<extension id="ref-96">jfif</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-54" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-97">image/jpeg</contentName>
+<extension id="ref-98">jpe</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-55" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-97"/>
+<extension href="#ref-98"/>
+</a1:ContentType>
+<a1:ContentType id="ref-56" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-97"/>
+<extension id="ref-99">jpeg</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-57" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-97"/>
+<extension id="ref-100">jpg</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-58" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-101">image/gif</contentName>
+<extension id="ref-102">gif</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-59" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-103">text/html</contentName>
+<extension id="ref-104">html</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-60" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-103"/>
+<extension id="ref-105">htm</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-61" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-106">text/plain</contentName>
+<extension id="ref-107">txt</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-62" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-97"/>
+<extension href="#ref-98"/>
+</a1:ContentType>
+<a1:ContentType id="ref-63" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-108">audio/wav</contentName>
+<extension id="ref-109">wav</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-64" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-110">audio/x-ms-wma</contentName>
+<extension id="ref-111">wma</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-65" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-112">audio/mpeg</contentName>
+<extension id="ref-113">mp3</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-66" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-110"/>
+<extension href="#ref-111"/>
+</a1:ContentType>
+<a1:ContentType id="ref-67" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-114">audio/mid</contentName>
+<extension id="ref-115">mid</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-68" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-114"/>
+<extension id="ref-116">midi</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-69" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-117">video/mpeg</contentName>
+<extension id="ref-118">mp2</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-70" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-117"/>
+<extension id="ref-119">mp2v</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-71" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-117"/>
+<extension id="ref-120">mpa</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-72" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-117"/>
+<extension id="ref-121">mpeg</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-73" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-117"/>
+<extension id="ref-122">mpg</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-74" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-117"/>
+<extension id="ref-123">mpv2</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-75" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName id="ref-124">video/x-ms-wmv</contentName>
+<extension id="ref-125">wmv</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-76" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-124"/>
+<extension id="ref-126">wmx</extension>
+</a1:ContentType>
+<a1:ContentType id="ref-77" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer.Model/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<contentName href="#ref-91"/>
+<extension href="#ref-92"/>
+</a1:ContentType>
+<a2:CGI id="ref-78" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<path_TRANSLATED_flag>false</path_TRANSLATED_flag>
+<extensions href="#ref-127"/>
+<enable>true</enable>
+<extensionsString id="ref-128">cgi,pl</extensionsString>
+<firstLineRead>true</firstLineRead>
+<exePath href="#ref-23"/>
+</a2:CGI>
+<a2:CGI id="ref-79" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KantanWEBServer/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<path_TRANSLATED_flag>true</path_TRANSLATED_flag>
+<extensions href="#ref-129"/>
+<enable>true</enable>
+<extensionsString id="ref-130">php</extensionsString>
+<firstLineRead>false</firstLineRead>
+<exePath id="ref-131">c:\php\php.exe</exePath>
+</a2:CGI>
+<a6:CharSplitStrings id="ref-127" xmlns:a6="http://schemas.microsoft.com/clr/nsassem/CommonClass/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<charSplitStrings href="#ref-132"/>
+</a6:CharSplitStrings>
+<a6:CharSplitStrings id="ref-129" xmlns:a6="http://schemas.microsoft.com/clr/nsassem/CommonClass/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<charSplitStrings href="#ref-133"/>
+</a6:CharSplitStrings>
+<a5:ArrayList id="ref-132" xmlns:a5="http://schemas.microsoft.com/clr/ns/System.Collections">
+<_items href="#ref-134"/>
+<_size>2</_size>
+<_version>2</_version>
+</a5:ArrayList>
+<a5:ArrayList id="ref-133" xmlns:a5="http://schemas.microsoft.com/clr/ns/System.Collections">
+<_items href="#ref-135"/>
+<_size>1</_size>
+<_version>1</_version>
+</a5:ArrayList>
+<SOAP-ENC:Array id="ref-134" SOAP-ENC:arrayType="xsd:anyType[4]">
+<item href="#ref-136"/>
+<item href="#ref-137"/>
+</SOAP-ENC:Array>
+<SOAP-ENC:Array id="ref-135" SOAP-ENC:arrayType="xsd:anyType[4]">
+<item href="#ref-138"/>
+</SOAP-ENC:Array>
+<a6:CharSplitString id="ref-136" xmlns:a6="http://schemas.microsoft.com/clr/nsassem/CommonClass/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<splitString id="ref-139">cgi</splitString>
+</a6:CharSplitString>
+<a6:CharSplitString id="ref-137" xmlns:a6="http://schemas.microsoft.com/clr/nsassem/CommonClass/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<splitString id="ref-140">pl</splitString>
+</a6:CharSplitString>
+<a6:CharSplitString id="ref-138" xmlns:a6="http://schemas.microsoft.com/clr/nsassem/CommonClass/KantanWEBServer%2C%20Version%3D4.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<splitString href="#ref-130"/>
+</a6:CharSplitString>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
