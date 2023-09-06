@@ -754,6 +754,8 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
     return newCreateList
 
 
+randomNumber = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
 
 @app.route("/")
 def hello():
@@ -779,6 +781,8 @@ def convertHtml():
         for newHtmlSentence in newHtmlLine:
             f.write(newHtmlSentence)
     
+    time.sleep(1)
+    
     return render_template('newCreate.html')
 
 
@@ -796,6 +800,8 @@ def convertHtml_sumple1():
         for newHtmlSentence in newHtmlLine:
             f.write(newHtmlSentence)
     
+    time.sleep(1)
+    
     return render_template('newCreate_sumple.html')
 
 @app.route('/convertHtml_sumple2', methods=['POST'])
@@ -811,6 +817,7 @@ def convertHtml_sumple2():
         for newHtmlSentence in newHtmlLine:
             f.write(newHtmlSentence)
     
+    time.sleep(1)
     
     return render_template('newCreate_sumple.html')
 
@@ -827,6 +834,7 @@ def convertHtml_sumple3():
         for newHtmlSentence in newHtmlLine:
             f.write(newHtmlSentence)
     
+    time.sleep(1)
     
     return render_template('newCreate_sumple.html')
 
@@ -843,6 +851,7 @@ def convertHtml_sumple4():
         for newHtmlSentence in newHtmlLine:
             f.write(newHtmlSentence)
     
+    time.sleep(1)
     
     return render_template('newCreate_sumple.html')
 
@@ -859,7 +868,7 @@ def convertHtml_sumple5():
         for newHtmlSentence in newHtmlLine:
             f.write(newHtmlSentence)
     
-
+    time.sleep(1)
     
     return render_template('newCreate_sumple.html')
 
@@ -876,6 +885,7 @@ def convertHtml_sumple6():
         for newHtmlSentence in newHtmlLine:
             f.write(newHtmlSentence)
     
+    time.sleep(1)
     
     return render_template('newCreate_sumple.html')
 
