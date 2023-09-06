@@ -25,6 +25,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
     tagElementCounter = 0
     displayNameCounter = 0
     iconFileCounter = 0
+    imageAreaCounter = 0
     
     textOriginalList = []
     txtNormalize = []
@@ -220,17 +221,15 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                     newCreateList.append("						<div class=\"text\">\n")
                     
                     if talkAreaMargin == "leftAndPicture" or talkAreaMargin == "rightAndPicture" or talkAreaMargin == "rightAndHiddenAndPicture":
-                        newCreateList.append("							<div class=\"imageAreaLR\">\n")
-
-                        for text in newCreateTextLine:
-                            if not text == "\n" and re.search("<img id=\"img\" src=data:image/",text):
-                                newCreateList.append("							" + text + "\n")
-                            else:
-                                newCreateList.append("							<p><br></p>\n")
-                        
-                        newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-
+                        newCreateList.append("							<div>\n")
+                        imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
+                        newCreateList.append("									" + imageAreaCounterStr)
+                        newCreateList.append("									<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
+                        newCreateList.append("									<p><br></p>\n")
+                        newCreateList.append("									<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+                        newCreateList.append("								</div>\n")                        
                         newCreateList.append("							</div>\n")
+                        imageAreaCounter += 1
                     else:
                         for text in newCreateTextLine:
                             if not text == "\n":
@@ -370,16 +369,14 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                     newCreateList.append("				</div>\n")
                 elif talkAreaType == "pictureTable":
                     newCreateList.append("				<div class=\"imageArea\">\n")
-                    
-                    for text in newCreateTextLine:
-                        if not text == "\n" and re.search("<img id=\"img\" src=data:image/",text):
-                            newCreateList.append("							" + text + "\n")
-                        else:
-                            newCreateList.append("							<p><br></p>\n")
-                    
-                    newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-                    
+                    imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
+                    newCreateList.append("									" + imageAreaCounterStr)
+                    newCreateList.append("						<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
+                    newCreateList.append("						<p><br></p>\n")
+                    newCreateList.append("						<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+                    newCreateList.append("					</div>\n")                                            
                     newCreateList.append("				</div>\n")
+                    imageAreaCounter += 1
                 elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
                     pass
 #                            newCreateList.append("[[##cut##]]\n")
@@ -524,17 +521,15 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
             newCreateList.append("						<div class=\"text\">\n")
             
             if talkAreaMargin == "leftAndPicture" or talkAreaMargin == "rightAndPicture" or talkAreaMargin == "rightAndHiddenAndPicture":
-                newCreateList.append("							<div class=\"imageAreaLR\">\n")
-
-                for text in newCreateTextLine:
-                    if not text == "\n" and re.search("<img id=\"img\" src=data:image/",text):
-                        newCreateList.append("							" + text + "\n")
-                    else:
-                        newCreateList.append("							<p><br></p>\n")
-                
-                newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-
+                newCreateList.append("							<div>\n")
+                imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
+                newCreateList.append("									" + imageAreaCounterStr)
+                newCreateList.append("									<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
+                newCreateList.append("									<p><br></p>\n")
+                newCreateList.append("									<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+                newCreateList.append("								</div>\n")                        
                 newCreateList.append("							</div>\n")
+                imageAreaCounter += 1
             else:
                 for text in newCreateTextLine:
                     if not text == "\n":
@@ -674,16 +669,14 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
             newCreateList.append("				</div>\n")
         elif talkAreaType == "pictureTable":
             newCreateList.append("				<div class=\"imageArea\">\n")
-            
-            for text in newCreateTextLine:
-                if not text == "\n" and re.search("<img id=\"img\" src=data:image/",text):
-                    newCreateList.append("							" + text + "\n")
-                else:
-                    newCreateList.append("							<p><br></p>\n")
-            
-            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-            
+            imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
+            newCreateList.append("									" + imageAreaCounterStr)
+            newCreateList.append("						<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
+            newCreateList.append("						<p><br></p>\n")
+            newCreateList.append("						<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+            newCreateList.append("					</div>\n")                                            
             newCreateList.append("				</div>\n")
+            imageAreaCounter += 1
         elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
             pass
 #       newCreateList.append("[[##cut##]]\n")            
@@ -717,12 +710,24 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
         time.sleep(1)
         sys.exit()
 
-    newCreateList.append("              <img src=data:image/png;base64," + src + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
+    newCreateList.append("              <img src=data:image/png;base64," + src + " alt=\"プラム\" width=3% />PlumTalk for PC\n")
     newCreateList.append("			</div>\n")
-    newCreateList.append("		</div>\n")
+    newCreateList.append("		</div>\n")   
+
+    try:
+        with open('./scriptList.dat','r',encoding="UTF-8") as f:
+            newCreateTextLine = f.readlines()
+    except:
+        print("ERROR:エラーが発生しました。CSS_list.datが見つからない。あるいはファイルが破損している可能性があります。プログラムを終了します。")
+        time.sleep(1)
+        sys.exit()
+        
+    for line in newCreateTextLine:
+            newCreateList.append(line)
+    
     newCreateList.append("	</body>\n")
     newCreateList.append("</html>\n")
-
+    newCreateList.append("\n")
     
 
     try:
