@@ -165,8 +165,9 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
         try:
             with open("./images/plum.png", mode='rb') as f:
                 src = base64.b64encode(f.read()).decode('utf-8')
-        except:
+        except Exception as e:
             print("ERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
+            print(e)
             time.sleep(1)
             sys.exit()
     
