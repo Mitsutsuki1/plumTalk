@@ -457,7 +457,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                     
             
             if displayName == "":
-                displayName = textOriginalLine.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@右右","").replace("@@@返信","").replace("@@@複数","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@カット","").replace("@@@","").replace("　","").replace(" ","")
+                displayName = textOriginalLine.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@右右","").replace("@@@返信","").replace("@@@複数","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@カット","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
             if displayName == "":
                 displayName = "？"
             elif talkAreaType == "pictureTable":
