@@ -223,6 +223,7 @@
 		width: fit-content;
 		background-color: #5484c4;
 		word-break: break-all
+		text-align: right;
 		float:right;
 		clear: both;
 	}
