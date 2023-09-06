@@ -1,0 +1,15 @@
+		<script>						
+			function insertImage(num) {
+				const uploadImage = document.querySelector('#uploadImage');
+				var file = uploadImage.files[0];
+				let text = document.getElementById('imageArea' + String(num)).innerHTML;
+
+				const reader = new FileReader();
+				reader.onload = (event) => {
+					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " width=\"100%\"/>";
+					
+					document.getElementById("imageArea" + String(num)).innerHTML = base64;
+				};
+				reader.readAsDataURL(file);
+			}
+		</script>
