@@ -45,7 +45,8 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
         
     
     for f in textOriginalList:
-        f = f.replace("＠＠＠","@@@").replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("@@@画像：","@@@画像:")
+        f = re.sub("[@＠][@＠][@＠]","@@@",f)
+        f = f.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("@@@画像：","@@@画像:")
         txtNormalize.append(f)
     
     textOriginalList = txtNormalize
@@ -74,6 +75,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                 
                 charactorId = re.search("No[\d]{3}_[\d]{1}", charactorLineDat)
                 charactorId = charactorId.group()
+                tagElement = re.sub("[@＠][@＠][@＠]","@@@",charactorLineDat)
                 tagElement = charactorLineDat.replace(charactorId +"_tagElement:","").replace("＠＠＠","@@@").replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("\n","")
                 tagElementList.append(tagElement)
                 tagElementCounter += 1      
@@ -140,244 +142,86 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
     displayNameBefore = ""
     talkAreaTypeBefore = ""
     talkAreaMarginBefore = ""
-    pictureTableImage = ""
-    
-    
-    if textOriginalList == []:
-        print("ERROR:PlumTalk.txtの中身が空です。プログラムを終了します。")
+            
+    if not creatorName == "":
+            creatorName = "作者:" + creatorName
+            
+   
+    newCreateList.append("<html lang=\"ja\">\n")
+    newCreateList.append("	<head>\n")
+    newCreateList.append("		<meta charset=\"UTF-8\"/>\n")
+    newCreateList.append("		<title>PlumTalk</title>\n")
+    newCreateList.append("	</head>\n")
+    newCreateList.append("	<body>\n")
+    newCreateList.append("		<div class=\"plumContainer\">\n")
+    newCreateList.append("			<div class=\"header\">\n")
+
+    try:
+        with open("./images/plum.png", mode='rb') as f:
+            src = base64.b64encode(f.read()).decode('utf-8')
+    except Exception as e:
+        print("aERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
+        print(e)
         time.sleep(1)
         sys.exit()
-    else:
-            
-        if not creatorName == "":
-                creatorName = "作者:" + creatorName
-                
-       
-        newCreateList.append("<html lang=\"ja\">\n")
-        newCreateList.append("	<head>\n")
-        newCreateList.append("		<meta charset=\"UTF-8\"/>\n")
-        newCreateList.append("		<title>PlumTalk</title>\n")
-        newCreateList.append("	</head>\n")
-        newCreateList.append("	<body>\n")
-        newCreateList.append("		<div class=\"plumContainer\">\n")
-        newCreateList.append("			<div class=\"header\">\n")
+
+    newCreateList.append("              <img src=data:image/png;base64," + src + " alt=\"プラム\" width=6% />PlumTalk <font class=\"fontExclamation\"><font color=\"#FFFFFF\" >..</font>!<font color=\"#FFFFFF\">..</font></font>\n")
+
+    newCreateList.append("			</div>\n")
+    newCreateList.append("			<div class=\"subtitle\">\n")
     
-        try:
-            with open("./images/plum.png", mode='rb') as f:
-                src = base64.b64encode(f.read()).decode('utf-8')
-        except Exception as e:
-            print("aERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
-            print(e)
-            time.sleep(1)
-            sys.exit()
-    
-        newCreateList.append("              <img src=data:image/png;base64," + src + " alt=\"プラム\" width=6% />PlumTalk <font class=\"fontExclamation\"><font color=\"#FFFFFF\" >..</font>!<font color=\"#FFFFFF\">..</font></font>\n")
-    
-        newCreateList.append("			</div>\n")
-        newCreateList.append("			<div class=\"subtitle\">\n")
-        
-        newCreateList.append("				" + titleName + "<br>" + creatorName + "\n")
-        newCreateList.append("			</div>\n")
-        newCreateList.append("			<div class=\"lineElements\">\n")
-    
-    
-        for textOriginalLine in textOriginalList:
-            if re.search("@@@",textOriginalLine):
-                startFlg = 1
-                if tagElementFirstFlg == 1:
-                    if talkAreaType == "normal":
-    
-                        if talkAreaMargin == "left" or talkAreaMargin == "leftAndPicture":
-                            newCreateList.append("				<div class=\"leftTable\">\n")                            
-                        elif talkAreaMargin == "right" or talkAreaMargin == "rightAndHidden" or talkAreaMargin == "rightAndPicture" or talkAreaMargin == "rightAndHiddenAndPicture":
-                            newCreateList.append("				<div class=\"rightTable\">\n")
-                            
-                        if talkAreaMargin == "rightAndHidden" or talkAreaMargin == "rightAndHiddenAndPicture":
-                            newCreateList.append("					<div class=\"textfield1_hidden\">\n")
-                        elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == talkAreaMargin:
-                            newCreateList.append("					<div class=\"textfield2\">\n")
-                        elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "right" and talkAreaMargin == "rightAndPicture":
-                            newCreateList.append("					<div class=\"textfield2\">\n")
-                        elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "rightAndPicture" and talkAreaMargin == "right":
-                            newCreateList.append("					<div class=\"textfield2\">\n")
-                        elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "left" and talkAreaMargin == "leftAndPicture":
-                            newCreateList.append("					<div class=\"textfield2\">\n")
-                        elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "leftAndPicture" and talkAreaMargin == "left":
-                            newCreateList.append("					<div class=\"textfield2\">\n")
-                        else:
-                            newCreateList.append("					<figure>\n")
-                            try:            
-                                root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
-                                with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
-                                    src = base64.b64encode(f.read()).decode('utf-8')
-                            except:
-                                iconFileName = npcObjectIconFileName
-                                root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
-                                with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
-                                    src = base64.b64encode(f.read()).decode('utf-8')
-    
-                            newCreateList.append("						<img src=data:image/" + ext.replace(".","") + ";base64," + src + " />\n")
-                            newCreateList.append("					</figure>\n")
-                            newCreateList.append("					<div class=\"textfield1\">\n")
-                            newCreateList.append("						<div class=\"name\">\n")
-                            newCreateList.append("							<p>" + displayName + "</p>\n")
-                            newCreateList.append("						</div>\n")
-    
-    
-                        newCreateList.append("						<div class=\"text\">\n")
-                        
-                        if talkAreaMargin == "leftAndPicture" or talkAreaMargin == "rightAndPicture" or talkAreaMargin == "rightAndHiddenAndPicture":
-                            newCreateList.append("							<div class=\"imageAreaLR\">\n")
-    
-                            for text in newCreateTextLine:
-                                if not text == "\n" and re.search("<img id=\"img\" src=data:image/",text):
-                                    newCreateList.append("							" + text + "\n")
-                                else:
-                                    newCreateList.append("							<p><br></p>\n")
-                            
-                            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-    
-                            newCreateList.append("							</div>\n")
-                        else:
-                            for text in newCreateTextLine:
-                                if not text == "\n":
-                                    newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                                else:
-                                    newCreateList.append("							<p><br></p>\n")
-                            
-                            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-    
-                        newCreateList.append("						</div>\n")
-                        newCreateList.append("					</div>\n")
-                        newCreateList.append("				</div>\n")
-                        
-                        
-                    elif talkAreaType == "replyContinue":
-                        if replyContinueFlg == 0:
-                            if re.search("@@@返信@@@",textOriginalLine):
-                                newCreateList.append("				<div class=\"rightTable\">\n")
-                                newCreateList.append("					<div class=\"textfield3\">\n")
-                                newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
-                                newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
-                                newCreateList.append("						<div class=\"text\">\n")
-       
-                                for text in newCreateTextLine:
-                                    if not text == "\n":
-                                        newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                                    else:
-                                        newCreateList.append("							<p><br></p>\n")
-                                
-                                newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-                                
-                                newCreateList.append("						</div>\n")
-                                replyContinueFlg = 1
-                                if not re.search("@@@複数@@@",textOriginalLine):
-                                    newCreateList.append("					</div>\n")
-                                    newCreateList.append("				</div>\n")
-                                    replyContinueFlg = 0
-                            else:
-                                newCreateList.append("				<div class=\"rightTable\">\n")
-                                newCreateList.append("					<div class=\"textfield3\">\n")
-                                newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
-                                newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
-                                newCreateList.append("						<div class=\"text\">\n")
-       
-                                for text in newCreateTextLine:
-                                    if not text == "\n":
-                                        newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                                    else:
-                                        newCreateList.append("							<p><br></p>\n")
-                                
-                                newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-                                
-                                newCreateList.append("						</div>\n")
-                                newCreateList.append("					</div>\n")
-                                newCreateList.append("				</div>\n")
-                                
-                                    
-                        elif replyContinueFlg == 1:
-                            if re.search("@@@返信@@@",textOriginalLine):
-                                newCreateList.append("						<div class=\"text\">\n")
-    
-                                for text in newCreateTextLine:
-                                    if not text == "\n":
-                                        newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                                    else:
-                                        newCreateList.append("							<p><br></p>\n")
-                                
-                                newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-                                
-                                newCreateList.append("						</div>\n")
-                                replyContinueFlg = 1
-                                if not re.search("@@@複数@@@",textOriginalLine):
-                                    newCreateList.append("					</div>\n")
-                                    newCreateList.append("				</div>\n")
-                                    replyContinueFlg = 0
-                            else:
-                                newCreateList.append("						<div class=\"text\">\n")
-    
-                                for text in newCreateTextLine:
-                                    if not text == "\n":
-                                        newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                                    else:
-                                        newCreateList.append("							<p><br></p>\n")
-                                
-                                newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-                                
-                                newCreateList.append("						</div>\n")
-                                newCreateList.append("					</div>\n")
-                                newCreateList.append("				</div>\n")
-                                replyContinueFlg = 0
-    
-    
-                    elif talkAreaType == "reply":
+    newCreateList.append("				" + titleName + "<br>" + creatorName + "\n")
+    newCreateList.append("			</div>\n")
+    newCreateList.append("			<div class=\"lineElements\">\n")
+
+
+    for textOriginalLine in textOriginalList:
+        if re.search("@@@",textOriginalLine):
+            if tagElementFirstFlg == 1:
+                if talkAreaType == "normal":
+
+                    if talkAreaMargin == "left" or talkAreaMargin == "leftAndPicture":
+                        newCreateList.append("				<div class=\"leftTable\">\n")                            
+                    elif talkAreaMargin == "right" or talkAreaMargin == "rightAndHidden" or talkAreaMargin == "rightAndPicture" or talkAreaMargin == "rightAndHiddenAndPicture":
                         newCreateList.append("				<div class=\"rightTable\">\n")
-                        newCreateList.append("					<div class=\"textfield3\">\n")
-                        newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
-                        newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
-                        newCreateList.append("						<div class=\"text\">\n")
-    
-       
-                        for text in newCreateTextLine:
-                            if not text == "\n":
-                                newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                            else:
-                                newCreateList.append("							<p><br></p>\n")
                         
-                        newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-                        
+                    if talkAreaMargin == "rightAndHidden" or talkAreaMargin == "rightAndHiddenAndPicture":
+                        newCreateList.append("					<div class=\"textfield1_hidden\">\n")
+                    elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == talkAreaMargin:
+                        newCreateList.append("					<div class=\"textfield2\">\n")
+                    elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "right" and talkAreaMargin == "rightAndPicture":
+                        newCreateList.append("					<div class=\"textfield2\">\n")
+                    elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "rightAndPicture" and talkAreaMargin == "right":
+                        newCreateList.append("					<div class=\"textfield2\">\n")
+                    elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "left" and talkAreaMargin == "leftAndPicture":
+                        newCreateList.append("					<div class=\"textfield2\">\n")
+                    elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "leftAndPicture" and talkAreaMargin == "left":
+                        newCreateList.append("					<div class=\"textfield2\">\n")
+                    else:
+                        newCreateList.append("					<figure>\n")
+                        try:            
+                            root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
+                            with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
+                                src = base64.b64encode(f.read()).decode('utf-8')
+                        except:
+                            iconFileName = npcObjectIconFileName
+                            root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
+                            with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
+                                src = base64.b64encode(f.read()).decode('utf-8')
+
+                        newCreateList.append("						<img src=data:image/" + ext.replace(".","") + ";base64," + src + " />\n")
+                        newCreateList.append("					</figure>\n")
+                        newCreateList.append("					<div class=\"textfield1\">\n")
+                        newCreateList.append("						<div class=\"name\">\n")
+                        newCreateList.append("							<p>" + displayName + "</p>\n")
                         newCreateList.append("						</div>\n")
-                        newCreateList.append("					</div>\n")
-                        newCreateList.append("				</div>\n")
-                    elif talkAreaType == "label":
-                        newCreateList.append("				<div class=\"centerTable\">\n")
-                        newCreateList.append("					<div class=\"textfield\">\n")
-                        newCreateList.append("						<div class=\"text\">\n")
-    
-                        for text in newCreateTextLine:
-                            if not text == "\n":
-                                newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                            else:
-                                newCreateList.append("							<p><br></p>\n")
-                        
-                        newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-    
-                        newCreateList.append("						</div>\n")
-                        newCreateList.append("					</div>\n")
-                        newCreateList.append("				</div>\n")
-                    elif talkAreaType == "love":
-                        newCreateList.append("				<div class=\"rightTable\">\n")
-                        newCreateList.append("					<div class=\"textfield4\">\n")
-                        newCreateList.append("                      <p><font color=#FF5192>|</font>絆イベント</p>\n")
-                        newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
-                        newCreateList.append("						<div class=\"text\">\n")
-                        newCreateList.append(                           "<p>" + displayName + "の絆ストーリーへ</p>\n")
-                        newCreateList.append("						</div>\n")
-                        newCreateList.append("					</div>\n")
-                        newCreateList.append("				</div>\n")
-                    elif talkAreaType == "pictureTable":
-                        newCreateList.append("				<div class=\"imageArea\">\n")
-                        
+
+
+                    newCreateList.append("						<div class=\"text\">\n")
+                    
+                    if talkAreaMargin == "leftAndPicture" or talkAreaMargin == "rightAndPicture" or talkAreaMargin == "rightAndHiddenAndPicture":
+                        newCreateList.append("							<div class=\"imageAreaLR\">\n")
+
                         for text in newCreateTextLine:
                             if not text == "\n" and re.search("<img id=\"img\" src=data:image/",text):
                                 newCreateList.append("							" + text + "\n")
@@ -385,142 +229,256 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                                 newCreateList.append("							<p><br></p>\n")
                         
                         newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+
+                        newCreateList.append("							</div>\n")
+                    else:
+                        for text in newCreateTextLine:
+                            if not text == "\n":
+                                newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                            else:
+                                newCreateList.append("							<p><br></p>\n")
                         
-                        newCreateList.append("				</div>\n")
-                    elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
-                        pass
-    #                            newCreateList.append("[[##cut##]]\n")
-                        
+                        newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+
+                    newCreateList.append("						</div>\n")
+                    newCreateList.append("					</div>\n")
+                    newCreateList.append("				</div>\n")
                     
                     
-                    displayNameBefore = displayName
-                    talkAreaTypeBefore = talkAreaType
-                    talkAreaMarginBefore = talkAreaMargin       
-                    newCreateTextLine = []
-                    
-                
-                tagElementFirstFlg = 1
-                displayName = ""
-                iconFileName = ""
-                
-                for tagElement in tagElementList:
-                    if re.search(tagElement,textOriginalLine):
-                        elementExist = True
-                        for index, display in enumerate(displayNameList):
-                            if index == tagElementCounter:
-                                displayName = display
-                                if displayName is None:
-                                    displayName = tagElement.replace("@@@","")
-                                break
-                        
-                        for index, iconFile in enumerate(iconFileList):
-                            if index == tagElementCounter:
-                                iconFileName = iconFile
-                                if iconFileName is None:
-                                    iconFileName = npcObjectIconFileName
-                                break
+                elif talkAreaType == "replyContinue":
+                    if replyContinueFlg == 0:
+                        if re.search("@@@返信@@@",textOriginalLine):
+                            newCreateList.append("				<div class=\"rightTable\">\n")
+                            newCreateList.append("					<div class=\"textfield3\">\n")
+                            newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
+                            newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+                            newCreateList.append("						<div class=\"text\">\n")
+   
+                            for text in newCreateTextLine:
+                                if not text == "\n":
+                                    newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                                else:
+                                    newCreateList.append("							<p><br></p>\n")
                             
+                            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                            
+                            newCreateList.append("						</div>\n")
+                            replyContinueFlg = 1
+                            if not re.search("@@@複数@@@",textOriginalLine):
+                                newCreateList.append("					</div>\n")
+                                newCreateList.append("				</div>\n")
+                                replyContinueFlg = 0
+                        else:
+                            newCreateList.append("				<div class=\"rightTable\">\n")
+                            newCreateList.append("					<div class=\"textfield3\">\n")
+                            newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
+                            newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+                            newCreateList.append("						<div class=\"text\">\n")
+   
+                            for text in newCreateTextLine:
+                                if not text == "\n":
+                                    newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                                else:
+                                    newCreateList.append("							<p><br></p>\n")
+                            
+                            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                            
+                            newCreateList.append("						</div>\n")
+                            newCreateList.append("					</div>\n")
+                            newCreateList.append("				</div>\n")
+                            
+                                
+                    elif replyContinueFlg == 1:
+                        if re.search("@@@返信@@@",textOriginalLine):
+                            newCreateList.append("						<div class=\"text\">\n")
+
+                            for text in newCreateTextLine:
+                                if not text == "\n":
+                                    newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                                else:
+                                    newCreateList.append("							<p><br></p>\n")
+                            
+                            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                            
+                            newCreateList.append("						</div>\n")
+                            replyContinueFlg = 1
+                            if not re.search("@@@複数@@@",textOriginalLine):
+                                newCreateList.append("					</div>\n")
+                                newCreateList.append("				</div>\n")
+                                replyContinueFlg = 0
+                        else:
+                            newCreateList.append("						<div class=\"text\">\n")
+
+                            for text in newCreateTextLine:
+                                if not text == "\n":
+                                    newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                                else:
+                                    newCreateList.append("							<p><br></p>\n")
+                            
+                            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                            
+                            newCreateList.append("						</div>\n")
+                            newCreateList.append("					</div>\n")
+                            newCreateList.append("				</div>\n")
+                            replyContinueFlg = 0
+
+
+                elif talkAreaType == "reply":
+                    newCreateList.append("				<div class=\"rightTable\">\n")
+                    newCreateList.append("					<div class=\"textfield3\">\n")
+                    newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
+                    newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+                    newCreateList.append("						<div class=\"text\">\n")
+
+   
+                    for text in newCreateTextLine:
+                        if not text == "\n":
+                            newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                        else:
+                            newCreateList.append("							<p><br></p>\n")
                     
-                    if elementExist == True:
-                        elementExist = False
-                        tagElementCounter = 0
-                        break
+                    newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                    
+                    newCreateList.append("						</div>\n")
+                    newCreateList.append("					</div>\n")
+                    newCreateList.append("				</div>\n")
+                elif talkAreaType == "label":
+                    newCreateList.append("				<div class=\"centerTable\">\n")
+                    newCreateList.append("					<div class=\"textfield\">\n")
+                    newCreateList.append("						<div class=\"text\">\n")
+
+                    for text in newCreateTextLine:
+                        if not text == "\n":
+                            newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                        else:
+                            newCreateList.append("							<p><br></p>\n")
+                    
+                    newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+
+                    newCreateList.append("						</div>\n")
+                    newCreateList.append("					</div>\n")
+                    newCreateList.append("				</div>\n")
+                elif talkAreaType == "love":
+                    newCreateList.append("				<div class=\"rightTable\">\n")
+                    newCreateList.append("					<div class=\"textfield4\">\n")
+                    newCreateList.append("                      <p><font color=#FF5192>|</font>絆イベント</p>\n")
+                    newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+                    newCreateList.append("						<div class=\"text\">\n")
+                    newCreateList.append(                           "<p>" + displayName + "の絆ストーリーへ</p>\n")
+                    newCreateList.append("						</div>\n")
+                    newCreateList.append("					</div>\n")
+                    newCreateList.append("				</div>\n")
+                elif talkAreaType == "pictureTable":
+                    newCreateList.append("				<div class=\"imageArea\">\n")
+                    
+                    for text in newCreateTextLine:
+                        if not text == "\n" and re.search("<img id=\"img\" src=data:image/",text):
+                            newCreateList.append("							" + text + "\n")
+                        else:
+                            newCreateList.append("							<p><br></p>\n")
+                    
+                    newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                    
+                    newCreateList.append("				</div>\n")
+                elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
+                    pass
+#                            newCreateList.append("[[##cut##]]\n")
+                    
                 
                 
+                displayNameBefore = displayName
+                talkAreaTypeBefore = talkAreaType
+                talkAreaMarginBefore = talkAreaMargin       
+                newCreateTextLine = []
+                
+            
+            tagElementFirstFlg = 1
+            displayName = ""
+            iconFileName = ""
+            
+            for tagElement in tagElementList:
+                if re.search(tagElement,textOriginalLine):
+                    elementExist = True
+                    for index, display in enumerate(displayNameList):
+                        if index == tagElementCounter:
+                            displayName = display
+                            if displayName is None:
+                                displayName = tagElement.replace("@@@","")
+                            break
+                    
+                    for index, iconFile in enumerate(iconFileList):
+                        if index == tagElementCounter:
+                            iconFileName = iconFile
+                            if iconFileName is None:
+                                iconFileName = npcObjectIconFileName
+                            break
                         
-                    
-                    tagElementCounter += 1
                 
+                if elementExist == True:
+                    elementExist = False
+                    tagElementCounter = 0
+                    break
+            
+            
+                    
+                
+                tagElementCounter += 1
+            
+            talkAreaType = "normal"
+            talkAreaMargin = "left"
+            
+            if re.search("@@@画像@@@",textOriginalLine):
+                talkAreaType = "pictureTable"
+            if re.search("@@@左@@@",textOriginalLine) or re.search("@@@左左@@@",textOriginalLine) or re.search("@@@左左左@@@",textOriginalLine) or re.search("@@@左左左左[^@]*@@@",textOriginalLine):
                 talkAreaType = "normal"
                 talkAreaMargin = "left"
-                
-                if re.search("@@@画像:[^@]*@@@",textOriginalLine):
-                    talkAreaType = "pictureTable"
-                    pictureTableImage = re.match("@@@画像:[^@]*@@@",textOriginalLine)
-                    try:
-                        pictureTableImage = pictureTableImage.group()
-                    except:
-                        pictureTableImage = ""
-                    
-                    pictureTableImage = pictureTableImage.replace("@@@画像:", "").replace("@@@", "")
-                    
-                    if not os.path.isfile("./" + insertImageLocation + pictureTableImage) == True:
-                        pictureTableImage = "noImage.png"
-                if re.search("@@@左@@@",textOriginalLine) or re.search("@@@左左@@@",textOriginalLine) or re.search("@@@左左左@@@",textOriginalLine) or re.search("@@@左左左左[^@]*@@@",textOriginalLine):
-                    talkAreaType = "normal"
-                    talkAreaMargin = "left"
-                    if re.search("@@@画像:[^@]*@@@",textOriginalLine):
-                        talkAreaMargin = "leftAndPicture"
-                        pictureTableImage = re.match("@@@画像:[^@]*@@@",textOriginalLine)
-                        try:
-                            pictureTableImage = pictureTableImage.group()
-                        except:
-                            pictureTableImage = ""
-                        
-                        pictureTableImage = pictureTableImage.replace("@@@画像:", "").replace("@@@", "")
-                        if not os.path.isfile("./" + insertImageLocation + pictureTableImage) == True:
-                            pictureTableImage = "noImage.png"
-                if re.search("@@@右@@@",textOriginalLine):
-                    talkAreaType = "normal"
-                    talkAreaMargin = "right"
-                    if re.search("@@@画像:[^@]*@@@",textOriginalLine):
-                        talkAreaMargin = "rightAndPicture"
-                        pictureTableImage = re.match("@@@画像:[^@]*@@@",textOriginalLine)
-                        try:
-                            pictureTableImage = pictureTableImage.group()
-                        except:
-                            pictureTableImage = ""
-                        
-                        pictureTableImage = pictureTableImage.replace("@@@画像:", "").replace("@@@", "")
-                        if not os.path.isfile("./" + insertImageLocation + pictureTableImage) == True:
-                            pictureTableImage = "noImage.png"
-                if re.search("@@@右右@@@",textOriginalLine) or re.search("@@@右右右@@@",textOriginalLine) or re.search("@@@右右右右[^@]*@@@",textOriginalLine):
-                    talkAreaType = "normal"
-                    talkAreaMargin = "rightAndHidden"
-                    if re.search("@@@画像:[^@]*@@@",textOriginalLine):
-                        talkAreaMargin = "rightAndHiddenAndPicture"
-                        pictureTableImage = re.match("@@@画像:[^@]*@@@",textOriginalLine)
-                        try:
-                            pictureTableImage = pictureTableImage.group()
-                        except:
-                            pictureTableImage = ""
-                        
-                        pictureTableImage = pictureTableImage.replace("@@@画像:", "").replace("@@@", "")
-                        if not os.path.isfile("./" + insertImageLocation + pictureTableImage) == True:
-                            pictureTableImage = "noImage.png"
-                if re.search("@@@返信@@@",textOriginalLine):
-                    if re.search("@@@複数@@@",textOriginalLine):
-                        talkAreaType = "replyContinue"
-                    else:
-                        talkAreaType = "reply"
-                if re.search("@@@ラベル@@@",textOriginalLine):    
-                    talkAreaType = "label"
-                if re.search("@@@絆ストーリー@@@",textOriginalLine):
-                    talkAreaType = "love"
-                                        
-    
-                if re.search("@@@カット@@@",textOriginalLine):
-                    talkAreaType = "cut"
-                        
-                
-                if displayName == "":
-                    displayName = textOriginalLine.replace("@@@左","").replace("@@@右","").replace("@@@右右","").replace("@@@返信","").replace("@@@複数","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@","").replace("　","").replace(" ","")
-                if displayName == "":
-                    displayName = "？"
-                if iconFileName == "":
-                    iconFileName = npcObjectIconFileName
-    
-                
-                tagElementCounter = 0
-                
-            elif startFlg == 1:
-                if tagElementFirstFlg == 1:
-                    if talkAreaMargin == "left":
-                        newCreateTextLine.append(textOriginalLine.replace("<強調>","<b>").replace("</強調>","</b>").replace("<照れ>","<font class=\"blush\">").replace("</照れ>","</font>").replace("<blush>","<font class=\"blush\">").replace("</blush>","</font>").replace("<赤字>","<font class=\"textRed_left\">").replace("</赤字>","</font>").replace("<red>","<font class=\"textRed_left\">").replace("</red>","</font>"))                    
-                    else:
-                        newCreateTextLine.append(textOriginalLine.replace("<強調>","<b>").replace("</強調>","</b>").replace("<照れ>","<font class=\"blush\">").replace("</照れ>","</font>").replace("<blush>","<font class=\"blush\">").replace("</blush>","</font>").replace("<赤字>","<font class=\"textRed_right\">").replace("</赤字>","</font>").replace("<red>","<font class=\"textRed_right\">").replace("</red>","</font>"))                    
+                if re.search("@@@画像@@@",textOriginalLine):
+                    talkAreaMargin = "leftAndPicture"
+            if re.search("@@@右@@@",textOriginalLine):
+                talkAreaType = "normal"
+                talkAreaMargin = "right"
+                if re.search("@@@画像@@@",textOriginalLine):
+                    talkAreaMargin = "rightAndPicture"
+            if re.search("@@@右右@@@",textOriginalLine) or re.search("@@@右右右@@@",textOriginalLine) or re.search("@@@右右右右[^@]*@@@",textOriginalLine):
+                talkAreaType = "normal"
+                talkAreaMargin = "rightAndHidden"
+                if re.search("@@@画像@@@",textOriginalLine):
+                    talkAreaMargin = "rightAndHiddenAndPicture"
+            if re.search("@@@返信@@@",textOriginalLine):
+                if re.search("@@@複数@@@",textOriginalLine):
+                    talkAreaType = "replyContinue"
                 else:
-                    pass
+                    talkAreaType = "reply"
+            if re.search("@@@ラベル@@@",textOriginalLine):    
+                talkAreaType = "label"
+            if re.search("@@@絆ストーリー@@@",textOriginalLine):
+                talkAreaType = "love"
+                                    
+
+            if re.search("@@@カット@@@",textOriginalLine):
+                talkAreaType = "cut"
+                    
+            
+            if displayName == "":
+                displayName = textOriginalLine.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@右右","").replace("@@@返信","").replace("@@@複数","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@カット","").replace("@@@","").replace("　","").replace(" ","")
+            if displayName == "":
+                displayName = "？"
+            elif talkAreaType == "pictureTable":
+                talkAreaType = "normal"
+                talkAreaMargin = "leftAndPicture"
+            if iconFileName == "":
+                iconFileName = npcObjectIconFileName
+
+            
+            tagElementCounter = 0
+            
+        elif tagElementFirstFlg == 1:
+            if talkAreaMargin == "left":
+                newCreateTextLine.append(textOriginalLine.replace("<強調>","<b>").replace("</強調>","</b>").replace("<照れ>","<font class=\"blush\">").replace("</照れ>","</font>").replace("<blush>","<font class=\"blush\">").replace("</blush>","</font>").replace("<赤字>","<font class=\"textRed_left\">").replace("</赤字>","</font>").replace("<red>","<font class=\"textRed_left\">").replace("</red>","</font>"))                    
+            else:
+                newCreateTextLine.append(textOriginalLine.replace("<強調>","<b>").replace("</強調>","</b>").replace("<照れ>","<font class=\"blush\">").replace("</照れ>","</font>").replace("<blush>","<font class=\"blush\">").replace("</blush>","</font>").replace("<赤字>","<font class=\"textRed_right\">").replace("</赤字>","</font>").replace("<red>","<font class=\"textRed_right\">").replace("</red>","</font>"))                    
+        else:
+            pass
                         
     
     if tagElementFirstFlg == 1:
@@ -728,53 +686,63 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
             newCreateList.append("				</div>\n")
         elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
             pass
-#            newCreateList.append("[[##cut##]]\n")
-            
+#       newCreateList.append("[[##cut##]]\n")            
+    else:
+        newCreateList.append("				<div class=\"centerTable\">\n")
+        newCreateList.append("					<div class=\"textfield\">\n")
+        newCreateList.append("						<div class=\"text\">\n")
+
+        newCreateList.append("							<p>エラー:テキストエリアが空欄、あるいは有効なタグが存在しません。</p>\n")
         
+        newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+
+        newCreateList.append("						</div>\n")
+        newCreateList.append("					</div>\n")
+        newCreateList.append("				</div>\n")
         
-        displayNameBefore = displayName
-        talkAreaTypeBefore = talkAreaType
-        talkAreaMarginBefore = talkAreaMargin       
-        newCreateTextLine = []
+    displayNameBefore = displayName
+    talkAreaTypeBefore = talkAreaType
+    talkAreaMarginBefore = talkAreaMargin       
+    newCreateTextLine = []
+
+
+    newCreateList.append("			</div>\n")
+    newCreateList.append("			<div class=\"footer\">\n")
+
+    try:
+        with open("./images/plum.png", mode='rb') as f:
+            src = base64.b64encode(f.read()).decode('utf-8')
+    except:
+        print("ERROR:画像のbase64化に失敗しました。フッダー用の画像が破損している可能性があります。プログラムを終了します。")
+        time.sleep(1)
+        sys.exit()
+
+    newCreateList.append("              <img src=data:image/png;base64," + src + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
+    newCreateList.append("			</div>\n")
+    newCreateList.append("		</div>\n")
+    newCreateList.append("	</body>\n")
+    newCreateList.append("</html>\n")
+
     
+
+    try:
+        with open('./CSSList.dat','r',encoding="UTF-8") as f:
+            newCreateTextLine = f.readlines()
+    except:
+        print("ERROR:エラーが発生しました。CSS_list.datが見つからない。あるいはファイルが破損している可能性があります。プログラムを終了します。")
+        time.sleep(1)
+        sys.exit()
     
-        newCreateList.append("			</div>\n")
-        newCreateList.append("			<div class=\"footer\">\n")
+    for line in newCreateTextLine:
+        if re.search("background: #dce6e9 url",line) and re.search("no-repeat right top",line):
+            newCreateTextCSSLine.append(replyWindow_backgroundName) 
+        elif re.search("background: #f4d6de url",line) and re.search("no-repeat right top",line):
+            newCreateTextCSSLine.append(favorStory_backgroundName) 
+        else:
+            newCreateTextCSSLine.append(line) 
     
-        try:
-            with open("./images/plum.png", mode='rb') as f:
-                src = base64.b64encode(f.read()).decode('utf-8')
-        except:
-            print("ERROR:画像のbase64化に失敗しました。フッダー用の画像が破損している可能性があります。プログラムを終了します。")
-            time.sleep(1)
-            sys.exit()
-    
-        newCreateList.append("              <img src=data:image/png;base64," + src + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
-        newCreateList.append("			</div>\n")
-        newCreateList.append("		</div>\n")
-        newCreateList.append("	</body>\n")
-        newCreateList.append("</html>\n")
-    
-        
-    
-        try:
-            with open('./CSSList.dat','r',encoding="UTF-8") as f:
-                newCreateTextLine = f.readlines()
-        except:
-            print("ERROR:エラーが発生しました。CSS_list.datが見つからない。あるいはファイルが破損している可能性があります。プログラムを終了します。")
-            time.sleep(1)
-            sys.exit()
-        
-        for line in newCreateTextLine:
-            if re.search("background: #dce6e9 url",line) and re.search("no-repeat right top",line):
-                newCreateTextCSSLine.append(replyWindow_backgroundName) 
-            elif re.search("background: #f4d6de url",line) and re.search("no-repeat right top",line):
-                newCreateTextCSSLine.append(favorStory_backgroundName) 
-            else:
-                newCreateTextCSSLine.append(line) 
-        
-        for line in newCreateTextCSSLine:
-            newCreateList.append(line)
+    for line in newCreateTextCSSLine:
+        newCreateList.append(line)
 
     
     
