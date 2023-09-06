@@ -749,7 +749,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
             time.sleep(1)
             sys.exit()
     
-        newCreateList.append("              <img src=data:image/png;base64," + src + " alt=\"プラム\" width=3% />PlumTalk for PC\n")
+        newCreateList.append("              <img src=data:image/png;base64," + src + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
         newCreateList.append("			</div>\n")
         newCreateList.append("		</div>\n")
         newCreateList.append("	</body>\n")
