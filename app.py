@@ -246,7 +246,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                     
                 elif talkAreaType == "replyContinue":
                     if replyContinueFlg == 0:
-                        if re.search("@@@返信@@@",textOriginalLine):
+                        if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@連続@@@",textOriginalLine):
                             newCreateList.append("				<div class=\"rightTable\">\n")
                             newCreateList.append("					<div class=\"textfield3\">\n")
                             newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
@@ -263,7 +263,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                             
                             newCreateList.append("						</div>\n")
                             replyContinueFlg = 1
-                            if not re.search("@@@複数@@@",textOriginalLine):
+                            if not re.search("@@@追加@@@",textOriginalLine) or not re.search("@@@連続@@@",textOriginalLine):
                                 newCreateList.append("					</div>\n")
                                 newCreateList.append("				</div>\n")
                                 replyContinueFlg = 0
@@ -288,7 +288,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                             
                                 
                     elif replyContinueFlg == 1:
-                        if re.search("@@@返信@@@",textOriginalLine):
+                        if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@連続@@@",textOriginalLine):
                             newCreateList.append("						<div class=\"text\">\n")
 
                             for text in newCreateTextLine:
@@ -301,7 +301,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                             
                             newCreateList.append("						</div>\n")
                             replyContinueFlg = 1
-                            if not re.search("@@@複数@@@",textOriginalLine):
+                            if not re.search("@@@追加@@@",textOriginalLine) or not re.search("@@@連続@@@",textOriginalLine):
                                 newCreateList.append("					</div>\n")
                                 newCreateList.append("				</div>\n")
                                 replyContinueFlg = 0
@@ -442,7 +442,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                 if re.search("@@@画像@@@",textOriginalLine):
                     talkAreaMargin = "rightAndHiddenAndPicture"
             if re.search("@@@返信@@@",textOriginalLine):
-                if re.search("@@@複数@@@",textOriginalLine):
+                if re.search("@@@追加@@@",textOriginalLine):
                     talkAreaType = "replyContinue"
                 else:
                     talkAreaType = "reply"
@@ -450,14 +450,18 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                 talkAreaType = "label"
             if re.search("@@@絆ストーリー@@@",textOriginalLine):
                 talkAreaType = "love"
-                                    
+            
+            if re.search("@@@連続@@@",textOriginalLine):
+                displayName = displayNameBefore
+                talkAreaType = talkAreaTypeBefore
+                talkAreaMargin = talkAreaMarginBefore 
 
             if re.search("@@@カット@@@",textOriginalLine):
                 talkAreaType = "cut"
                     
             
             if displayName == "":
-                displayName = textOriginalLine.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@右右","").replace("@@@返信","").replace("@@@複数","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@カット","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
+                displayName = textOriginalLine.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@右右","").replace("@@@返信","").replace("@@@追加","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@連続","").replace("@@@カット","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
             if displayName == "":
                 displayName = "？"
             elif talkAreaType == "pictureTable":
@@ -546,7 +550,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
             
         elif talkAreaType == "replyContinue":
             if replyContinueFlg == 0:
-                if re.search("@@@返信@@@",textOriginalLine):
+                if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@連続@@@",textOriginalLine):
                     newCreateList.append("				<div class=\"rightTable\">\n")
                     newCreateList.append("					<div class=\"textfield3\">\n")
                     newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
@@ -563,7 +567,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                     
                     newCreateList.append("						</div>\n")
                     replyContinueFlg = 1
-                    if not re.search("@@@複数@@@",textOriginalLine):
+                    if not re.search("@@@追加@@@",textOriginalLine) or not re.search("@@@連続@@@",textOriginalLine):
                         newCreateList.append("					</div>\n")
                         newCreateList.append("				</div>\n")
                         replyContinueFlg = 0
@@ -588,7 +592,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                     
                         
             elif replyContinueFlg == 1:
-                if re.search("@@@返信@@@",textOriginalLine):
+                if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@連続@@@",textOriginalLine):
                     newCreateList.append("						<div class=\"text\">\n")
 
                     for text in newCreateTextLine:
@@ -601,7 +605,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                     
                     newCreateList.append("						</div>\n")
                     replyContinueFlg = 1
-                    if not re.search("@@@複数@@@",textOriginalLine):
+                    if not re.search("@@@追加@@@",textOriginalLine) or not re.search("@@@連続@@@",textOriginalLine):
                         newCreateList.append("					</div>\n")
                         newCreateList.append("				</div>\n")
                         replyContinueFlg = 0
