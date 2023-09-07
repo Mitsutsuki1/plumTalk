@@ -11,9 +11,8 @@
 	}
 	@media screen and (max-width: 1300px) {
 	    p{
-	        background-color: black;
 	         font-size:8vw;
-			 font-weight:600;
+			 font-weight:normal;
 	     }
  	}
 	textarea {
@@ -34,6 +33,7 @@
 	@media screen and (max-width: 1300px) {
 	    textarea{
 	        font-size:3vw;
+	        font-weight:normal;
 	     }
  	}
 	textarea.sumple {
@@ -55,6 +55,7 @@
 	@media screen and (max-width: 1300px) {
 	    textarea.sumple{
 	        font-size:3vw;
+	        font-weight:normal;
 	     }
  	}
 	.nodisplay_box {
