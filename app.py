@@ -300,7 +300,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                             
                             newCreateList.append("						</div>\n")
                             replyContinueFlg = 1
-                            if not re.search("@@@追加@@@",textOriginalLine) or not re.search("@@@連続@@@",textOriginalLine):
+                            if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@連続@@@",textOriginalLine):
                                 newCreateList.append("					</div>\n")
                                 newCreateList.append("				</div>\n")
                                 replyContinueFlg = 0
@@ -566,7 +566,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                     
                     newCreateList.append("						</div>\n")
                     replyContinueFlg = 1
-                    if not re.search("@@@追加@@@",textOriginalLine) or not re.search("@@@連続@@@",textOriginalLine):
+                    if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@連続@@@",textOriginalLine):
                         newCreateList.append("					</div>\n")
                         newCreateList.append("				</div>\n")
                         replyContinueFlg = 0
@@ -604,7 +604,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                     
                     newCreateList.append("						</div>\n")
                     replyContinueFlg = 1
-                    if not re.search("@@@追加@@@",textOriginalLine) or not re.search("@@@連続@@@",textOriginalLine):
+                    if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@連続@@@",textOriginalLine):
                         newCreateList.append("					</div>\n")
                         newCreateList.append("				</div>\n")
                         replyContinueFlg = 0
