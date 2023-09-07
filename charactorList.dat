@@ -23,9 +23,6 @@ iconFile:フォルダ場所と共に該当アイコンファイルの名前を�
 アイコンファイルの保存場所
 iconFileLocation:images/charactor_iconSet
 
-トーク内添付画像の保存場所
-insertImageLocation:images/images
-
 ユニークのアイコン画像が見つからなかった場合のモブアイコン名
 npcObjectIconFileName:npcObject.webp
 
@@ -47,7 +44,7 @@ No001_1_displayName:先生
 No001_1_iconFile:teacher.webp
 
 プレナハデス
-No002_1_tagElement:@@@プレ先@@@
+No002_1_tagElement:@@@プレナハデス@@@
 No002_1_displayName:プレナハデス
 No002_1_iconFile:teacher.webp
 
@@ -63,9 +60,13 @@ No003_1_tagElement:@@@シロコ@@@
 No003_1_displayName:シロコ
 No003_1_iconFile:abydos_shiroco.webp
 
-No003_2_tagElement:@@@シロコ(水着)@@@
+No003_2_tagElement:@@@シロコ水着@@@
 No003_2_displayName:シロコ(水着)
-No003_2_iconFile:abydos_shiroco.webp
+No003_2_iconFile:abydos_shiroco_summer.webp
+
+No003_3_tagElement:@@@シロコライディング@@@
+No003_3_displayName:シロコ(ライディング)
+No003_3_iconFile:abydos_shiroco_riding.webp
 
 小鳥遊ホシノ
 
@@ -73,9 +74,9 @@ No004_1_tagElement:@@@ホシノ@@@
 No004_1_displayName:ホシノ
 No004_1_iconFile:abydos_hoshino.webp
 
-No004_2_tagElement:@@@ホシノ(水着)@@@
+No004_2_tagElement:@@@ホシノ水着@@@
 No004_2_displayName:ホシノ(水着)
-No004_2_iconFile:abydos_hoshino.webp
+No004_2_iconFile:abydos_hoshino_summer.webp
 
 
 黒見セリカ
@@ -84,13 +85,13 @@ No005_1_tagElement:@@@セリカ@@@
 No005_1_displayName:セリカ
 No005_1_iconFile:abydos_serika.webp
 
-No005_2_tagElement:@@@セリカ(水着)@@@
+No005_2_tagElement:@@@セリカ水着@@@
 No005_2_displayName:セリカ(水着)
-No005_2_iconFile:abydos_serika.webp
+No005_2_iconFile:abydos_serika_summer.webp
 
-No005_3_tagElement:@@@セリカ(正月)@@@
+No005_3_tagElement:@@@セリカ正月@@@
 No005_3_displayName:セリカ(正月)
-No005_3_iconFile:abydos_serika.webp
+No005_3_iconFile:abydos_serika_newyear.webp
 
 
 奥空アヤネ
@@ -99,9 +100,9 @@ No006_1_tagElement:@@@アヤネ@@@
 No006_1_displayName:アヤネ
 No006_1_iconFile:abydos_ayane.webp
 
-No006_2_tagElement:@@@アヤネ(水着)@@@
+No006_2_tagElement:@@@アヤネ水着@@@
 No006_2_displayName:アヤネ(水着)
-No006_2_iconFile:abydos_ayane.webp
+No006_2_iconFile:abydos_ayane_summer.webp
 
 十六夜ノノミ
 
@@ -109,22 +110,78 @@ No007_1_tagElement:@@@ノノミ@@@
 No007_1_displayName:ノノミ
 No007_1_iconFile:abydos_nonomi.webp
 
-No007_2_tagElement:@@@ノノミ(水着)@@@
+No007_2_tagElement:@@@ノノミ水着@@@
 No007_2_displayName:ノノミ(水着)
-No007_2_iconFile:abydos_nonomi.webp
+No007_2_iconFile:abydos_nonomi_summer.webp
 
 -------------------------------------
 -------------------------------------
-トリニティ総合学園
+アリウススクワッド
 -------------------------------------
 -------------------------------------
 
-柚鳥ナツ
+錠前サオリ
 
-No003_1_tagElement:@@@ナツ@@@
-No003_1_displayName:ナツ
-No003_1_iconFile:trinity_natsu.webp
+No008_1_tagElement:@@@サオリ@@@
+No008_1_displayName:サオリ
+No008_1_iconFile:arius_saori.webp
+
+秤アツコ
+
+No009_1_tagElement:@@@アツコ@@@
+No009_1_displayName:アツコ
+No009_1_iconFile:arius_atsuko.webp
+
+戒野ミサキ
+
+No010_1_tagElement:@@@ミサキ@@@
+No010_1_displayName:ミサキ
+No010_1_iconFile:arius_misaki.webp
+
+槌永ヒヨリ
+
+No011_1_tagElement:@@@ヒヨリ@@@
+No011_1_displayName:ヒヨリ
+No011_1_iconFile:arius_hiyori.webp
 
 -------------------------------------
 -------------------------------------
+ヴァルキューレ警察学校
+-------------------------------------
+-------------------------------------
 
+尾刃カンナ
+
+No012_1_tagElement:@@@カンナ@@@
+No012_1_displayName:カンナ
+No012_1_iconFile:valkyrie_kanna.webp
+
+合歓垣フブキ
+
+No013_1_tagElement:@@@フブキ@@@
+No013_1_displayName:フブキ
+No013_1_iconFile:valkyrie_hubuki.webp
+
+中務キリノ
+
+No014_1_tagElement:@@@キリノ@@@
+No014_1_displayName:キリノ
+No014_1_iconFile:valkyrie_kirino.webp
+
+-------------------------------------
+-------------------------------------
+クロノススクール
+-------------------------------------
+-------------------------------------
+
+風巻マイ
+
+No015_1_tagElement:@@@マイ@@@
+No015_1_displayName:マイ
+No015_1_iconFile:kronos_mai.webp
+
+川流シノン
+
+No016_1_tagElement:@@@シノン@@@
+No016_1_displayName:シノン
+No016_1_iconFile:kronos_shinon.webp
