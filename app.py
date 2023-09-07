@@ -47,7 +47,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
     
     for f in textOriginalList:
         f = re.sub("[@＠][@＠][@＠]","@@@",f)
-        f = f.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("@@@画像：","@@@画像:")
+        f = f.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)")
         txtNormalize.append(f)
     
     textOriginalList = txtNormalize
@@ -77,7 +77,8 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                 charactorId = re.search("No[\d]{3}_[\d]{1}", charactorLineDat)
                 charactorId = charactorId.group()
                 tagElement = re.sub("[@＠][@＠][@＠]","@@@",charactorLineDat)
-                tagElement = charactorLineDat.replace(charactorId +"_tagElement:","").replace("＠＠＠","@@@").replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("\n","")
+                tagElement = charactorLineDat.replace(charactorId +"_tagElement:","").replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("\n","")
+                print(tagElement)
                 tagElementList.append(tagElement)
                 tagElementCounter += 1      
             
@@ -102,8 +103,6 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
             
             elif re.search("iconFileLocation:", charactorLineDat):
                 iconFileLocation = charactorLineDat.replace("iconFileLocation:","").replace("\n","") + "/"
-            elif re.search("insertImageLocation:", charactorLineDat):
-                insertImageLocation = charactorLineDat.replace("insertImageLocation:","").replace("\n","") + "/"
             elif re.search("npcObjectIconFileName:", charactorLineDat):
                 npcObjectIconFileName = charactorLineDat.replace("npcObjectIconFileName:","").replace("\n","")
             elif re.search("replyWindow_backgroundName:", charactorLineDat):
@@ -394,7 +393,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
             iconFileName = ""
             
             for tagElement in tagElementList:
-                if re.search(tagElement,textOriginalLine):
+                if re.search(tagElement.replace("(","\(").replace(")","\)"),textOriginalLine):
                     elementExist = True
                     for index, display in enumerate(displayNameList):
                         if index == tagElementCounter:
