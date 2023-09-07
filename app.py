@@ -772,14 +772,13 @@ def convertHtml():
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName)
+    newHtmlLine = ''.join(newHtmlLine)
     
-    with open("./templates/" + "newCreate.html",'w', encoding="utf-8") as f:
-        for newHtmlSentence in newHtmlLine:
-            f.write(newHtmlSentence)
+#    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
+#        for newHtmlSentence in newHtmlLine:
+#            f.write(newHtmlSentence)
     
-    time.sleep(1)
-    
-    return render_template('newCreate.html')
+    return render_template('index.html',input_from_python=newHtmlLine)
 
 
 
@@ -797,8 +796,6 @@ def convertHtml_sumple1():
 #        for newHtmlSentence in newHtmlLine:
 #            f.write(newHtmlSentence)
     
-    time.sleep(1)
-    
     return render_template('index.html',input_from_python=newHtmlLine)
 
 @app.route('/convertHtml_sumple2', methods=['POST'])
@@ -814,8 +811,6 @@ def convertHtml_sumple2():
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
 #        for newHtmlSentence in newHtmlLine:
 #            f.write(newHtmlSentence)
-    
-    time.sleep(1)
     
     return render_template('index.html',input_from_python=newHtmlLine)
 
@@ -833,8 +828,6 @@ def convertHtml_sumple3():
 #        for newHtmlSentence in newHtmlLine:
 #            f.write(newHtmlSentence)
     
-    time.sleep(1)
-    
     return render_template('index.html',input_from_python=newHtmlLine)
 
 @app.route('/convertHtml_sumple4', methods=['POST'])
@@ -850,8 +843,6 @@ def convertHtml_sumple4():
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
 #        for newHtmlSentence in newHtmlLine:
 #            f.write(newHtmlSentence)
-    
-    time.sleep(1)
     
     return render_template('index.html',input_from_python=newHtmlLine)
 
@@ -869,8 +860,6 @@ def convertHtml_sumple5():
 #        for newHtmlSentence in newHtmlLine:
 #            f.write(newHtmlSentence)
     
-    time.sleep(1)
-    
     return render_template('index.html',input_from_python=newHtmlLine)
 
 @app.route('/convertHtml_sumple6', methods=['POST'])
@@ -886,8 +875,6 @@ def convertHtml_sumple6():
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
 #        for newHtmlSentence in newHtmlLine:
 #            f.write(newHtmlSentence)
-    
-    time.sleep(1)
     
     return render_template('index.html',input_from_python=newHtmlLine)
 
