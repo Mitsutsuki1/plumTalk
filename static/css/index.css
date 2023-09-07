@@ -11,7 +11,7 @@
 	}
 	@media screen and (max-width: 1300px) {
 	    p{
-	         font-size:8vw;
+	         font-size:9vw;
 			 font-weight:normal;
 	     }
  	}
@@ -32,7 +32,7 @@
 	}
 	@media screen and (max-width: 1300px) {
 	    textarea{
-	        font-size:3vw;
+	        font-size:5vw;
 	        font-weight:normal;
 	     }
  	}
@@ -54,7 +54,7 @@
 	}
 	@media screen and (max-width: 1300px) {
 	    textarea.sumple{
-	        font-size:3vw;
+	        font-size:5vw;
 	        font-weight:normal;
 	     }
  	}
