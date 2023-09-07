@@ -7,7 +7,7 @@
 		margin-top: 0px;
 		margin-bottom: 0px;
 		font-size:3.5vw;
-		font-weight: bolder;
+		font-weight: normal;
 	}
 	textarea {
 		resize: none;
@@ -64,7 +64,7 @@
 		margin-left:0%;
 		text-align: center;
 		clear: both;
-		font-weight:bolder;
+		font-weight:bold;
 		line-height: 2.5;
 		color: #ffffff;
 	}
@@ -73,7 +73,7 @@
 		background: #eb96a6;
 		padding: 0%;
 		text-align: center;
-		font-weight: bolder;
+		font-weight: bold;
 		clear: both;
 		font-size: 2.5vw;
 		line-height: 2;
