@@ -759,12 +759,8 @@ randomNumber = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f",
 
 @app.route("/")
 def hello():
-   return render_template('index.html')
-
-@app.route('/sumple', methods=['POST'])
-def sumple():
-    requestName = request.form['test1']
-    return render_template('index.html', result = requestName)
+   input_from_python = []
+   return render_template('index.html',input_from_python=input_from_python)
 
 @app.route('/convertHtml', methods=['POST'])
 def convertHtml():
@@ -795,14 +791,15 @@ def convertHtml_sumple1():
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName)
+    newHtmlLine = ''.join(newHtmlLine)
     
-    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
-        for newHtmlSentence in newHtmlLine:
-            f.write(newHtmlSentence)
+#    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
+#        for newHtmlSentence in newHtmlLine:
+#            f.write(newHtmlSentence)
     
     time.sleep(1)
     
-    return render_template('newCreate_sumple.html')
+    return render_template('index.html',input_from_python=newHtmlLine)
 
 @app.route('/convertHtml_sumple2', methods=['POST'])
 def convertHtml_sumple2():
