@@ -1,6 +1,7 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8"/>
+		<meta name="twitter:image" content="https://github.com/Mitsutsuki1/plumTalk/blob/main/images/twitterCard.webp" />
 		<title>PlumTalk Creator for BlueArchive</title>
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
 	</head>
@@ -243,7 +244,7 @@ PlumTalk Creator WEB版公開(ベータ)
 	           	;
 	       	}else{
     	       	var mainBody = document.getElementById("mainBody")
-    	       	mainBody.innerHTML = {{ input_from_python　| tojson}};
+    	       	mainBody.innerHTML = strData;
 	       	}          
 	    }
     	function insertImage(num) {
