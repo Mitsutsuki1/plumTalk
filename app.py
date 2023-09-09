@@ -159,9 +159,8 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
     try:
         with open("./images/plum.png", mode='rb') as f:
             src = base64.b64encode(f.read()).decode('utf-8')
-    except Exception as e:
-        print("aERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
-        print(e)
+    except:
+        print("ERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
         time.sleep(1)
         sys.exit()
 
@@ -757,8 +756,6 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
     return newCreateList
 
 
-randomNumber = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-
 
 @app.route("/")
 def hello():
@@ -880,7 +877,6 @@ def convertHtml_sumple6():
 #            f.write(newHtmlSentence)
     
     return render_template('index.html',input_from_python=newHtmlLine)
-
 
 if __name__ == '__main__':
     app.run(debug=True, threaded=True, host="localhost", port=5000)
