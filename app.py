@@ -5,13 +5,14 @@ import re
 import os
 import time
 import base64
+import html
 
 app = Flask(__name__)
 
 # http://127.0.0.1:5000をルートとして、("")の中でアクセスポイント指定
 # @app.route("hoge")などで指定すると、http://127.0.0.1:5000/hogeでの動作を記述できる。
 
-def htmlCreater(textLineOriginal,titleName,creatorName):
+def htmlCreater(textOriginalList,titleName,creatorName):
     iconFileLocation = ""
     displayName = ""
     iconFileName = ""
@@ -27,8 +28,6 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
     iconFileCounter = 0
     imageAreaCounter = 0
     
-    textOriginalList = []
-    txtNormalize = []
     newCreateTextCSSLine = []
     
     newCreateList = []
@@ -41,16 +40,12 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
     iconFileList = []
     
     #-- 処理開始 --
-
-    textOriginalList = textLineOriginal.splitlines(True)
-        
     
-    for f in textOriginalList:
-        f = re.sub("[@＠][@＠][@＠]","@@@",f)
-        f = f.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("（私服）","(私服)").replace("（クリスマス）","(クリスマス)")
-        txtNormalize.append(f)
-    
-    textOriginalList = txtNormalize
+    textOriginalList = html.unescape(textOriginalList)
+    textOriginalList = re.sub("[@＠][@＠][@＠]","@@@",textOriginalList)
+#   textOriginalList = textOriginalList.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("（私服）","(私服)").replace("（クリスマス）","(クリスマス)")
+    textOriginalList = textOriginalList.replace("@@@スケバン1@@@","@@@スケバン１@@@").replace("@@@スケバン2@@@","@@@スケバン２@@@").replace("@@@スケバン3@@@","@@@スケバン３@@@")
+    textOriginalList = textOriginalList.splitlines(True)
     
     try:
         with open('./charactorList.dat','r',encoding="UTF-8") as f:
@@ -870,4 +865,4 @@ def convertHtml_sumple6():
     return render_template('index.html',input_from_python=newHtmlLine)
 
 if __name__ == '__main__':
-    app.run(debug=True, threaded=True, host="localhost", port=5000)
+    app.run(debug=True, threaded=True, host='0.0.0.0', port=80)
