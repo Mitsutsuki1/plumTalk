@@ -47,7 +47,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
     
     for f in textOriginalList:
         f = re.sub("[@＠][@＠][@＠]","@@@",f)
-        f = f.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)")
+        f = f.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("（私服）","(私服)").replace("（クリスマス）","(クリスマス)")
         txtNormalize.append(f)
     
     textOriginalList = txtNormalize
@@ -77,7 +77,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
                 charactorId = re.search("No[\d]{3}_[\d]{1}", charactorLineDat)
                 charactorId = charactorId.group()
                 tagElement = re.sub("[@＠][@＠][@＠]","@@@",charactorLineDat)
-                tagElement = charactorLineDat.replace(charactorId +"_tagElement:","").replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("\n","")
+                tagElement = charactorLineDat.replace(charactorId +"_tagElement:","").replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("（私服）","(私服)").replace("（クリスマス）","(クリスマス)").replace("\n","")
                 print(tagElement)
                 tagElementList.append(tagElement)
                 tagElementCounter += 1      
@@ -157,14 +157,14 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
     newCreateList.append("			<div class=\"header\">\n")
 
     try:
-        with open("./images/plum.png", mode='rb') as f:
-            src = base64.b64encode(f.read()).decode('utf-8')
+        with open("./images/plum.webp", mode='rb') as f:
+            plumSrc = base64.b64encode(f.read()).decode('utf-8')
     except:
         print("ERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
         time.sleep(1)
         sys.exit()
 
-    newCreateList.append("              <img src=data:image/png;base64," + src + " alt=\"プラム\" width=6% />PlumTalk <font class=\"fontExclamation\"><font color=\"#FFFFFF\" >..</font>!<font color=\"#FFFFFF\">..</font></font>\n")
+    newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=6% />PlumTalk <font class=\"fontExclamation\"><font color=\"#FFFFFF\" >..</font>!<font color=\"#FFFFFF\">..</font></font>\n")
 
     newCreateList.append("			</div>\n")
     newCreateList.append("			<div class=\"subtitle\">\n")
@@ -703,16 +703,7 @@ def htmlCreater(textLineOriginal,titleName,creatorName):
 
     newCreateList.append("			</div>\n")
     newCreateList.append("			<div class=\"footer\">\n")
-
-    try:
-        with open("./images/plum.png", mode='rb') as f:
-            src = base64.b64encode(f.read()).decode('utf-8')
-    except:
-        print("ERROR:画像のbase64化に失敗しました。フッダー用の画像が破損している可能性があります。プログラムを終了します。")
-        time.sleep(1)
-        sys.exit()
-
-    newCreateList.append("              <img src=data:image/png;base64," + src + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
+    newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
     newCreateList.append("			</div>\n")
     newCreateList.append("		</div>\n")   
 
