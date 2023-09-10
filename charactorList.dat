@@ -357,6 +357,42 @@ No034_1_tagElement:@@@ジュリ@@@
 No034_1_displayName:ジュリ
 No034_1_iconFile:gehenna_juri.webp
 
+救急医療部
+
+氷室セナ
+
+No035_1_tagElement:@@@セナ@@@
+No035_1_displayName:セナ
+No035_1_iconFile:gehenna_sena.webp
+
+温泉開発部
+
+カスミ
+
+No036_1_tagElement:@@@カスミ@@@
+No036_1_displayName:カスミ
+No036_1_iconFile:gehenna_kasumi.webp
+
+下倉メグ
+
+No037_1_tagElement:@@@メグ@@@
+No037_1_displayName:メグ
+No037_1_iconFile:gehenna_megu.webp
+
+帰宅部
+
+キララ
+
+No038_1_tagElement:@@@キララ@@@
+No038_1_displayName:キララ
+No038_1_iconFile:gehenna_kirara.webp
+
+旗見エリカ
+
+No039_1_tagElement:@@@エリカ@@@
+No039_1_displayName:エリカ
+No039_1_iconFile:gehenna_erika.webp
+
 -------------------------------------
 -------------------------------------
 トリニティ総合学園
@@ -367,215 +403,215 @@ No034_1_iconFile:gehenna_juri.webp
 
 桐藤ナギサ
 
-No035_1_tagElement:@@@ナギサ@@@
-No035_1_displayName:ナギサ
-No035_1_iconFile:trinity_nagisa.webp
+No040_1_tagElement:@@@ナギサ@@@
+No040_1_displayName:ナギサ
+No040_1_iconFile:trinity_nagisa.webp
 
 聖園ミカ
 
-No036_1_tagElement:@@@ミカ@@@
-No036_1_displayName:ミカ
-No036_1_iconFile:trinity_mika.webp
+No041_1_tagElement:@@@ミカ@@@
+No041_1_displayName:ミカ
+No041_1_iconFile:trinity_mika.webp
 
 百合園セイア
 
-No037_1_tagElement:@@@セイア@@@
-No037_1_displayName:セイア
-No037_1_iconFile:trinity_seia.webp
+No042_1_tagElement:@@@セイア@@@
+No042_1_displayName:セイア
+No042_1_iconFile:trinity_seia.webp
 
 正義実現委員会
 
 剣先ツルギ
 
-No038_1_tagElement:@@@ツルギ@@@
-No038_1_displayName:ツルギ
-No038_1_iconFile:trinity_tsurugi.webp
+No043_1_tagElement:@@@ツルギ@@@
+No043_1_displayName:ツルギ
+No043_1_iconFile:trinity_tsurugi.webp
 
-No038_2_tagElement:@@@ツルギ水着@@@
-No038_2_displayName:ツルギ(水着)
-No038_2_iconFile:trinity_tsurugi_summer.webp
+No043_2_tagElement:@@@ツルギ水着@@@
+No043_2_displayName:ツルギ(水着)
+No043_2_iconFile:trinity_tsurugi_summer.webp
 
 羽川ハスミ
 
-No039_1_tagElement:@@@ハスミ@@@
-No039_1_displayName:ハスミ
-No039_1_iconFile:trinity_hasumi.webp
+No044_1_tagElement:@@@ハスミ@@@
+No044_1_displayName:ハスミ
+No044_1_iconFile:trinity_hasumi.webp
 
-No039_2_tagElement:@@@ハスミ体操服@@@
-No039_2_displayName:ハスミ(体操服)
-No039_2_iconFile:trinity_hasumi_sports.webp
+No044_2_tagElement:@@@ハスミ体操服@@@
+No044_2_displayName:ハスミ(体操服)
+No044_2_iconFile:trinity_hasumi_sports.webp
 
 静山マシロ
 
-No040_1_tagElement:@@@マシロ@@@
-No040_1_displayName:マシロ
-No040_1_iconFile:trinity_mashiro.webp
+No045_1_tagElement:@@@マシロ@@@
+No045_1_displayName:マシロ
+No045_1_iconFile:trinity_mashiro.webp
 
-No040_2_tagElement:@@@マシロ水着@@@
-No040_2_displayName:マシロ(水着)
-No040_2_iconFile:trinity_mashiro_summer.webp
+No045_2_tagElement:@@@マシロ水着@@@
+No045_2_displayName:マシロ(水着)
+No045_2_iconFile:trinity_mashiro_summer.webp
 
 イチカ
 
-No041_1_tagElement:@@@イチカ@@@
-No041_1_displayName:イチカ
-No041_1_iconFile:trinity_ichika.webp
+No046_1_tagElement:@@@イチカ@@@
+No046_1_displayName:イチカ
+No046_1_iconFile:trinity_ichika.webp
 
 シスターフッド
 
 歌住サクラコ
 
-No042_1_tagElement:@@@サクラコ@@@
-No042_1_displayName:サクラコ
-No042_1_iconFile:trinity_sakurako.webp
+No047_1_tagElement:@@@サクラコ@@@
+No047_1_displayName:サクラコ
+No047_1_iconFile:trinity_sakurako.webp
 
 伊落マリー
 
-No043_1_tagElement:@@@マリー@@@
-No043_1_displayName:マリー
-No043_1_iconFile:trinity_marii.webp
+No048_1_tagElement:@@@マリー@@@
+No048_1_displayName:マリー
+No048_1_iconFile:trinity_marii.webp
 
-No043_2_tagElement:@@@マリー体操服@@@
-No043_2_displayName:マリー(体操服)
-No043_2_iconFile:trinity_marii_sports.webp
+No048_2_tagElement:@@@マリー体操服@@@
+No048_2_displayName:マリー(体操服)
+No048_2_iconFile:trinity_marii_sports.webp
 
 若葉ヒナタ
 
-No044_1_tagElement:@@@ヒナタ@@@
-No044_1_displayName:ヒナタ
-No044_1_iconFile:trinity_hinata.webp
+No049_1_tagElement:@@@ヒナタ@@@
+No049_1_displayName:ヒナタ
+No049_1_iconFile:trinity_hinata.webp
 
-No044_2_tagElement:@@@ヒナタ水着@@@
-No044_2_displayName:ヒナタ(水着)
-No044_2_iconFile:trinity_hinata_summer.webp
+No049_2_tagElement:@@@ヒナタ水着@@@
+No049_2_displayName:ヒナタ(水着)
+No049_2_iconFile:trinity_hinata_summer.webp
 
 図書委員会
 
 古関ウイ
 
-No045_1_tagElement:@@@ウイ@@@
-No045_1_displayName:ウイ
-No045_1_iconFile:trinity_ui.webp
+No050_1_tagElement:@@@ウイ@@@
+No050_1_displayName:ウイ
+No050_1_iconFile:trinity_ui.webp
 
-No045_2_tagElement:@@@ウイ水着@@@
-No045_2_displayName:ウイ(水着)
-No045_2_iconFile:trinity_ui_summer.webp
+No050_2_tagElement:@@@ウイ水着@@@
+No050_2_displayName:ウイ(水着)
+No050_2_iconFile:trinity_ui_summer.webp
 
 円堂シミコ
 
-No046_1_tagElement:@@@シミコ@@@
-No046_1_displayName:シミコ
-No046_1_iconFile:trinity_shimiko.webp
+No051_1_tagElement:@@@シミコ@@@
+No051_1_displayName:シミコ
+No051_1_iconFile:trinity_shimiko.webp
 
 補習授業部
 
 阿慈谷ヒフミ
 
-No047_1_tagElement:@@@ヒフミ@@@
-No047_1_displayName:ヒフミ
-No047_1_iconFile:trinity_hihumi.webp
+No052_1_tagElement:@@@ヒフミ@@@
+No052_1_displayName:ヒフミ
+No052_1_iconFile:trinity_hihumi.webp
 
-No047_2_tagElement:@@@ヒフミ水着@@@
-No047_2_displayName:ヒフミ(水着)
-No047_2_iconFile:trinity_hihumi_summer.webp
+No052_2_tagElement:@@@ヒフミ水着@@@
+No052_2_displayName:ヒフミ(水着)
+No052_2_iconFile:trinity_hihumi_summer.webp
 
 白洲アズサ
 
-No048_1_tagElement:@@@アズサ@@@
-No048_1_displayName:アズサ
-No048_1_iconFile:trinity_azusa.webp
+No053_1_tagElement:@@@アズサ@@@
+No053_1_displayName:アズサ
+No053_1_iconFile:trinity_azusa.webp
 
-No048_2_tagElement:@@@アズサ水着@@@
-No048_2_displayName:アズサ(水着)
-No048_2_iconFile:trinity_azusa_summer.webp
+No053_2_tagElement:@@@アズサ水着@@@
+No053_2_displayName:アズサ(水着)
+No053_2_iconFile:trinity_azusa_summer.webp
 
 下江コハル
 
-No049_1_tagElement:@@@コハル@@@
-No049_1_displayName:コハル
-No049_1_iconFile:trinity_koharu.webp
+No054_1_tagElement:@@@コハル@@@
+No054_1_displayName:コハル
+No054_1_iconFile:trinity_koharu.webp
 
-No049_2_tagElement:@@@コハル水着@@@
-No049_2_displayName:コハル(水着)
-No049_2_iconFile:trinity_koharu_summer.webp
+No054_2_tagElement:@@@コハル水着@@@
+No054_2_displayName:コハル(水着)
+No054_2_iconFile:trinity_koharu_summer.webp
 
 浦和ハナコ
 
-No050_1_tagElement:@@@ハナコ@@@
-No050_1_displayName:ハナコ
-No050_1_iconFile:trinity_hanako.webp
+No055_1_tagElement:@@@ハナコ@@@
+No055_1_displayName:ハナコ
+No055_1_iconFile:trinity_hanako.webp
 
-No050_2_tagElement:@@@ハナコ水着@@@
-No050_2_displayName:ハナコ(水着)
-No050_2_iconFile:trinity_hanako_summer.webp
+No055_2_tagElement:@@@ハナコ水着@@@
+No055_2_displayName:ハナコ(水着)
+No055_2_iconFile:trinity_hanako_summer.webp
 
 放課後スイーツ部
 
 柚鳥ナツ
 
-No051_1_tagElement:@@@ナツ@@@
-No051_1_displayName:ナツ
-No051_1_iconFile:trinity_natsu.webp
+No056_1_tagElement:@@@ナツ@@@
+No056_1_displayName:ナツ
+No056_1_iconFile:trinity_natsu.webp
 
 杏山カズサ
 
-No052_1_tagElement:@@@カズサ@@@
-No052_1_displayName:カズサ
-No052_1_iconFile:trinity_kazusa.webp
+No057_1_tagElement:@@@カズサ@@@
+No057_1_displayName:カズサ
+No057_1_iconFile:trinity_kazusa.webp
 
 栗村アイリ
 
-No053_1_tagElement:@@@アイリ@@@
-No053_1_displayName:アイリ
-No053_1_iconFile:trinity_airi.webp
+No058_1_tagElement:@@@アイリ@@@
+No058_1_displayName:アイリ
+No058_1_iconFile:trinity_airi.webp
 
 伊原木ヨシミ
 
-No054_1_tagElement:@@@ヨシミ@@@
-No054_1_displayName:ヨシミ
-No054_1_iconFile:trinity_yoshimi.webp
+No059_1_tagElement:@@@ヨシミ@@@
+No059_1_displayName:ヨシミ
+No059_1_iconFile:trinity_yoshimi.webp
 
 救護騎士団
 
 蒼森ミネ
 
-No055_1_tagElement:@@@ミネ@@@
-No055_1_displayName:ミネ
-No055_1_iconFile:trinity_mine.webp
+No060_1_tagElement:@@@ミネ@@@
+No060_1_displayName:ミネ
+No060_1_iconFile:trinity_mine.webp
 
 朝顔ハナエ
 
-No056_1_tagElement:@@@ハナエ@@@
-No056_1_displayName:ハナエ
-No056_1_iconFile:trinity_hanae.webp
+No061_1_tagElement:@@@ハナエ@@@
+No061_1_displayName:ハナエ
+No061_1_iconFile:trinity_hanae.webp
 
-No056_2_tagElement:@@@ハナエクリスマス@@@
-No056_2_displayName:ハナエ(クリスマス)
-No056_2_iconFile:trinity_hanae_christmas.webp
+No061_2_tagElement:@@@ハナエクリスマス@@@
+No061_2_displayName:ハナエ(クリスマス)
+No061_2_iconFile:trinity_hanae_christmas.webp
 
 鷲見セリナ
 
-No057_1_tagElement:@@@セリナ@@@
-No057_1_displayName:セリナ
-No057_1_iconFile:trinity_serina.webp
+No062_1_tagElement:@@@セリナ@@@
+No062_1_displayName:セリナ
+No062_1_iconFile:trinity_serina.webp
 
-No057_2_tagElement:@@@セリナクリスマス@@@
-No057_2_displayName:セリナ(クリスマス)
-No057_2_iconFile:trinity_serina_christmas.webp
+No062_2_tagElement:@@@セリナクリスマス@@@
+No062_2_displayName:セリナ(クリスマス)
+No062_2_iconFile:trinity_serina_christmas.webp
 
 トリニティ自警団
 
 守月スズミ
 
-No058_1_tagElement:@@@スズミ@@@
-No058_1_displayName:スズミ
-No058_1_iconFile:trinity_suzumi.webp
+No063_1_tagElement:@@@スズミ@@@
+No063_1_displayName:スズミ
+No063_1_iconFile:trinity_suzumi.webp
 
 宇沢レイサ
 
-No059_1_tagElement:@@@レイサ@@@
-No059_1_displayName:レイサ
-No059_1_iconFile:trinity_reisa.webp
+No064_1_tagElement:@@@レイサ@@@
+No064_1_displayName:レイサ
+No064_1_iconFile:trinity_reisa.webp
 
 百鬼夜行連合学院
 
@@ -583,111 +619,111 @@ No059_1_iconFile:trinity_reisa.webp
 
 天地ニヤ
 
-No060_1_tagElement:@@@ニヤ@@@
-No060_1_displayName:ニヤ
-No060_1_iconFile:hyakki_niya.webp
+No065_1_tagElement:@@@ニヤ@@@
+No065_1_displayName:ニヤ
+No065_1_iconFile:hyakki_niya.webp
 
 桑上カホ
 
-No061_1_tagElement:@@@カホ@@@
-No061_1_displayName:カホ
-No061_1_iconFile:hyakki_kaho.webp
+No066_1_tagElement:@@@カホ@@@
+No066_1_displayName:カホ
+No066_1_iconFile:hyakki_kaho.webp
 
 和楽チセ
 
-No062_1_tagElement:@@@チセ@@@
-No062_1_displayName:チセ
-No062_1_iconFile:hyakki_chise.webp
+No067_1_tagElement:@@@チセ@@@
+No067_1_displayName:チセ
+No067_1_iconFile:hyakki_chise.webp
 
-No062_2_tagElement:@@@チセ水着@@@
-No062_2_displayName:チセ(水着)
-No062_2_iconFile:hyakki_chise_summer.webp
+No067_2_tagElement:@@@チセ水着@@@
+No067_2_displayName:チセ(水着)
+No067_2_iconFile:hyakki_chise_summer.webp
 
 百花繚乱紛争調停委員会
 
 御陵ナグサ
 
-No063_1_tagElement:@@@ナグサ@@@
-No063_1_displayName:ナグサ
-No063_1_iconFile:hyakki_nagusa.webp
+No068_1_tagElement:@@@ナグサ@@@
+No068_1_displayName:ナグサ
+No068_1_iconFile:hyakki_nagusa.webp
 
 お祭り運営委員会
 
 河和シズコ
 
-No064_1_tagElement:@@@シズコ@@@
-No064_1_displayName:シズコ
-No064_1_iconFile:hyakki_shizuko.webp
+No069_1_tagElement:@@@シズコ@@@
+No069_1_displayName:シズコ
+No069_1_iconFile:hyakki_shizuko.webp
 
-No064_2_tagElement:@@@シズコ水着@@@
-No064_2_displayName:シズコ(水着)
-No064_2_iconFile:hyakki_shizuko_summer.webp
+No069_2_tagElement:@@@シズコ水着@@@
+No069_2_displayName:シズコ(水着)
+No069_2_iconFile:hyakki_shizuko_summer.webp
 
 朝比奈フィーナ
 
-No065_1_tagElement:@@@フィーナ@@@
-No065_1_displayName:フィーナ
-No065_1_iconFile:hyakki_fina.webp
+No070_1_tagElement:@@@フィーナ@@@
+No070_1_displayName:フィーナ
+No070_1_iconFile:hyakki_fina.webp
 
 ウミカ
 
-No066_1_tagElement:@@@ウミカ@@@
-No066_1_displayName:ウミカ
-No066_1_iconFile:hyakki_umika.webp
+No071_1_tagElement:@@@ウミカ@@@
+No071_1_displayName:ウミカ
+No071_1_iconFile:hyakki_umika.webp
 
 忍術研究部
 
 千鳥ミチル
 
-No067_1_tagElement:@@@ミチル@@@
-No067_1_displayName:ミチル
-No067_1_iconFile:hyakki_michiru.webp
+No072_1_tagElement:@@@ミチル@@@
+No072_1_displayName:ミチル
+No072_1_iconFile:hyakki_michiru.webp
 
 大野ツクヨ
 
-No068_1_tagElement:@@@ツクヨ@@@
-No068_1_displayName:ツクヨ
-No068_1_iconFile:hyakki_tsukuyo.webp
+No073_1_tagElement:@@@ツクヨ@@@
+No073_1_displayName:ツクヨ
+No073_1_iconFile:hyakki_tsukuyo.webp
 
 久田イズナ
 
-No069_1_tagElement:@@@イズナ@@@
-No069_1_displayName:イズナ
-No069_1_iconFile:hyakki_izuna.webp
+No074_1_tagElement:@@@イズナ@@@
+No074_1_displayName:イズナ
+No074_1_iconFile:hyakki_izuna.webp
 
-No069_2_tagElement:@@@イズナ水着@@@
-No069_2_displayName:イズナ(水着)
-No069_2_iconFile:hyakki_izuna_summer.webp
+No074_2_tagElement:@@@イズナ水着@@@
+No074_2_displayName:イズナ(水着)
+No074_2_iconFile:hyakki_izuna_summer.webp
 
 修行部
 
 春日ツバキ
 
-No070_1_tagElement:@@@ツバキ@@@
-No070_1_displayName:ツバキ
-No070_1_iconFile:hyakki_tsubaki.webp
+No075_1_tagElement:@@@ツバキ@@@
+No075_1_displayName:ツバキ
+No075_1_iconFile:hyakki_tsubaki.webp
 
 水羽ミモリ
 
-No071_1_tagElement:@@@ミモリ@@@
-No071_1_displayName:ミモリ
-No071_1_iconFile:hyakki_mimori.webp
+No076_1_tagElement:@@@ミモリ@@@
+No076_1_displayName:ミモリ
+No076_1_iconFile:hyakki_mimori.webp
 
-No072_2_tagElement:@@@ミモリ水着@@@
-No072_2_displayName:ミモリ(水着)
-No072_2_iconFile:hyakki_mimori_summer.webp
+No076_2_tagElement:@@@ミモリ水着@@@
+No076_2_displayName:ミモリ(水着)
+No076_2_iconFile:hyakki_mimori_summer.webp
 
 勇美カエデ
 
-No073_1_tagElement:@@@カエデ@@@
-No073_1_displayName:カエデ
-No073_1_iconFile:hyakki_kaede.webp
+No078_1_tagElement:@@@カエデ@@@
+No078_1_displayName:カエデ
+No078_1_iconFile:hyakki_kaede.webp
 
 
 
 
 明星ヒマリ
 
-No035_1_tagElement:@@@ヒマリ@@@
-No035_1_displayName:ヒマリ
-No035_1_iconFile:millennium_himari.webp
+No100_1_tagElement:@@@ヒマリ@@@
+No100_1_displayName:ヒマリ
+No100_1_iconFile:millennium_himari.webp
