@@ -147,7 +147,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     newCreateList.append("		<meta charset=\"UTF-8\"/>\n")
     newCreateList.append("		<title>PlumTalk</title>\n")
     newCreateList.append("	</head>\n")
-    newCreateList.append("	<body>\n")
+    newCreateList.append("	<body bgColor=\"#ffe4e1\">\n")
     newCreateList.append("		<div class=\"plumContainer\">\n")
     newCreateList.append("			<div class=\"header\">\n")
 
