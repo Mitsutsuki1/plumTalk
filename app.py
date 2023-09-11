@@ -705,41 +705,20 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     newCreateList.append("		</div>\n")   
 
     try:
-        with open('./scriptList.dat','r',encoding="UTF-8") as f:
-            newCreateTextLine = f.readlines()
+        with open('./scriptAndCSSList.dat','r',encoding="UTF-8") as f:
+            scriptAndCSSList = f.readlines()
     except:
-        print("ERROR:エラーが発生しました。CSS_list.datが見つからない。あるいはファイルが破損している可能性があります。プログラムを終了します。")
-        time.sleep(1)
-        sys.exit()
-        
-    for line in newCreateTextLine:
-            newCreateList.append(line)
-    
-    newCreateList.append("	</body>\n")
-    newCreateList.append("</html>\n")
-    newCreateList.append("\n")
-    
-
-    try:
-        with open('./CSSList.dat','r',encoding="UTF-8") as f:
-            newCreateTextLine = f.readlines()
-    except:
-        print("ERROR:エラーが発生しました。CSS_list.datが見つからない。あるいはファイルが破損している可能性があります。プログラムを終了します。")
+        print("ERROR:エラーが発生しました。scriptAndCSSList.datが見つからない。あるいはファイルが破損している可能性があります。プログラムを終了します。")
         time.sleep(1)
         sys.exit()
     
-    for line in newCreateTextLine:
+    for line in scriptAndCSSList:
         if re.search("background: #dce6e9 url",line) and re.search("no-repeat right top",line):
-            newCreateTextCSSLine.append(replyWindow_backgroundName) 
+            newCreateList.append(replyWindow_backgroundName) 
         elif re.search("background: #f4d6de url",line) and re.search("no-repeat right top",line):
-            newCreateTextCSSLine.append(favorStory_backgroundName) 
+            newCreateList.append(favorStory_backgroundName) 
         else:
-            newCreateTextCSSLine.append(line) 
-    
-    for line in newCreateTextCSSLine:
-        newCreateList.append(line)
-
-    
+            newCreateList.append(line)    
     
     return newCreateList
 
