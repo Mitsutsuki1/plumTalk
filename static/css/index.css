@@ -3,6 +3,9 @@
 	header {
 		background: #eb96a6;
 	}
+	body{
+		margin:auto;
+	}
 	p{
 		margin-top: 0px;
 		margin-bottom: 0px;
@@ -58,9 +61,6 @@
 	        font-weight:normal;
 	     }
  	}
- 	body{
-		margin:auto;
-	}
 	.nodisplay_box {
 		display: none;
 	}
