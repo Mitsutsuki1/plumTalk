@@ -1,5 +1,8 @@
 <style>
 	@charset "UTF-8";
+	body{
+		margin:auto;
+	}
 	header {
 		background: #eb96a6;
 	}
