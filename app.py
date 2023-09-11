@@ -159,7 +159,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
         time.sleep(1)
         sys.exit()
 
-    newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=6% />PlumTalk <font class=\"fontExclamation\"><font color=\"#FFFFFF\" >..</font>!<font color=\"#FFFFFF\">..</font></font>\n")
+    newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=6% />PlumTalk</font>\n")
 
     newCreateList.append("			</div>\n")
     newCreateList.append("			<div class=\"subtitle\">\n")
