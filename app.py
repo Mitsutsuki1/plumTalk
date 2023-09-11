@@ -227,11 +227,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                         newCreateList.append("							</div>\n")
                         imageAreaCounter += 1
                     else:
-                        for text in newCreateTextLine:
-                            if not text == "\n":
-                                newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                            else:
-                                newCreateList.append("							<p><br></p>\n")
+                        if newCreateTextLine == []:
+                            newCreateList.append("							<p><br></p>\n")
+                        else:
+                            for text in newCreateTextLine:
+                                if not text == "\n":
+                                    newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                                else:
+                                    newCreateList.append("							<p><br></p>\n")
                         
                         newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
                         if re.search("<div class=\"text\">\n",newCreateList[-2]) and newCreateList[-1] == "":
@@ -251,11 +254,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                             newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
                             newCreateList.append("						<div class=\"text\">\n")
    
-                            for text in newCreateTextLine:
-                                if not text == "\n":
-                                    newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                                else:
-                                    newCreateList.append("							<p><br></p>\n")
+                            if newCreateTextLine == []:
+                                newCreateList.append("							<p><br></p>\n")
+                            else:
+                                for text in newCreateTextLine:
+                                    if not text == "\n":
+                                        newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                                    else:
+                                        newCreateList.append("							<p><br></p>\n")
                             
                             newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
                             if re.search("<div class=\"text\">\n",newCreateList[-2]) and newCreateList[-1] == "":
@@ -274,11 +280,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                             newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
                             newCreateList.append("						<div class=\"text\">\n")
    
-                            for text in newCreateTextLine:
-                                if not text == "\n":
-                                    newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                                else:
-                                    newCreateList.append("							<p><br></p>\n")
+                            if newCreateTextLine == []:
+                                newCreateList.append("							<p><br></p>\n")
+                            else:
+                                for text in newCreateTextLine:
+                                    if not text == "\n":
+                                        newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                                    else:
+                                        newCreateList.append("							<p><br></p>\n")
                             
                             newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
                             if re.search("<div class=\"text\">\n",newCreateList[-2]) and newCreateList[-1] == "":
@@ -293,11 +302,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                         if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@連続@@@",textOriginalLine):
                             newCreateList.append("						<div class=\"text\">\n")
 
-                            for text in newCreateTextLine:
-                                if not text == "\n":
-                                    newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                                else:
-                                    newCreateList.append("							<p><br></p>\n")
+                            if newCreateTextLine == []:
+                                newCreateList.append("							<p><br></p>\n")
+                            else:
+                                for text in newCreateTextLine:
+                                    if not text == "\n":
+                                        newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                                    else:
+                                        newCreateList.append("							<p><br></p>\n")
                             
                             newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
                             if re.search("<div class=\"text\">\n",newCreateList[-2]) and newCreateList[-1] == "":
@@ -312,11 +324,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                         else:
                             newCreateList.append("						<div class=\"text\">\n")
 
-                            for text in newCreateTextLine:
-                                if not text == "\n":
-                                    newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                                else:
-                                    newCreateList.append("							<p><br></p>\n")
+                            if newCreateTextLine == []:
+                                newCreateList.append("							<p><br></p>\n")
+                            else:
+                                for text in newCreateTextLine:
+                                    if not text == "\n":
+                                        newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                                    else:
+                                        newCreateList.append("							<p><br></p>\n")
                             
                             newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
                             if re.search("<div class=\"text\">\n",newCreateList[-2]) and newCreateList[-1] == "":
@@ -336,11 +351,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     newCreateList.append("						<div class=\"text\">\n")
 
    
-                    for text in newCreateTextLine:
-                        if not text == "\n":
-                            newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                        else:
-                            newCreateList.append("							<p><br></p>\n")
+                    if newCreateTextLine == []:
+                        newCreateList.append("							<p><br></p>\n")
+                    else:
+                        for text in newCreateTextLine:
+                            if not text == "\n":
+                                newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                            else:
+                                newCreateList.append("							<p><br></p>\n")
                     
                     newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
                     if re.search("<div class=\"text\">\n",newCreateList[-2]) and newCreateList[-1] == "":
@@ -354,11 +372,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     newCreateList.append("					<div class=\"textfield\">\n")
                     newCreateList.append("						<div class=\"text\">\n")
 
-                    for text in newCreateTextLine:
-                        if not text == "\n":
-                            newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
-                        else:
-                            newCreateList.append("							<p><br></p>\n")
+                    if newCreateTextLine == []:
+                        newCreateList.append("							<p><br></p>\n")
+                    else:
+                        for text in newCreateTextLine:
+                            if not text == "\n":
+                                newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
+                            else:
+                                newCreateList.append("							<p><br></p>\n")
                     
                     newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
                     if re.search("<div class=\"text\">\n",newCreateList[-2]) and newCreateList[-1] == "":
