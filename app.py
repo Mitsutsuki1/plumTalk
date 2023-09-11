@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+"""
+Created by ミツツキ
+
+"""
 #app.py
 from flask import Flask, render_template, request
 import sys
@@ -28,8 +33,6 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     iconFileCounter = 0
     imageAreaCounter = 0
     
-    newCreateTextCSSLine = []
-    
     newCreateList = []
     newCreateTextLine = []
     charactorListDat = []
@@ -43,8 +46,8 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     
     textOriginalList = html.unescape(textOriginalList)
     textOriginalList = re.sub("[@＠][@＠][@＠]","@@@",textOriginalList)
-#   textOriginalList = textOriginalList.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("（私服）","(私服)").replace("（クリスマス）","(クリスマス)")
-    textOriginalList = textOriginalList.replace("@@@スケバン1@@@","@@@スケバン１@@@").replace("@@@スケバン2@@@","@@@スケバン２@@@").replace("@@@スケバン3@@@","@@@スケバン３@@@")
+#   textOriginalList = textOriginalList.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニー)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("（私服）","(私服)").replace("（クリスマス）","(クリスマス)")
+    textOriginalList = textOriginalList.replace("@@@スケバン1@@@","@@@スケバン１@@@",-1).replace("@@@スケバン2@@@","@@@スケバン２@@@",-1).replace("@@@スケバン3@@@","@@@スケバン３@@@",-1).replace("<強調>","<b>",-1).replace("</強調>","</b>",-1).replace("<照れ>","<font class=\"blush\">",-1).replace("</照れ>","</font>",-1).replace("<blush>","<font class=\"blush\">",-1).replace("</blush>","</font>",-1)
     textOriginalList = textOriginalList.splitlines(True)
     
     try:
@@ -72,8 +75,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                 charactorId = re.search("No[\d]{3}_[\d]{1}", charactorLineDat)
                 charactorId = charactorId.group()
                 tagElement = re.sub("[@＠][@＠][@＠]","@@@",charactorLineDat)
-                tagElement = charactorLineDat.replace(charactorId +"_tagElement:","").replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニーガール)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("（私服）","(私服)").replace("（クリスマス）","(クリスマス)").replace("\n","")
-                print(tagElement)
+                tagElement = charactorLineDat.replace(charactorId +"_tagElement:","").replace("\n","")
                 tagElementList.append(tagElement)
                 tagElementCounter += 1      
             
@@ -225,12 +227,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                         imageAreaCounter += 1
                     else:
                         for text in newCreateTextLine:
-                            if not text == "\n":
+                            if not text == "":
                                 newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                             else:
                                 newCreateList.append("							<p><br></p>\n")
                         
-                        newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                        newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                        if newCreateList[-2] == "						<div class=\"text\">\n":
+                            newCreateList.append("							<p><br></p>\n")
 
                     newCreateList.append("						</div>\n")
                     newCreateList.append("					</div>\n")
@@ -247,12 +251,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                             newCreateList.append("						<div class=\"text\">\n")
    
                             for text in newCreateTextLine:
-                                if not text == "\n":
+                                if not text == "":
                                     newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                                 else:
                                     newCreateList.append("							<p><br></p>\n")
                             
-                            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                            newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                            if newCreateList[-2] == "						<div class=\"text\">\n":
+                                newCreateList.append("							<p><br></p>\n")
                             
                             newCreateList.append("						</div>\n")
                             replyContinueFlg = 1
@@ -268,12 +274,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                             newCreateList.append("						<div class=\"text\">\n")
    
                             for text in newCreateTextLine:
-                                if not text == "\n":
+                                if not text == "":
                                     newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                                 else:
                                     newCreateList.append("							<p><br></p>\n")
                             
-                            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                            newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                            if newCreateList[-2] == "						<div class=\"text\">\n":
+                                newCreateList.append("							<p><br></p>\n")
                             
                             newCreateList.append("						</div>\n")
                             newCreateList.append("					</div>\n")
@@ -285,12 +293,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                             newCreateList.append("						<div class=\"text\">\n")
 
                             for text in newCreateTextLine:
-                                if not text == "\n":
+                                if not text == "":
                                     newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                                 else:
                                     newCreateList.append("							<p><br></p>\n")
                             
-                            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                            newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                            if newCreateList[-2] == "						<div class=\"text\">\n":
+                                newCreateList.append("							<p><br></p>\n")
                             
                             newCreateList.append("						</div>\n")
                             replyContinueFlg = 1
@@ -302,12 +312,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                             newCreateList.append("						<div class=\"text\">\n")
 
                             for text in newCreateTextLine:
-                                if not text == "\n":
+                                if not text == "":
                                     newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                                 else:
                                     newCreateList.append("							<p><br></p>\n")
                             
-                            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                            newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                            if newCreateList[-2] == "						<div class=\"text\">\n":
+                                newCreateList.append("							<p><br></p>\n")
                             
                             newCreateList.append("						</div>\n")
                             newCreateList.append("					</div>\n")
@@ -324,12 +336,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
 
    
                     for text in newCreateTextLine:
-                        if not text == "\n":
+                        if not text == "":
                             newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                         else:
                             newCreateList.append("							<p><br></p>\n")
                     
-                    newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                    newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                    if newCreateList[-2] == "						<div class=\"text\">\n":
+                        newCreateList.append("							<p><br></p>\n")
                     
                     newCreateList.append("						</div>\n")
                     newCreateList.append("					</div>\n")
@@ -340,12 +354,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     newCreateList.append("						<div class=\"text\">\n")
 
                     for text in newCreateTextLine:
-                        if not text == "\n":
+                        if not text == "":
                             newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                         else:
                             newCreateList.append("							<p><br></p>\n")
                     
-                    newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                    newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                    if newCreateList[-2] == "						<div class=\"text\">\n":
+                        newCreateList.append("							<p><br></p>\n")
 
                     newCreateList.append("						</div>\n")
                     newCreateList.append("					</div>\n")
@@ -372,7 +388,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     imageAreaCounter += 1
                 elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
                     pass
-#                            newCreateList.append("[[##cut##]]\n")
+#                   newCreateList.append("[[##cut##]]\n")
                     
                 
                 
@@ -443,12 +459,10 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                 talkAreaType = "label"
             if re.search("@@@絆ストーリー@@@",textOriginalLine):
                 talkAreaType = "love"
-            
             if re.search("@@@連続@@@",textOriginalLine):
                 displayName = displayNameBefore
                 talkAreaType = talkAreaTypeBefore
                 talkAreaMargin = talkAreaMarginBefore
-            
             if re.search("@@@アイコン@@@",textOriginalLine):
                 displayNameBefore = ""
                 talkAreaTypeBefore = ""
@@ -459,7 +473,9 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     
             
             if displayName == "":
-                displayName = textOriginalLine.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@右右","").replace("@@@返信","").replace("@@@追加","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@連続","").replace("@@@カット","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
+                displayName = re.sub("@@@左左左*","",textOriginalLine)
+                displayName = re.sub("@@@右右右*","",displayName)
+                displayName = displayName.replace("@@@画像","",-1).replace("@@@左","",-1).replace("@@@右","",-1).replace("@@@返信","",-1).replace("@@@追加","",-1).replace("@@@ラベル","",-1).replace("@@@絆ストーリー","",-1).replace("@@@連続","",-1).replace("@@@カット","",-1).replace("@@@","",-1).replace("　","",-1).replace(" ","",-1).replace("\n","",-1)
             if displayName == "":
                 displayName = "？"
             elif talkAreaType == "pictureTable":
@@ -473,9 +489,9 @@ def htmlCreater(textOriginalList,titleName,creatorName):
             
         elif tagElementFirstFlg == 1:
             if talkAreaMargin == "left":
-                newCreateTextLine.append(textOriginalLine.replace("<強調>","<b>").replace("</強調>","</b>").replace("<照れ>","<font class=\"blush\">").replace("</照れ>","</font>").replace("<blush>","<font class=\"blush\">").replace("</blush>","</font>").replace("<赤字>","<font class=\"textRed_left\">").replace("</赤字>","</font>").replace("<red>","<font class=\"textRed_left\">").replace("</red>","</font>"))                    
+                newCreateTextLine.append(textOriginalLine.replace("<赤字>","<font class=\"textRed_left\">",-1).replace("</赤字>","</font>",-1).replace("<red>","<font class=\"textRed_left\">",-1).replace("</red>","</font>",-1))                    
             else:
-                newCreateTextLine.append(textOriginalLine.replace("<強調>","<b>").replace("</強調>","</b>").replace("<照れ>","<font class=\"blush\">").replace("</照れ>","</font>").replace("<blush>","<font class=\"blush\">").replace("</blush>","</font>").replace("<赤字>","<font class=\"textRed_right\">").replace("</赤字>","</font>").replace("<red>","<font class=\"textRed_right\">").replace("</red>","</font>"))                    
+                newCreateTextLine.append(textOriginalLine.replace("<赤字>","<font class=\"textRed_right\">",-1).replace("</赤字>","</font>",-1).replace("<red>","<font class=\"textRed_right\">",-1).replace("</red>","</font>",-1))                    
         else:
             pass
                         
@@ -534,13 +550,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                 imageAreaCounter += 1
             else:
                 for text in newCreateTextLine:
-                    if not text == "\n":
+                    if not text == "":
                         newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                     else:
                         newCreateList.append("							<p><br></p>\n")
                 
-                newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-
+                newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                if newCreateList[-2] == "						<div class=\"text\">\n":
+                    newCreateList.append("							<p><br></p>\n")
             newCreateList.append("						</div>\n")
             newCreateList.append("					</div>\n")
             newCreateList.append("				</div>\n")
@@ -556,12 +573,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     newCreateList.append("						<div class=\"text\">\n")
    
                     for text in newCreateTextLine:
-                        if not text == "\n":
+                        if not text == "":
                             newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                         else:
                             newCreateList.append("							<p><br></p>\n")
                     
-                    newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                    newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                    if newCreateList[-2] == "						<div class=\"text\">\n":
+                        newCreateList.append("							<p><br></p>\n")
                     
                     newCreateList.append("						</div>\n")
                     replyContinueFlg = 1
@@ -577,12 +596,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     newCreateList.append("						<div class=\"text\">\n")
    
                     for text in newCreateTextLine:
-                        if not text == "\n":
+                        if not text == "":
                             newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                         else:
                             newCreateList.append("							<p><br></p>\n")
                     
-                    newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                    newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                    if newCreateList[-2] == "						<div class=\"text\">\n":
+                        newCreateList.append("							<p><br></p>\n")
                     
                     newCreateList.append("						</div>\n")
                     newCreateList.append("					</div>\n")
@@ -594,12 +615,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     newCreateList.append("						<div class=\"text\">\n")
 
                     for text in newCreateTextLine:
-                        if not text == "\n":
+                        if not text == "":
                             newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                         else:
                             newCreateList.append("							<p><br></p>\n")
                     
-                    newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                    newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                    if newCreateList[-2] == "						<div class=\"text\">\n":
+                        newCreateList.append("							<p><br></p>\n")
                     
                     newCreateList.append("						</div>\n")
                     replyContinueFlg = 1
@@ -611,12 +634,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     newCreateList.append("						<div class=\"text\">\n")
 
                     for text in newCreateTextLine:
-                        if not text == "\n":
+                        if not text == "":
                             newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                         else:
                             newCreateList.append("							<p><br></p>\n")
                     
-                    newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+                    newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+                    if newCreateList[-2] == "						<div class=\"text\">\n":
+                        newCreateList.append("							<p><br></p>\n")
                     
                     newCreateList.append("						</div>\n")
                     newCreateList.append("					</div>\n")
@@ -633,12 +658,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
 
    
             for text in newCreateTextLine:
-                if not text == "\n" :
+                if not text == "" :
                     newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                 else:
                     newCreateList.append("							<p><br></p>\n")
             
-            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+            newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+            if newCreateList[-2] == "						<div class=\"text\">\n":
+                newCreateList.append("							<p><br></p>\n")
             
             newCreateList.append("						</div>\n")
             newCreateList.append("					</div>\n")
@@ -649,12 +676,14 @@ def htmlCreater(textOriginalList,titleName,creatorName):
             newCreateList.append("						<div class=\"text\">\n")
 
             for text in newCreateTextLine:
-                if not text == "\n":
+                if not text == "":
                     newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
                 else:
                     newCreateList.append("							<p><br></p>\n")
             
-            newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
+            newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
+            if newCreateList[-2] == "						<div class=\"text\">\n":
+                newCreateList.append("							<p><br></p>\n")
 
             newCreateList.append("						</div>\n")
             newCreateList.append("					</div>\n")
@@ -665,7 +694,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
             newCreateList.append("                      <p><font color=#FF5192>|</font>絆イベント</p>\n")
             newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
             newCreateList.append("						<div class=\"text\">\n")
-            newCreateList.append(                           "<p>" + displayName + "の絆ストーリーへ</p>\n")
+            newCreateList.append("							<p>" + displayName + "の絆ストーリーへ</p>\n")
             newCreateList.append("						</div>\n")
             newCreateList.append("					</div>\n")
             newCreateList.append("				</div>\n")
@@ -686,11 +715,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
         newCreateList.append("				<div class=\"centerTable\">\n")
         newCreateList.append("					<div class=\"textfield\">\n")
         newCreateList.append("						<div class=\"text\">\n")
-
         newCreateList.append("							<p>エラー:テキストエリアが空欄、あるいは有効なタグが存在しません。</p>\n")
-        
-        newCreateList[-1] = newCreateList[-1].replace("<p><br></p>\n","")
-
         newCreateList.append("						</div>\n")
         newCreateList.append("					</div>\n")
         newCreateList.append("				</div>\n")
@@ -702,7 +727,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     newCreateList.append("			<div class=\"footer\">\n")
     newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
     newCreateList.append("			</div>\n")
-    newCreateList.append("		</div>\n")   
+    newCreateList.append("		</div>\n")
 
     try:
         with open('./scriptAndCSSList.dat','r',encoding="UTF-8") as f:
