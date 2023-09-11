@@ -447,7 +447,12 @@ def htmlCreater(textOriginalList,titleName,creatorName):
             if re.search("@@@連続@@@",textOriginalLine):
                 displayName = displayNameBefore
                 talkAreaType = talkAreaTypeBefore
-                talkAreaMargin = talkAreaMarginBefore 
+                talkAreaMargin = talkAreaMarginBefore
+            
+            if re.search("@@@アイコン@@@",textOriginalLine):
+                displayNameBefore = ""
+                talkAreaTypeBefore = ""
+                talkAreaMarginBefore = ""
 
             if re.search("@@@カット@@@",textOriginalLine):
                 talkAreaType = "cut"
@@ -689,10 +694,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
         newCreateList.append("						</div>\n")
         newCreateList.append("					</div>\n")
         newCreateList.append("				</div>\n")
-        
-    displayNameBefore = displayName
-    talkAreaTypeBefore = talkAreaType
-    talkAreaMarginBefore = talkAreaMargin       
+
     newCreateTextLine = []
 
 
