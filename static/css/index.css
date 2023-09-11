@@ -1,8 +1,5 @@
 <style>
 	@charset "UTF-8";
-	body{
-		margin:auto;
-	}
 	header {
 		background: #eb96a6;
 	}
@@ -61,6 +58,9 @@
 	        font-weight:normal;
 	     }
  	}
+ 	body{
+		margin:auto;
+	}
 	.nodisplay_box {
 		display: none;
 	}
@@ -101,8 +101,6 @@
 		color: #ffffff;
 	}
 	.plumContainer .lineElements {
-		min-height: 100vh;
-		min-height: calc(var(--vh, 1vh) * 100);
 		width: 100%;
 		overflow: hidden;
 		line-height: 1.5;
