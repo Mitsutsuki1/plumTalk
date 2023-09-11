@@ -47,7 +47,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     textOriginalList = html.unescape(textOriginalList)
     textOriginalList = re.sub("[@＠][@＠][@＠]","@@@",textOriginalList)
 #   textOriginalList = textOriginalList.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニー)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("（私服）","(私服)").replace("（クリスマス）","(クリスマス)")
-    textOriginalList = textOriginalList.replace("@@@スケバン1@@@","@@@スケバン１@@@",-1).replace("@@@スケバン2@@@","@@@スケバン２@@@",-1).replace("@@@スケバン3@@@","@@@スケバン３@@@",-1).replace("<強調>","<b>",-1).replace("</強調>","</b>",-1).replace("<照れ>","<font class=\"blush\">",-1).replace("</照れ>","</font>",-1).replace("<blush>","<font class=\"blush\">",-1).replace("</blush>","</font>",-1)
+    textOriginalList = textOriginalList.replace("@@@スケバン1@@@","@@@スケバン１@@@").replace("@@@スケバン2@@@","@@@スケバン２@@@").replace("@@@スケバン3@@@","@@@スケバン３@@@").replace("<強調>","<b>").replace("</強調>","</b>").replace("<照れ>","<font class=\"blush\">").replace("</照れ>","</font>").replace("<blush>","<font class=\"blush\">").replace("</blush>","</font>")
     textOriginalList = textOriginalList.splitlines(True)
     
     try:
@@ -475,7 +475,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
             if displayName == "":
                 displayName = re.sub("@@@左左左*","",textOriginalLine)
                 displayName = re.sub("@@@右右右*","",displayName)
-                displayName = displayName.replace("@@@画像","",-1).replace("@@@左","",-1).replace("@@@右","",-1).replace("@@@返信","",-1).replace("@@@追加","",-1).replace("@@@ラベル","",-1).replace("@@@絆ストーリー","",-1).replace("@@@連続","",-1).replace("@@@カット","",-1).replace("@@@","",-1).replace("　","",-1).replace(" ","",-1).replace("\n","",-1)
+                displayName = displayName.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@返信","").replace("@@@追加","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@連続","").replace("@@@カット","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
             if displayName == "":
                 displayName = "？"
             elif talkAreaType == "pictureTable":
@@ -489,9 +489,9 @@ def htmlCreater(textOriginalList,titleName,creatorName):
             
         elif tagElementFirstFlg == 1:
             if talkAreaMargin == "left":
-                newCreateTextLine.append(textOriginalLine.replace("<赤字>","<font class=\"textRed_left\">",-1).replace("</赤字>","</font>",-1).replace("<red>","<font class=\"textRed_left\">",-1).replace("</red>","</font>",-1))                    
+                newCreateTextLine.append(textOriginalLine.replace("<赤字>","<font class=\"textRed_left\">").replace("</赤字>","</font>").replace("<red>","<font class=\"textRed_left\">").replace("</red>","</font>"))                    
             else:
-                newCreateTextLine.append(textOriginalLine.replace("<赤字>","<font class=\"textRed_right\">",-1).replace("</赤字>","</font>",-1).replace("<red>","<font class=\"textRed_right\">",-1).replace("</red>","</font>",-1))                    
+                newCreateTextLine.append(textOriginalLine.replace("<赤字>","<font class=\"textRed_right\">").replace("</赤字>","</font>").replace("<red>","<font class=\"textRed_right\">").replace("</red>","</font>"))                    
         else:
             pass
                         
