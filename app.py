@@ -49,9 +49,9 @@ def htmlCreater(textOriginalList,titleName,creatorName):
 #   textOriginalList = textOriginalList.replace("（水着）","(水着)").replace("（正月）","(正月)").replace("（体操服）","(体操服)").replace("（応援団）","(応援団)").replace("（幼女）","(幼女)").replace("（温泉）","(温泉)").replace("（バニーガール）","(バニー)").replace("（バニー）","(バニー)").replace("（ライディング）","(ライディング)").replace("（私服）","(私服)").replace("（クリスマス）","(クリスマス)")
     textOriginalList = textOriginalList.replace("@@@スケバン1@@@","@@@スケバン１@@@").replace("@@@スケバン2@@@","@@@スケバン２@@@").replace("@@@スケバン3@@@","@@@スケバン３@@@").replace("<強調>","<b>").replace("</強調>","</b>").replace("<照れ>","<font class=\"blush\">").replace("</照れ>","</font>").replace("<blush>","<font class=\"blush\">").replace("</blush>","</font>")
     textOriginalList = textOriginalList.splitlines(True)
-    textOriginalList.append("\n")
-    if textOriginalList[-1] == "\n":
-        if textOriginalList[-2] == "\n":
+    textOriginalList.append("")
+    if textOriginalList[-1] == "":
+        if textOriginalList[-2] == "":
             textOriginalList = textOriginalList[:-1]
     
     try:
