@@ -50,6 +50,9 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     textOriginalList = textOriginalList.replace("@@@スケバン1@@@","@@@スケバン１@@@").replace("@@@スケバン2@@@","@@@スケバン２@@@").replace("@@@スケバン3@@@","@@@スケバン３@@@").replace("<強調>","<b>").replace("</強調>","</b>").replace("<照れ>","<font class=\"blush\">").replace("</照れ>","</font>").replace("<blush>","<font class=\"blush\">").replace("</blush>","</font>")
     textOriginalList = textOriginalList.splitlines(True)
     textOriginalList.append("\n")
+    if textOriginalList[-1] == "\n":
+        if textOriginalList[-2] == "\n":
+            textOriginalList = textOriginalList[:-1]
     
     try:
         with open('./charactorList.dat','r',encoding="UTF-8") as f:
