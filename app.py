@@ -893,5 +893,5 @@ def convertHtml_sumple6():
     return render_template('index.html',input_from_python=newHtmlLine)
 
 if __name__ == '__main__':
-    app.run(debug=True, threaded=True, host='0.0.0.0', port=80)
+    app.run(debug=False, threaded=False, host='0.0.0.0')
 #    app.run(debug=True, threaded=True, host='localhost', port=80)
