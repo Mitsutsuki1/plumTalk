@@ -25,6 +25,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     
     
     startFlg = 0
+    repeatFlg = 0
     tagElementFirstFlg = 0
     tagElementCounter = 0
     displayNameCounter = 0
@@ -208,15 +209,18 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                         newCreateList.append("					<div class=\"textfield2\">\n")
                     else:
                         newCreateList.append("					<figure>\n")
-                        try:            
-                            root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
-                            with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
-                                src = base64.b64encode(f.read()).decode('utf-8')
-                        except:
-                            iconFileName = npcObjectIconFileName
-                            root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
-                            with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
-                                src = base64.b64encode(f.read()).decode('utf-8')
+                        if repeatFlg == 0:
+                            try:            
+                                root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
+                                with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
+                                    src = base64.b64encode(f.read()).decode('utf-8')
+                            except:
+                                iconFileName = npcObjectIconFileName
+                                root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
+                                with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
+                                    src = base64.b64encode(f.read()).decode('utf-8')
+                        else:
+                            repeatFlg = 0
 
                         newCreateList.append("						<img src=data:image/" + ext.replace(".","") + ";base64," + src + " />\n")
                         newCreateList.append("					</figure>\n")
@@ -509,6 +513,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                 displayName = displayNameBefore
                 talkAreaType = talkAreaTypeBefore
                 talkAreaMargin = talkAreaMarginBefore
+                repeatFlg = 1
             if re.search("@@@アイコン@@@",textOriginalLine):
                 displayNameBefore = ""
                 talkAreaTypeBefore = ""
@@ -563,15 +568,18 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                 newCreateList.append("					<div class=\"textfield2\">\n")
             else:
                 newCreateList.append("					<figure>\n")
-                try:            
-                    root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
-                    with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
-                        src = base64.b64encode(f.read()).decode('utf-8')
-                except:
-                    iconFileName = npcObjectIconFileName
-                    root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
-                    with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
-                        src = base64.b64encode(f.read()).decode('utf-8')
+                if repeatFlg == 0:
+                    try:            
+                        root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
+                        with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
+                            src = base64.b64encode(f.read()).decode('utf-8')
+                    except:
+                        iconFileName = npcObjectIconFileName
+                        root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
+                        with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
+                            src = base64.b64encode(f.read()).decode('utf-8')
+                else:
+                    repeatFlg = 0
 
                 newCreateList.append("						<img src=data:image/" + ext.replace(".","") + ";base64," + src + " />\n")
                 newCreateList.append("					</figure>\n")
