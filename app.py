@@ -14,8 +14,6 @@ import html
 
 app = Flask(__name__)
 
-# http://127.0.0.1:5000をルートとして、("")の中でアクセスポイント指定
-# @app.route("hoge")などで指定すると、http://127.0.0.1:5000/hogeでの動作を記述できる。
 
 def htmlCreater(textOriginalList,titleName,creatorName):
     iconFileLocation = ""
@@ -115,7 +113,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
         with open("./images/" + replyWindow_backgroundName, mode='rb') as f:
             src = base64.b64encode(f.read()).decode('utf-8')
     except:
-        print("ERROR:画像のbase64化に失敗しました。設定ファイル上で誤ったファイルが指定されている可能性があります。プログラムを終了します。")
+        print("ERROR:返信窓用画像のbase64化に失敗しました。設定ファイル上で誤ったファイルが指定されている可能性があります。プログラムを終了します。")
         time.sleep(1)
         sys.exit()
     
@@ -126,11 +124,27 @@ def htmlCreater(textOriginalList,titleName,creatorName):
         with open("./images/" + favorStory_backgroundName, mode='rb') as f:
             src = base64.b64encode(f.read()).decode('utf-8')
     except:
-        print("ERROR:画像のbase64化に失敗しました。設定ファイル上で誤ったファイルが指定されている可能性があります。プログラムを終了します。")
+        print("ERROR:絆ストーリー用画像のbase64化に失敗しました。設定ファイル上で誤ったファイルが指定されている可能性があります。プログラムを終了します。")
         time.sleep(1)
         sys.exit()
     
     favorStory_backgroundName = "		background: #f4d6de url(data:image/" + ext.replace(".","") + ";base64," + src + ") no-repeat right top;\n"
+
+    try:
+        with open('./scriptAndCSSList.dat','r',encoding="UTF-8") as f:
+            scriptAndCSSList = f.readlines()
+    except:
+        print("ERROR:scriptAndCSSList.datが見つからない。あるいはファイルが破損している可能性があります。プログラムを終了します。")
+        time.sleep(1)
+        sys.exit()
+
+    try:
+        with open("./images/plum.webp", mode='rb') as f:
+            plumSrc = base64.b64encode(f.read()).decode('utf-8')
+    except:
+        print("ERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
+        time.sleep(1)
+        sys.exit()
     
     startFlg = 0
     tagElementCounter = 0
@@ -144,29 +158,27 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     if not creatorName == "":
             creatorName = "作者:" + creatorName
             
-   
-    newCreateList.append("<html lang=\"ja\">\n")
-    newCreateList.append("	<head>\n")
-    newCreateList.append("		<meta charset=\"UTF-8\"/>\n")
+
+    newCreateList.append("\n	<head>\n")
+    newCreateList.append("		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n")
+    newCreateList.append("		<meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n")
     newCreateList.append("		<title>PlumTalk</title>\n")
+    
+    for text in scriptAndCSSList:
+        if re.search("background: #dce6e9 url",text) and re.search("no-repeat right top",text):
+            newCreateList.append(replyWindow_backgroundName) 
+        elif re.search("background: #f4d6de url",text) and re.search("no-repeat right top",text):
+            newCreateList.append(favorStory_backgroundName) 
+        else:
+            newCreateList.append(text)
+    
     newCreateList.append("	</head>\n")
     newCreateList.append("	<body>\n")
     newCreateList.append("		<div class=\"plumContainer\">\n")
     newCreateList.append("			<div class=\"header\">\n")
-
-    try:
-        with open("./images/plum.webp", mode='rb') as f:
-            plumSrc = base64.b64encode(f.read()).decode('utf-8')
-    except:
-        print("ERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
-        time.sleep(1)
-        sys.exit()
-
     newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=6% />PlumTalk</font>\n")
-
     newCreateList.append("			</div>\n")
     newCreateList.append("			<div class=\"subtitle\">\n")
-    
     newCreateList.append("				" + titleName + "<br>" + creatorName + "\n")
     newCreateList.append("			</div>\n")
     newCreateList.append("			<div class=\"lineElements\">\n")
@@ -208,6 +220,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
 
                         newCreateList.append("						<img src=data:image/" + ext.replace(".","") + ";base64," + src + " />\n")
                         newCreateList.append("					</figure>\n")
+                        
                         newCreateList.append("					<div class=\"textfield1\">\n")
                         newCreateList.append("						<div class=\"name\">\n")
                         newCreateList.append("							<p>" + displayName + "</p>\n")
@@ -247,7 +260,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     
                 elif talkAreaType == "replyContinue":
                     if replyContinueFlg == 0:
-                        if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@連続@@@",textOriginalLine):
+                        if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@リピート@@@",textOriginalLine):
                             newCreateList.append("				<div class=\"rightTable\">\n")
                             newCreateList.append("					<div class=\"textfield3\">\n")
                             newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
@@ -269,7 +282,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                             
                             newCreateList.append("						</div>\n")
                             replyContinueFlg = 1
-                            if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@連続@@@",textOriginalLine):
+                            if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@リピート@@@",textOriginalLine):
                                 newCreateList.append("					</div>\n")
                                 newCreateList.append("				</div>\n")
                                 replyContinueFlg = 0
@@ -299,7 +312,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                             
                                 
                     elif replyContinueFlg == 1:
-                        if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@連続@@@",textOriginalLine):
+                        if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@リピート@@@",textOriginalLine):
                             newCreateList.append("						<div class=\"text\">\n")
 
                             if newCreateTextLine == []:
@@ -317,7 +330,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                             
                             newCreateList.append("						</div>\n")
                             replyContinueFlg = 1
-                            if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@連続@@@",textOriginalLine):
+                            if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@リピート@@@",textOriginalLine):
                                 newCreateList.append("					</div>\n")
                                 newCreateList.append("				</div>\n")
                                 replyContinueFlg = 0
@@ -408,6 +421,13 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     newCreateList.append("					</div>\n")                                            
                     newCreateList.append("				</div>\n")
                     imageAreaCounter += 1
+                elif talkAreaType == "space":
+                    newCreateList.append("				<div>\n")
+                    newCreateList.append("				    <p><br></p>\n")
+                    newCreateList.append("				</div>\n")
+                    displayName = displayNameBefore
+                    talkAreaType = talkAreaTypeBefore
+                    talkAreaMargin = talkAreaMarginBefore
                 elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
                     pass
 #                   newCreateList.append("[[##cut##]]\n")
@@ -455,6 +475,10 @@ def htmlCreater(textOriginalList,titleName,creatorName):
             talkAreaType = "normal"
             talkAreaMargin = "left"
             
+            if re.search("@@@カット@@@",textOriginalLine):
+                talkAreaType = "cut"
+            if re.search("@@@スペース@@@",textOriginalLine) and not re.search("@@@アイコン@@@",textOriginalLine) and elementExist == False:
+                talkAreaType = "space"
             if re.search("@@@画像@@@",textOriginalLine):
                 talkAreaType = "pictureTable"
             if re.search("@@@左@@@",textOriginalLine) or re.search("@@@左左@@@",textOriginalLine) or re.search("@@@左左左@@@",textOriginalLine) or re.search("@@@左左左左[^@]*@@@",textOriginalLine):
@@ -481,7 +505,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                 talkAreaType = "label"
             if re.search("@@@絆ストーリー@@@",textOriginalLine):
                 talkAreaType = "love"
-            if re.search("@@@連続@@@",textOriginalLine):
+            if re.search("@@@リピート@@@",textOriginalLine):
                 displayName = displayNameBefore
                 talkAreaType = talkAreaTypeBefore
                 talkAreaMargin = talkAreaMarginBefore
@@ -489,20 +513,19 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                 displayNameBefore = ""
                 talkAreaTypeBefore = ""
                 talkAreaMarginBefore = ""
-
-            if re.search("@@@カット@@@",textOriginalLine):
-                talkAreaType = "cut"
-                    
             
             if displayName == "":
                 displayName = re.sub("@@@左左左*","",textOriginalLine)
                 displayName = re.sub("@@@右右右*","",displayName)
-                displayName = displayName.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@返信","").replace("@@@追加","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@連続","").replace("@@@カット","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
+                displayName = displayName.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@返信","").replace("@@@追加","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@リピート","").replace("@@@カット","").replace("@@@スペース","").replace("@@@アイコン","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
+
             if displayName == "":
                 displayName = "？"
             elif talkAreaType == "pictureTable":
                 talkAreaType = "normal"
                 talkAreaMargin = "leftAndPicture"
+            elif talkAreaType == "space":
+                talkAreaType = "normal"
             if iconFileName == "":
                 iconFileName = npcObjectIconFileName
 
@@ -516,7 +539,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                 newCreateTextLine.append(textOriginalLine.replace("<赤字>","<font class=\"textRed_right\">").replace("</赤字>","</font>").replace("<red>","<font class=\"textRed_right\">").replace("</red>","</font>"))                    
         else:
             pass
-                        
+
     
     if tagElementFirstFlg == 1:
         if talkAreaType == "normal":
@@ -587,7 +610,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
             
         elif talkAreaType == "replyContinue":
             if replyContinueFlg == 0:
-                if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@連続@@@",textOriginalLine):
+                if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@リピート@@@",textOriginalLine):
                     newCreateList.append("				<div class=\"rightTable\">\n")
                     newCreateList.append("					<div class=\"textfield3\">\n")
                     newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
@@ -606,7 +629,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     
                     newCreateList.append("						</div>\n")
                     replyContinueFlg = 1
-                    if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@連続@@@",textOriginalLine):
+                    if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@リピート@@@",textOriginalLine):
                         newCreateList.append("					</div>\n")
                         newCreateList.append("				</div>\n")
                         replyContinueFlg = 0
@@ -633,7 +656,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     
                         
             elif replyContinueFlg == 1:
-                if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@連続@@@",textOriginalLine):
+                if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@リピート@@@",textOriginalLine):
                     newCreateList.append("						<div class=\"text\">\n")
 
                     for text in newCreateTextLine:
@@ -648,7 +671,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     
                     newCreateList.append("						</div>\n")
                     replyContinueFlg = 1
-                    if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@連続@@@",textOriginalLine):
+                    if not re.search("@@@追加@@@",textOriginalLine) and not re.search("@@@リピート@@@",textOriginalLine):
                         newCreateList.append("					</div>\n")
                         newCreateList.append("				</div>\n")
                         replyContinueFlg = 0
@@ -750,22 +773,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
     newCreateList.append("			</div>\n")
     newCreateList.append("		</div>\n")
-
-    try:
-        with open('./scriptAndCSSList.dat','r',encoding="UTF-8") as f:
-            scriptAndCSSList = f.readlines()
-    except:
-        print("ERROR:エラーが発生しました。scriptAndCSSList.datが見つからない。あるいはファイルが破損している可能性があります。プログラムを終了します。")
-        time.sleep(1)
-        sys.exit()
-    
-    for line in scriptAndCSSList:
-        if re.search("background: #dce6e9 url",line) and re.search("no-repeat right top",line):
-            newCreateList.append(replyWindow_backgroundName) 
-        elif re.search("background: #f4d6de url",line) and re.search("no-repeat right top",line):
-            newCreateList.append(favorStory_backgroundName) 
-        else:
-            newCreateList.append(line)    
+    newCreateList.append("	</body>\n")
     
     return newCreateList
 
@@ -894,4 +902,4 @@ def convertHtml_sumple6():
 
 if __name__ == '__main__':
     app.run(debug=False, threaded=False, host='0.0.0.0', port=80)
-#    app.run(debug=True, threaded=True, host='localhost', port=80)
+#    app.run(debug=True, threaded=False, host='localhost', port=5000)
