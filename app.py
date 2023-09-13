@@ -424,7 +424,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     newCreateList.append("				</div>\n")
                     imageAreaCounter += 1
                 elif talkAreaType == "space":
-                    newCreateList.append("				<div>\n")
+                    newCreateList.append("				<div class=\"centerTable\">\n")
                     newCreateList.append("				    <p><br></p>\n")
                     newCreateList.append("				</div>\n")
                     displayName = displayNameBefore
@@ -759,6 +759,10 @@ def htmlCreater(textOriginalList,titleName,creatorName):
             newCreateList.append("					</div>\n")                                            
             newCreateList.append("				</div>\n")
             imageAreaCounter += 1
+        elif talkAreaType == "space":
+            newCreateList.append("				<div class=\"centerTable\">\n")
+            newCreateList.append("				    <p><br></p>\n")
+            newCreateList.append("				</div>\n")
         elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
             pass
 #       newCreateList.append("[[##cut##]]\n")            
