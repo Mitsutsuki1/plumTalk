@@ -187,4 +187,55 @@
 	.btn_base64:hover{
 		color: #ffffe0;
 	}
+	.toggle-button {
+	    display: flex;
+	    align-items: center;
+	    position: relative;
+	    margin-left:0vw;
+		margin-right:auto;
+	    width: 100px;
+	    height: 50px;
+	    border-radius: 50px;
+	    box-sizing: content-box;
+	    background-color: #6db9f333;
+	    cursor: pointer;
+	}
+
+	.toggle-button:has(:checked) {
+	    background-color: #ff759833;
+	}
+
+	.toggle-button::before {
+	    position: absolute;
+	    left: 5px;
+	    width: 42px;
+	    height: 42px;
+	    border-radius: 50%;
+	    background-color: #6db9f3;
+	    content: '';
+	}
+
+	.toggle-button:has(:checked)::before {
+	    left: 50px;
+	    background-color: #ff7598;
+	}
+
+	.toggle-button::after {
+	    position: absolute;
+	    left: 26px;
+	    transform: translateX(-50%);
+	    color: #fff;
+	    font-weight: 600;
+	    font-size: 1.0vw;
+	    content: 'YES';
+	}
+
+	.toggle-button:has(:checked)::after {
+	    left: 71px;
+	    content: 'NO';
+	}
+
+	.toggle-button input {
+	    display: none;
+	}
 </style>
