@@ -234,7 +234,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                     if talkAreaMargin == "leftAndPicture" or talkAreaMargin == "rightAndPicture" or talkAreaMargin == "rightAndHiddenAndPicture":
                         newCreateList.append("							<div>\n")
                         imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
-                        newCreateList.append("									" + imageAreaCounterStr)
+                        newCreateList.append("								" + imageAreaCounterStr)
                         newCreateList.append("									<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
                         newCreateList.append("									<p><br></p>\n")
                         newCreateList.append("									<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
@@ -416,10 +416,12 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                 elif talkAreaType == "pictureTable":
                     newCreateList.append("				<div class=\"imageArea\">\n")
                     imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
-                    newCreateList.append("									" + imageAreaCounterStr)
-                    newCreateList.append("						<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
-                    newCreateList.append("						<p><br></p>\n")
-                    newCreateList.append("						<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+                    newCreateList.append("					" + imageAreaCounterStr)
+                    newCreateList.append("						<div id=\"img\">\n")
+                    newCreateList.append("							<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
+                    newCreateList.append("							<p><br></p>\n")
+                    newCreateList.append("							<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+                    newCreateList.append("						</div>\n")
                     newCreateList.append("					</div>\n")                                            
                     newCreateList.append("				</div>\n")
                     imageAreaCounter += 1
@@ -590,7 +592,7 @@ def htmlCreater(textOriginalList,titleName,creatorName):
             if talkAreaMargin == "leftAndPicture" or talkAreaMargin == "rightAndPicture" or talkAreaMargin == "rightAndHiddenAndPicture":
                 newCreateList.append("							<div>\n")
                 imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
-                newCreateList.append("									" + imageAreaCounterStr)
+                newCreateList.append("								" + imageAreaCounterStr)
                 newCreateList.append("									<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
                 newCreateList.append("									<p><br></p>\n")
                 newCreateList.append("									<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
@@ -750,10 +752,12 @@ def htmlCreater(textOriginalList,titleName,creatorName):
         elif talkAreaType == "pictureTable":
             newCreateList.append("				<div class=\"imageArea\">\n")
             imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
-            newCreateList.append("									" + imageAreaCounterStr)
-            newCreateList.append("						<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
-            newCreateList.append("						<p><br></p>\n")
-            newCreateList.append("						<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+            newCreateList.append("					" + imageAreaCounterStr)
+            newCreateList.append("						<div id=\"img\">\n")
+            newCreateList.append("							<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
+            newCreateList.append("							<p><br></p>\n")
+            newCreateList.append("							<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+            newCreateList.append("						</div>\n")
             newCreateList.append("					</div>\n")                                            
             newCreateList.append("				</div>\n")
             imageAreaCounter += 1
