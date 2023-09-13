@@ -576,8 +576,6 @@ def htmlCreater(textOriginalList,titleName,creatorName):
                         root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
                         with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
                             src = base64.b64encode(f.read()).decode('utf-8')
-                else:
-                    repeatFlg = 0
 
                 newCreateList.append("						<img src=data:image/" + ext.replace(".","") + ";base64," + src + " />\n")
                 newCreateList.append("					</figure>\n")
