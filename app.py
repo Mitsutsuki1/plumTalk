@@ -15,7 +15,7 @@ import html
 app = Flask(__name__)
 
 
-def htmlCreater(textOriginalList,titleName,creatorName):
+def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
     iconFileLocation = ""
     displayName = ""
     iconFileName = ""
@@ -138,14 +138,15 @@ def htmlCreater(textOriginalList,titleName,creatorName):
         print("ERROR:scriptAndCSSList.datが見つからない。あるいはファイルが破損している可能性があります。プログラムを終了します。")
         time.sleep(1)
         sys.exit()
-
-    try:
-        with open("./images/plum.webp", mode='rb') as f:
-            plumSrc = base64.b64encode(f.read()).decode('utf-8')
-    except:
-        print("ERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
-        time.sleep(1)
-        sys.exit()
+    
+    if plumtalk_rabelCheck == False:
+        try:
+            with open("./images/plum.webp", mode='rb') as f:
+                plumSrc = base64.b64encode(f.read()).decode('utf-8')
+        except:
+            print("ERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
+            time.sleep(1)
+            sys.exit()
     
     startFlg = 0
     tagElementCounter = 0
@@ -176,9 +177,10 @@ def htmlCreater(textOriginalList,titleName,creatorName):
     newCreateList.append("	</head>\n")
     newCreateList.append("	<body>\n")
     newCreateList.append("		<div class=\"plumContainer\">\n")
-    newCreateList.append("			<div class=\"header\">\n")
-    newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=6% />PlumTalk</font>\n")
-    newCreateList.append("			</div>\n")
+    if plumtalk_rabelCheck == False:
+        newCreateList.append("			<div class=\"header\">\n")
+        newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=6% />PlumTalk</font>\n")
+        newCreateList.append("			</div>\n")
     newCreateList.append("			<div class=\"subtitle\">\n")
     newCreateList.append("				" + titleName + "<br>" + creatorName + "\n")
     newCreateList.append("			</div>\n")
@@ -781,9 +783,10 @@ def htmlCreater(textOriginalList,titleName,creatorName):
 
 
     newCreateList.append("			</div>\n")
-    newCreateList.append("			<div class=\"footer\">\n")
-    newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
-    newCreateList.append("			</div>\n")
+    if plumtalk_rabelCheck == False:
+        newCreateList.append("			<div class=\"footer\">\n")
+        newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
+        newCreateList.append("			</div>\n")
     newCreateList.append("		</div>\n")
     newCreateList.append("	</body>\n")
     
@@ -800,12 +803,18 @@ def hello():
 def convertHtml():
     titleName = request.form['titleName']
     createrName = request.form['creatorName']
+    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
+    if plumtalk_rabelCheck == None:
+        plumtalk_rabelCheck = False
+    elif plumtalk_rabelCheck == "on":
+        plumtalk_rabelCheck = True
+
 #    titleName = ""
 #    createrName = ""
     textLineOriginal = request.form['createTalk']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
-    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName)
+    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)    
 
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
@@ -820,10 +829,11 @@ def convertHtml():
 def convertHtml_sumple1():
     titleName = ""
     createrName = ""
+    plumtalk_rabelCheck = False
     textLineOriginal = request.form['sumpleTalk1']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
-    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName)
+    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
@@ -836,10 +846,11 @@ def convertHtml_sumple1():
 def convertHtml_sumple2():
     titleName = ""
     createrName = ""
+    plumtalk_rabelCheck = False
     textLineOriginal = request.form['sumpleTalk2']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
-    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName)
+    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
@@ -852,10 +863,11 @@ def convertHtml_sumple2():
 def convertHtml_sumple3():
     titleName = ""
     createrName = ""
+    plumtalk_rabelCheck = False
     textLineOriginal = request.form['sumpleTalk3']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
-    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName)
+    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
@@ -868,10 +880,11 @@ def convertHtml_sumple3():
 def convertHtml_sumple4():
     titleName = ""
     createrName = ""
+    plumtalk_rabelCheck = False
     textLineOriginal = request.form['sumpleTalk4']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
-    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName)
+    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
@@ -884,10 +897,11 @@ def convertHtml_sumple4():
 def convertHtml_sumple5():
     titleName = ""
     createrName = ""
+    plumtalk_rabelCheck = False
     textLineOriginal = request.form['sumpleTalk5']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
-    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName)
+    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
@@ -900,10 +914,11 @@ def convertHtml_sumple5():
 def convertHtml_sumple6():
     titleName = ""
     createrName = ""
+    plumtalk_rabelCheck = False
     textLineOriginal = request.form['sumpleTalk6']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
-    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName)
+    newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
@@ -913,5 +928,5 @@ def convertHtml_sumple6():
     return render_template('index.html',input_from_python=newHtmlLine)
 
 if __name__ == '__main__':
-    app.run(debug=False, threaded=False, host='0.0.0.0', port=80)
-#    app.run(debug=True, threaded=False, host='localhost', port=5000)
+#    app.run(debug=False, threaded=False, host='0.0.0.0', port=80)
+    app.run(debug=True, threaded=False, host='localhost', port=5000)
