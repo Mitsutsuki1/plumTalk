@@ -241,8 +241,6 @@
 				padding: 1.6vw 1.94vw;
 				margin-right: 18.3vw;
 				border-radius: 1.38vw;
-				width: fit-content;
-				background-color: #5484c4;
 				word-break: break-all
 				float:right;
 				clear: both;
