@@ -256,8 +256,6 @@
 				padding: 1.6vw 1.94vw;
 				margin-right: 18.3vw;
 				border-radius: 1.38vw;
-				display: flex;
-				justify-content: flex-end;
 				background-color: #5484c4;
 				word-wrap: break-all
 			}
