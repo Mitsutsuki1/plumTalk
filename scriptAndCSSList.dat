@@ -244,7 +244,7 @@
 				border-radius: 1.38vw;
 				width: fit-content;
 				background-color: #5484c4;
-				word-break: break-all
+				word-break: break-all;
 				float:right;
 				clear: both;
 			}
