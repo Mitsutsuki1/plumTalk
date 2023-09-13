@@ -94,8 +94,9 @@
 				clear: both;
 			}
 			.plumContainer .lineElements .imageArea #img {
-				max-width: 45vw;
-				min-width: 45vw;
+				max-width: 65vw;
+				margin-left: auto;
+				margin-right: auto;
 				object-fit: fill;
 				padding: 20px;
 				background-color: #FFFFFF;
