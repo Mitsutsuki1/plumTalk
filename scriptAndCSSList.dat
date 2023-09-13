@@ -354,7 +354,7 @@
 			}
 			.plumContainer .lineElements .centerTable {
 				display: block;
-				padding-top: 2.0vw;
+				padding-top: 4.0vw;
 				width: 90.5vw;
 				margin-left: auto;
 				margin-right: auto;
