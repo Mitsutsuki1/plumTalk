@@ -179,7 +179,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
     newCreateList.append("		<div class=\"plumContainer\">\n")
     if plumtalk_rabelCheck == False:
         newCreateList.append("			<div class=\"header\">\n")
-        newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=6% />PlumTalk</font>\n")
+        newCreateList.append("              <img src=\"data:image/webp;base64," + plumSrc + "\" alt=\"プラム\" width=6% />PlumTalk</font>\n")
         newCreateList.append("			</div>\n")
     newCreateList.append("			<div class=\"subtitle\">\n")
     newCreateList.append("				" + titleName + "<br>" + creatorName + "\n")
@@ -222,7 +222,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                                 with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
                                     src = base64.b64encode(f.read()).decode('utf-8')
 
-                        newCreateList.append("						<img src=data:image/" + ext.replace(".","") + ";base64," + src + " />\n")
+                        newCreateList.append("						<img src=\"data:image/" + ext.replace(".","") + ";base64," + src + "\" />\n")
                         newCreateList.append("					</figure>\n")
                         
                         newCreateList.append("					<div class=\"textfield1\">\n")
@@ -581,7 +581,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                         with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
                             src = base64.b64encode(f.read()).decode('utf-8')
 
-                newCreateList.append("						<img src=data:image/" + ext.replace(".","") + ";base64," + src + " />\n")
+                newCreateList.append("						<img src=\"data:image/" + ext.replace(".","") + ";base64," + src + "\" />\n")
                 newCreateList.append("					</figure>\n")
                 newCreateList.append("					<div class=\"textfield1\">\n")
                 newCreateList.append("						<div class=\"name\">\n")
@@ -785,7 +785,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
     newCreateList.append("			</div>\n")
     if plumtalk_rabelCheck == False:
         newCreateList.append("			<div class=\"footer\">\n")
-        newCreateList.append("              <img src=data:image/webp;base64," + plumSrc + " alt=\"プラム\" width=3% />PlumTalk for WEB\n")
+        newCreateList.append("              <img src=\"data:image/webp;base64," + plumSrc + "\" alt=\"プラム\" width=3% />PlumTalk for WEB\n")
         newCreateList.append("			</div>\n")
     newCreateList.append("		</div>\n")
     newCreateList.append("	</body>\n")
