@@ -21,7 +21,7 @@
 			p{
 				margin-top: 0px;
 				margin-bottom: 0px;
-				font-weight: 600;
+				font-weight: normal;
 				font-size:3.5vw;
 			}
 			.fontExclamation{
