@@ -94,29 +94,10 @@
 				clear: both;
 			}
 			.plumContainer .lineElements .imageArea #img {
-				max-width: 65vw;
 				margin-left: auto;
 				margin-right: auto;
 				object-fit: fill;
-				padding: 20px;
-				background-color: #FFFFFF;
-				border-radius: 1.40vw;
-				border: solid;
-				border-color: #aaaabb;
-			}
-				.plumContainer .lineElements .imageAreaLR {
-				width: fit-content;
-				border-radius: 5%;
-				padding-top: 0vw;
-				margin-left: auto;
-				margin-right: auto;
-				clear: both;
-			}
-			.plumContainer .lineElements .imageAreaLR #img {
-				max-width: 45vw;
-				min-width: 45vw;
-				object-fit: fill;
-				padding: 20px;
+				padding: 1.7vw;
 				background-color: #FFFFFF;
 				border-radius: 1.40vw;
 				border: solid;
@@ -379,12 +360,10 @@
 			function insertImage(num) {
 				const uploadImage = document.querySelector('#uploadImage');
 				var file = uploadImage.files[0];
-				let text = document.getElementById('imageArea' + String(num)).innerHTML;
-
 				const reader = new FileReader();
+
 				reader.onload = (event) => {
-					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " width=\"100%\"/>";
-					
+					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " style=\" width:50vw; \" />";
 					document.getElementById("imageArea" + String(num)).innerHTML = base64;
 				};
 				reader.readAsDataURL(file);

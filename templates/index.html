@@ -25,11 +25,10 @@
 			function insertImage(num) {
 				const uploadImage = document.querySelector('#uploadImage');
 				var file = uploadImage.files[0];
-				let text = document.getElementById('imageArea' + String(num)).innerHTML;
 				const reader = new FileReader();
 
 				reader.onload = (event) => {
-					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " width=\"100%\"/>";
+					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " style=\" width:50vw; \" />";
 					document.getElementById("imageArea" + String(num)).innerHTML = base64;
 				};
 
