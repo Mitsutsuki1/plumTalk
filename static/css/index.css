@@ -12,7 +12,7 @@
 		font-size:3.5vw;
 		font-weight:600;
 	}
-	@media screen and (max-width: 1000px) {
+	@media screen and (max-aspect-ratio: 1/1) {
 	    p{
 	         font-size:8vw;
 			 font-weight:normal;
@@ -33,7 +33,7 @@
 		box-shadow: 1px 1px 1px #999;
 		font-family:"HG丸ｺﾞｼｯｸM-PRO","ヒラギノ丸ゴ ProN","Noto Sans jp","Century Gothic","メイリオ","Meiryo";
 	}
-	@media screen and (max-width: 1000px) {
+	@media screen and (max-aspect-ratio: 1/1) {
 	    textarea{
 	        font-size:5vw;
 	        font-weight:normal;
@@ -55,7 +55,7 @@
 		box-shadow: 1px 1px 1px #999;
 		font-family:"HG丸ｺﾞｼｯｸM-PRO","ヒラギノ丸ゴ ProN","Noto Sans jp","Century Gothic","メイリオ","Meiryo";
 	}
-	@media screen and (max-width: 1000px) {
+	@media screen and (max-aspect-ratio: 1/1) {
 	    textarea.sumple{
 	        font-size:5vw;
 	        font-weight:normal;
