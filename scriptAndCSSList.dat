@@ -59,7 +59,7 @@
 			}
 			.plumContainer .footer {
 				margin-top: 5vw;
-				margin-bottom: -1.0vw;
+				margin-bottom: 0vw;
 				background: #eb96a6;
 				padding: 0%;
 				text-align: left;
