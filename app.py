@@ -31,6 +31,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
     displayNameCounter = 0
     iconFileCounter = 0
     imageAreaCounter = 0
+    plumContainerCounter = 1
     
     newCreateList = []
     newCreateTextLine = []
@@ -175,8 +176,9 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             newCreateList.append(text)
     
     newCreateList.append("	</head>\n")
+    newCreateList.append("	<p style=\"background-color:4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード</b></font></a></p>\n")
     newCreateList.append("	<body>\n")
-    newCreateList.append("		<div class=\"plumContainer\">\n")
+    newCreateList.append("		<div class=\"plumContainer\" id=\"plumContainer" + str(plumContainerCounter) +"\" >\n")
     if plumtalk_rabelCheck == False:
         newCreateList.append("			<div class=\"header\">\n")
         newCreateList.append("              <img src=\"data:image/webp;base64," + plumSrc + "\" alt=\"プラム\" width=6% />PlumTalk</font>\n")
@@ -435,8 +437,14 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     talkAreaType = talkAreaTypeBefore
                     talkAreaMargin = talkAreaMarginBefore
                 elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
-                    pass
-#                   newCreateList.append("[[##cut##]]\n")
+                    newCreateList.append("			</div>\n")
+                    newCreateList.append("		</div>\n")
+                    newCreateList.append("	</body>\n")
+                    plumContainerCounter += 1
+                    newCreateList.append("	<p style=\"background-color:4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード(" + str(plumContainerCounter) + ")</b></font></a></p>\n")
+                    newCreateList.append("	<body>\n")
+                    newCreateList.append("		<div class=\"plumContainer\" id=\"plumContainer" + str(plumContainerCounter) +"\" >\n")
+                    newCreateList.append("			<div class=\"lineElements\">\n")
                     
                 
                 repeatFlg = 0
@@ -785,7 +793,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
     newCreateList.append("			</div>\n")
     if plumtalk_rabelCheck == False:
         newCreateList.append("			<div class=\"footer\">\n")
-        newCreateList.append("              <img src=\"data:image/webp;base64," + plumSrc + "\" alt=\"プラム\" width=3% />PlumTalk for WEB\n")
+        newCreateList.append("				<img src=\"data:image/webp;base64," + plumSrc + "\" alt=\"プラム\" width=3% />PlumTalk for WEB\n")
         newCreateList.append("			</div>\n")
     newCreateList.append("		</div>\n")
     newCreateList.append("	</body>\n")

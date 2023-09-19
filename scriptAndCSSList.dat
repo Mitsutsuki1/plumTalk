@@ -23,6 +23,7 @@
 				margin-bottom: 0px;
 				font-weight: normal;
 				font-size:3.5vw;
+				font-family:"HG丸ｺﾞｼｯｸM-PRO","ヒラギノ丸ゴ ProN","Noto Sans jp","Century Gothic","メイリオ","Meiryo";
 			}
 			.fontExclamation{
 				background-color: #FFFFFF;
@@ -354,6 +355,13 @@
 				text-align: center;
 				padding: 1.60vw;
 				word-break: break-all
+			}
+			.btn_main{
+				color: #f0e68c;
+			}
+			.btn_main:hover{
+				color: #ffffe0;
+				border-bottom:2px solid #ffffe0;
 			}
 		</style>
 		<script>
