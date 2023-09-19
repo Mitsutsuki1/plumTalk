@@ -758,6 +758,7 @@ PlumTalk Creator WEB版実装(ベータ)
 					const name = "PlumTalk" + num + ".png";
 					const a = document.createElement('a');
 					a.href = canvas.toDataURL();
+					a.style = "display: none;";
 					a.download = name;
 					a.click();
 				});
