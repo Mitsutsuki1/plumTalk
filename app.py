@@ -797,6 +797,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
         newCreateList.append("			</div>\n")
     newCreateList.append("		</div>\n")
     newCreateList.append("	</body>\n")
+    newCreateList.append("</html>")
     
     return newCreateList
 
