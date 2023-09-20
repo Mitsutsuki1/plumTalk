@@ -116,7 +116,7 @@
 				z-index: -1;
 				position: absolute;
 				width: 13.8vw;
-				left: -2.3vw;
+				left: -2.2rem;
 			}
 			.plumContainer .lineElements .leftTable figure img {
 				border-radius: 50%;
@@ -174,7 +174,7 @@
 				z-index: -1;
 				position: absolute;
 				width: 13.8vw;
-				right: -4.0vw;
+				right: -3.0rem;
 			}
 			.plumContainer .lineElements .rightTable figure img {
 				border-radius: 50%;
