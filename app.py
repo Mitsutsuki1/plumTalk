@@ -786,7 +786,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             newCreateList.append("				<div class=\"centerTable\">\n")
             newCreateList.append("				    <p><br></p>\n")
             newCreateList.append("				</div>\n")
-        elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
+        elif talkAreaType == "cut":
             pass         
     else:
         newCreateList.append("				<div class=\"centerTable\">\n")
