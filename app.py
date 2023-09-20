@@ -448,7 +448,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     plumContainerCounter += 1
                     newCreateList.append("		<div name=\"pngDounload_Area\">\n")
                     newCreateList.append("			<p><br></p>\n")
-                    newCreateList.append("			<p style=\"background-color:4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード</b></font></a></p>\n")
+                    newCreateList.append("			<p style=\"background-color:4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード(" + str(plumContainerCounter) + ")</b></font></a></p>\n")
                     newCreateList.append("		</div>\n")
                     newCreateList.append("		<div class=\"plumContainer\" id=\"plumContainer" + str(plumContainerCounter) +"\" >\n")
                     newCreateList.append("			<div class=\"lineElements\">\n")
