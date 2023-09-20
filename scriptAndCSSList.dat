@@ -21,7 +21,7 @@
 			p{
 				margin-top: 0px;
 				margin-bottom: 0px;
-				font-weight: normal;
+				font-weight: bold;
 				font-size:3.5vw;
 				font-family:"HG丸ｺﾞｼｯｸM-PRO","ヒラギノ丸ゴ ProN","Noto Sans jp","Century Gothic","メイリオ","Meiryo";
 			}
@@ -79,8 +79,7 @@
 				color: #4d5b70;
 			}
 			.plumContainer .lineElements {
-				padding: 2vw 0 2vw 0;
-				width: 99%;
+				width: 100%;
 				margin-left: auto;
 				margin-right: auto;
 				overflow: hidden;
@@ -109,141 +108,130 @@
 				display: block;
 				z-index: 0;
 				position: relative;
-				left: 0%;
 				color: #ffffff;
 				clear: both;
 				padding-top: 2.0vw;
 			}
 			.plumContainer .lineElements .leftTable figure {
-				width: 13.8vw;
+				z-index: -1;
 				position: absolute;
-				top: 3.5vw;
-				left: 0%;
-				padding: 0;
-				margin: 0;
+				width: 13.8vw;
+				left: -2.3vw;
 			}
 			.plumContainer .lineElements .leftTable figure img {
 				border-radius: 50%;
 				width: 12.1vw;
 				height: 12.1vw;
 			}
+			.plumContainer .lineElements .leftTable solid {
+				z-index: -1;
+				position: absolute;
+				width: 13.8vw;
+				top: 11.5vw;
+				left: 0.5vw;
+				border-right: 1.7vw solid #4d5b70;
+				border-top: 1.1vw solid transparent;
+				border-bottom: 1.1vw solid transparent;
+			}
 			.plumContainer .lineElements .leftTable .textfield1 {
-				padding-left: 15vw;
-				padding-right: 7.14vw;
+				margin-top: 2.5vw;
+				margin-left: 15.5vw;
 				width: 69.3vw;
 				word-break: break-all
 			}
+			
 			.plumContainer .lineElements .leftTable .textfield1 .name {
 				font-size: 3.74vw;
 				color: #4d5b70;
 			}
 			.plumContainer .lineElements .leftTable .textfield1 .text {
-				position: relative;
 				width: fit-content;
 				padding: 1.6vw 1.94vw;
 				border-radius: 1.94vw;
 				background-color: #4d5b70;
 			}
-			.plumContainer .lineElements .leftTable .textfield1 .text ::after {
-				z-index: -1;
-				content: "";
-				position: absolute;
-				display: block;
-				width: 0;
-				height: 0;
-				left: -1.38vw;
-				top: 2.0vw;
-				border-right: 1.7vw solid #4d5b70;
-				border-top: 1.1vw solid transparent;
-				border-bottom: 1.1vw solid transparent;
-			}
-				.plumContainer .lineElements .leftTable .textfield2 {
-				padding-left: 15vw;
-				padding-right: 7.14vw;
+			.plumContainer .lineElements .leftTable .textfield2 {
+				margin-left: 15.5vw;
 				width: 69.3vw;
 				word-break: break-all
 			}
 			.plumContainer .lineElements .leftTable .textfield2 .text {
-				position: relative;
 				width: fit-content;
 				padding: 1.6vw 1.94vw;
 				border-radius: 1.94vw;
 				background-color: #4d5b70;
 			}
 			.plumContainer .lineElements .rightTable {
-				display: block;
 				z-index: 0;
 				position: relative;
-				padding-top: 2.0vw;
+				display: block;
 				color: #ffffff;
-				width: 100vw;
 				float: right;
 				clear: both;
+				padding-top: 2.0vw;
 			}
 			.plumContainer .lineElements .rightTable figure{
-				width: 13.8vw;
+				z-index: -1;
 				position: absolute;
-				top: 3.5vw;
-				left: 87.9%;
-				padding: 0;
-				margin: 0;
+				width: 13.8vw;
+				right: -4.0vw;
 			}
 			.plumContainer .lineElements .rightTable figure img {
 				border-radius: 50%;
 				width: 12.1vw;
 				height: 12.1vw;
 			}
-			.plumContainer .lineElements .rightTable .textfield1 {
-				margin-left: 15.6vw;
-				margin-right: -3.2vw;
-				width:fit-content;		
-				float:right;
-				clear: both;
-			}
-			.plumContainer .lineElements .rightTable .textfield1 ::after {
+			.plumContainer .lineElements .rightTable solid {
 				z-index: -1;
-				content: "";
 				position: absolute;
-				display: block;
-				width: 0;
-				height: 0;
-				right: 13.8vw;
-				top: 9.4vw;
-				border-left: 1.6vw solid #5484c4;
+				width: 13.8vw;
+				top: 11.4vw;
+				right: 0.5vw;
+				border-left: 1.7vw solid #5484c4;
 				border-top: 1.1vw solid transparent;
 				border-bottom: 1.1vw solid transparent;
 			}
+			.plumContainer .lineElements .rightTable hidden_solid {
+				z-index: -1;
+				position: absolute;
+				width: 13.8vw;
+				top: 3.5vw;
+				right: -10.85vw;
+				border-left: 1.7vw solid #5484c4;
+				border-top: 1.1vw solid transparent;
+				border-bottom: 1.1vw solid transparent;
+			}
+			.plumContainer .lineElements .rightTable .textfield1 {
+				margin-top: 2.5vw;
+				margin-right: 15.5vw;
+				width: 69.3vw;
+				word-break: break-all
+			}
 			.plumContainer .lineElements .rightTable .textfield1 .name {
-				margin-right: 16.2vw;
-				padding: 0.15vw 1.94vw;
-				border-radius: 1.38vw;
 				text-align: right;
 				font-size: 3.74vw;
 				color: #4d5b70;
 			}
 			.plumContainer .lineElements .rightTable .textfield1 .text {
-				padding: 1.6vw 1.94vw;
-				margin-right: 18.3vw;
-				border-radius: 1.38vw;
+				float:right;
+				clear: both;
 				width: fit-content;
-				background-color: #5484c4;
-				word-break: break-all;
-				float:right;
-				clear: both;
-			}
-				.plumContainer .lineElements .rightTable .textfield2 {
-				margin-left: 15.6vw;
-				margin-right: -3.2vw;
-				width:fit-content;		
-				float:right;
-				clear: both;
-			}
-				.plumContainer .lineElements .rightTable .textfield2 .text {
 				padding: 1.6vw 1.94vw;
-				margin-right: 18.3vw;
-				border-radius: 1.38vw;
+				border-radius: 1.94vw;
 				background-color: #5484c4;
-				word-wrap: break-all
+			}
+			.plumContainer .lineElements .rightTable .textfield2 {
+				margin-right: 15.5vw;
+				width: 69.3vw;
+				word-break: break-all
+			}
+			.plumContainer .lineElements .rightTable .textfield2 .text {
+				float:right;
+				clear: both;
+				width: fit-content;
+				padding: 1.6vw 1.94vw;
+				border-radius: 1.94vw;
+				background-color: #5484c4;
 			}
 			.plumContainer .lineElements .rightTable .textfield1_hidden {
 				margin-left: 15.6vw;
@@ -251,19 +239,6 @@
 				width:fit-content;
 				float:right;
 				clear: both;
-			}
-			.plumContainer .lineElements .rightTable .textfield1_hidden ::after {
-				z-index: -1;
-				content: "";
-				position: absolute;
-				display: block;
-				width: 0;
-				height: 0;
-				right: 2.75vw;
-				top: 3.8vw;
-				border-left: 1.6vw solid #5484c4;
-				border-top: 1.1vw solid transparent;
-				border-bottom: 1.1vw solid transparent;
 			}
 			.plumContainer .lineElements .rightTable .textfield1_hidden .text {
 				padding: 1.6vw 1.94vw;

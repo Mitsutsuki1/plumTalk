@@ -176,8 +176,10 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             newCreateList.append(text)
     
     newCreateList.append("	</head>\n")
-    newCreateList.append("	<p style=\"background-color:4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード</b></font></a></p>\n")
     newCreateList.append("	<body>\n")
+    newCreateList.append("		<div name=\"pngDounload_Area\">\n")
+    newCreateList.append("			<p style=\"background-color:4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード</b></font></a></p>\n")
+    newCreateList.append("		</div>\n")
     newCreateList.append("		<div class=\"plumContainer\" id=\"plumContainer" + str(plumContainerCounter) +"\" >\n")
     if plumtalk_rabelCheck == False:
         newCreateList.append("			<div class=\"header\">\n")
@@ -200,6 +202,8 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                         newCreateList.append("				<div class=\"rightTable\">\n")
                         
                     if talkAreaMargin == "rightAndHidden" or talkAreaMargin == "rightAndHiddenAndPicture":
+                        newCreateList.append("					<hidden_solid>\n")
+                        newCreateList.append("					</hidden_solid>\n")
                         newCreateList.append("					<div class=\"textfield1_hidden\">\n")
                     elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == talkAreaMargin:
                         newCreateList.append("					<div class=\"textfield2\">\n")
@@ -226,6 +230,8 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
 
                         newCreateList.append("						<img src=\"data:image/" + ext.replace(".","") + ";base64," + src + "\" />\n")
                         newCreateList.append("					</figure>\n")
+                        newCreateList.append("					<solid>\n")
+                        newCreateList.append("					</solid>\n")
                         
                         newCreateList.append("					<div class=\"textfield1\">\n")
                         newCreateList.append("						<div class=\"name\">\n")
@@ -439,10 +445,11 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                 elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
                     newCreateList.append("			</div>\n")
                     newCreateList.append("		</div>\n")
-                    newCreateList.append("	</body>\n")
                     plumContainerCounter += 1
-                    newCreateList.append("	<p style=\"background-color:4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード(" + str(plumContainerCounter) + ")</b></font></a></p>\n")
-                    newCreateList.append("	<body>\n")
+                    newCreateList.append("		<div name=\"pngDounload_Area\">\n")
+                    newCreateList.append("			<p><br></p>\n")
+                    newCreateList.append("			<p style=\"background-color:4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード</b></font></a></p>\n")
+                    newCreateList.append("		</div>\n")
                     newCreateList.append("		<div class=\"plumContainer\" id=\"plumContainer" + str(plumContainerCounter) +"\" >\n")
                     newCreateList.append("			<div class=\"lineElements\">\n")
                     
@@ -565,6 +572,8 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                 newCreateList.append("				<div class=\"rightTable\">\n")
                 
             if talkAreaMargin == "rightAndHidden" or talkAreaMargin == "rightAndHiddenAndPicture":
+                newCreateList.append("					<hidden_solid>\n")
+                newCreateList.append("					</hidden_solid>\n")
                 newCreateList.append("					<div class=\"textfield1_hidden\">\n")
             elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == talkAreaMargin:
                 newCreateList.append("					<div class=\"textfield2\">\n")
@@ -591,6 +600,8 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
 
                 newCreateList.append("						<img src=\"data:image/" + ext.replace(".","") + ";base64," + src + "\" />\n")
                 newCreateList.append("					</figure>\n")
+                newCreateList.append("					<solid>\n")
+                newCreateList.append("					</solid>\n")
                 newCreateList.append("					<div class=\"textfield1\">\n")
                 newCreateList.append("						<div class=\"name\">\n")
                 newCreateList.append("							<p>" + displayName + "</p>\n")
@@ -776,8 +787,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             newCreateList.append("				    <p><br></p>\n")
             newCreateList.append("				</div>\n")
         elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
-            pass
-#       newCreateList.append("[[##cut##]]\n")            
+            pass         
     else:
         newCreateList.append("				<div class=\"centerTable\">\n")
         newCreateList.append("					<div class=\"textfield\">\n")
