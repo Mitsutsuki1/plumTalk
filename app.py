@@ -818,15 +818,21 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
     newCreateTextLine = []
 
 
-    newCreateList.append("			</div>\n")
     if plumtalk_rabelCheck == False:
+        newCreateList.append("			</div>\n")
         newCreateList.append("			<div class=\"footer\">\n")
         newCreateList.append("				<img src=\"data:image/webp;base64," + plumSrc + "\" alt=\"プラム\" width=3% />PlumTalk for WEB\n")
         newCreateList.append("			</div>\n")
+    else:
+        newCreateList.append("				<div class=\"centerTable\">\n")
+        newCreateList.append("				    <p><br></p>\n")
+        newCreateList.append("				</div>\n")
+        newCreateList.append("			</div>\n")
+    
     newCreateList.append("		</div>\n")
     newCreateList.append("	</body>\n")
     newCreateList.append("</html>")
-    
+
     return newCreateList
 
 
