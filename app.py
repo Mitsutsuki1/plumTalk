@@ -145,7 +145,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             with open("./images/plum.webp", mode='rb') as f:
                 plumSrc = base64.b64encode(f.read()).decode('utf-8')
         except:
-            print("ERROR:画像のbase64化に失敗しました。ヘッダー用の画像が破損している可能性があります。プログラムを終了します。")
+            print("ERROR:ヘッダー用画像のbase64化に失敗しました。ファイルが破損している可能性があります。プログラムを終了します。")
             time.sleep(1)
             sys.exit()
     
@@ -162,8 +162,8 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
     if not creatorName == "":
             creatorName = "作者:" + creatorName
             
-
-    newCreateList.append("\n	<head>\n")
+    newCreateList.append("<html lang=\"ja\">\n")
+    newCreateList.append("	<head>\n")
     newCreateList.append("		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n")
     newCreateList.append("		<meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n")
     newCreateList.append("		<title>PlumTalk</title>\n")
@@ -218,7 +218,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                         newCreateList.append("					<div class=\"textfield2\">\n")
                     else:
                         newCreateList.append("					<figure>\n")
-                        
+
                         if iconInsert == False:
                             if repeatFlg == 0:
                                 try:            
@@ -235,7 +235,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                         else:
                             imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
                             newCreateList.append("								" + imageAreaCounterStr)
-                            newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像<br>　選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertIcon( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
+                            newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像<br>　選択<input type=\"file\" accept=\"image/*\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertIcon( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
                             newCreateList.append("								</div>\n")
                             imageAreaCounter += 1
                             
@@ -243,7 +243,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                         newCreateList.append("					</figure>\n")
                         newCreateList.append("					<solid>\n")
                         newCreateList.append("					</solid>\n")
-                        
+
                         newCreateList.append("					<div class=\"textfield1\">\n")
                         newCreateList.append("						<div class=\"name\">\n")
                         newCreateList.append("							<p>" + displayName + "</p>\n")
@@ -256,7 +256,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                         newCreateList.append("							<div>\n")
                         imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
                         newCreateList.append("								" + imageAreaCounterStr)
-                        newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
+                        newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" accept=\"image/*\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
                         newCreateList.append("								</div>\n")                        
                         newCreateList.append("							</div>\n")
                         imageAreaCounter += 1
@@ -437,7 +437,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
                     newCreateList.append("					" + imageAreaCounterStr)
                     newCreateList.append("						<div id=\"img\">\n")
-                    newCreateList.append("							<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
+                    newCreateList.append("							<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" accept=\"image/*\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
                     newCreateList.append("						</div>\n")
                     newCreateList.append("					</div>\n")                                            
                     newCreateList.append("				</div>\n")
@@ -552,7 +552,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             if displayName == "":
                 displayName = re.sub("@@@左左左*","",textOriginalLine)
                 displayName = re.sub("@@@右右右*","",displayName)
-                displayName = displayName.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@返信","").replace("@@@追加","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@リピート","").replace("@@@カット","").replace("@@@スペース","").replace("@@@アイコン表示","").replace("@@@アイコンチェンジ","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
+                displayName = displayName.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@返信","").replace("@@@追加","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@リピート","").replace("@@@カット","").replace("@@@スペース","").replace("@@@アイコン表示","").replace("@@@アイコン変更","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
 
             if displayName == "":
                 displayName = "？"
@@ -590,13 +590,13 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                 newCreateList.append("					<div class=\"textfield1_hidden\">\n")
             elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == talkAreaMargin:
                 newCreateList.append("					<div class=\"textfield2\">\n")
-            elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "right" and talkAreaMargin == "rightAndPicture":
+            elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "right" and talkAreaMargin == "rightAndPicture" and not talkAreaTypeBefore == "cut":
                 newCreateList.append("					<div class=\"textfield2\">\n")
-            elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "rightAndPicture" and talkAreaMargin == "right":
+            elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "rightAndPicture" and talkAreaMargin == "right" and not talkAreaTypeBefore == "cut":
                 newCreateList.append("					<div class=\"textfield2\">\n")
-            elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "left" and talkAreaMargin == "leftAndPicture":
+            elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "left" and talkAreaMargin == "leftAndPicture" and not talkAreaTypeBefore == "cut":
                 newCreateList.append("					<div class=\"textfield2\">\n")
-            elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "leftAndPicture" and talkAreaMargin == "left":
+            elif displayNameBefore == displayName and talkAreaTypeBefore == talkAreaType and talkAreaMarginBefore == "leftAndPicture" and talkAreaMargin == "left" and not talkAreaTypeBefore == "cut":
                 newCreateList.append("					<div class=\"textfield2\">\n")
             else:
                 newCreateList.append("					<figure>\n")
@@ -616,7 +616,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                 else:
                     imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
                     newCreateList.append("								" + imageAreaCounterStr)
-                    newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像<br>　選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertIcon( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
+                    newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像<br>　選択<input type=\"file\" accept=\"image/*\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertIcon( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
                     newCreateList.append("								</div>\n")
                     imageAreaCounter += 1
 
@@ -630,12 +630,12 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
 
 
             newCreateList.append("						<div class=\"text\">\n")
-            
+
             if talkAreaMargin == "leftAndPicture" or talkAreaMargin == "rightAndPicture" or talkAreaMargin == "rightAndHiddenAndPicture":
                 newCreateList.append("							<div>\n")
                 imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
                 newCreateList.append("								" + imageAreaCounterStr)
-                newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
+                newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" accept=\"image/*\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
                 newCreateList.append("								</div>\n")                        
                 newCreateList.append("							</div>\n")
                 imageAreaCounter += 1
@@ -649,11 +649,11 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                 newCreateList[-1] = newCreateList[-1].replace("							<p><br></p>\n","")
                 if re.search("<div class=\"text\">\n",newCreateList[-2]) and newCreateList[-1] == "":
                     newCreateList[-1] = "							<p><br></p>\n"
+
             newCreateList.append("						</div>\n")
             newCreateList.append("					</div>\n")
             newCreateList.append("				</div>\n")
-            
-            
+
         elif talkAreaType == "replyContinue":
             if replyContinueFlg == 0:
                 if re.search("@@@返信@@@",textOriginalLine) or re.search("@@@リピート@@@",textOriginalLine):
@@ -662,7 +662,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
                     newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
                     newCreateList.append("						<div class=\"text\">\n")
-   
+
                     for text in newCreateTextLine:
                         if not text == "":
                             newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
@@ -685,7 +685,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
                     newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
                     newCreateList.append("						<div class=\"text\">\n")
-   
+
                     for text in newCreateTextLine:
                         if not text == "":
                             newCreateList.append("							<p>" + text.replace("\n","") + "</p>\n")
@@ -761,6 +761,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             newCreateList.append("						</div>\n")
             newCreateList.append("					</div>\n")
             newCreateList.append("				</div>\n")
+
         elif talkAreaType == "label":
             newCreateList.append("				<div class=\"centerTable\">\n")
             newCreateList.append("					<div class=\"textfield\">\n")
@@ -794,7 +795,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
             newCreateList.append("					" + imageAreaCounterStr)
             newCreateList.append("						<div id=\"img\">\n")
-            newCreateList.append("							<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
+            newCreateList.append("							<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" accept=\"image/*\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
             newCreateList.append("						</div>\n")
             newCreateList.append("					</div>\n")                                            
             newCreateList.append("				</div>\n")
@@ -804,7 +805,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             newCreateList.append("				    <p><br></p>\n")
             newCreateList.append("				</div>\n")
         elif talkAreaType == "cut":
-            pass         
+            pass
     else:
         newCreateList.append("				<div class=\"centerTable\">\n")
         newCreateList.append("					<div class=\"textfield\">\n")
