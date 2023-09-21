@@ -4,7 +4,7 @@ Created by ミツツキ
 
 """
 #app.py
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import sys
 import re
 import os
@@ -157,6 +157,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
     displayNameBefore = ""
     talkAreaTypeBefore = ""
     talkAreaMarginBefore = ""
+    iconInsert = False
             
     if not creatorName == "":
             creatorName = "作者:" + creatorName
@@ -217,18 +218,28 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                         newCreateList.append("					<div class=\"textfield2\">\n")
                     else:
                         newCreateList.append("					<figure>\n")
-                        if repeatFlg == 0:
-                            try:            
-                                root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
-                                with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
-                                    src = base64.b64encode(f.read()).decode('utf-8')
-                            except:
-                                iconFileName = npcObjectIconFileName
-                                root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
-                                with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
-                                    src = base64.b64encode(f.read()).decode('utf-8')
-
-                        newCreateList.append("						<img src=\"data:image/" + ext.replace(".","") + ";base64," + src + "\" />\n")
+                        
+                        if iconInsert == False:
+                            if repeatFlg == 0:
+                                try:            
+                                    root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
+                                    with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
+                                        src = base64.b64encode(f.read()).decode('utf-8')
+                                except:
+                                    iconFileName = npcObjectIconFileName
+                                    root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
+                                    with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
+                                        src = base64.b64encode(f.read()).decode('utf-8')
+    
+                            newCreateList.append("						<img src=\"data:image/" + ext.replace(".","") + ";base64," + src + "\" />\n")
+                        else:
+                            imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
+                            newCreateList.append("								" + imageAreaCounterStr)
+                            newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像<br>　選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertIcon( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
+                            newCreateList.append("								</div>\n")
+                            imageAreaCounter += 1
+                            
+                            
                         newCreateList.append("					</figure>\n")
                         newCreateList.append("					<solid>\n")
                         newCreateList.append("					</solid>\n")
@@ -245,9 +256,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                         newCreateList.append("							<div>\n")
                         imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
                         newCreateList.append("								" + imageAreaCounterStr)
-                        newCreateList.append("									<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
-                        newCreateList.append("									<p><br></p>\n")
-                        newCreateList.append("									<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+                        newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
                         newCreateList.append("								</div>\n")                        
                         newCreateList.append("							</div>\n")
                         imageAreaCounter += 1
@@ -428,9 +437,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
                     newCreateList.append("					" + imageAreaCounterStr)
                     newCreateList.append("						<div id=\"img\">\n")
-                    newCreateList.append("							<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
-                    newCreateList.append("							<p><br></p>\n")
-                    newCreateList.append("							<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+                    newCreateList.append("							<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
                     newCreateList.append("						</div>\n")
                     newCreateList.append("					</div>\n")                                            
                     newCreateList.append("				</div>\n")
@@ -446,9 +453,9 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     newCreateList.append("			</div>\n")
                     newCreateList.append("		</div>\n")
                     plumContainerCounter += 1
-                    newCreateList.append("		<div name=\"pngDounload_Area\">\n")
-                    newCreateList.append("			<p><br></p>\n")
-                    newCreateList.append("			<p style=\"background-color:4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード(" + str(plumContainerCounter) + ")</b></font></a></p>\n")
+                    newCreateList.append("		<div name=\"pngDownload_Area\">\n")
+                    newCreateList.append("			<p style=\"background-color:#FFFFFF;\"><br></p>\n")
+                    newCreateList.append("			<p style=\"background-color:#4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード(" + str(plumContainerCounter) + ")</b></font></a></p>\n")
                     newCreateList.append("		</div>\n")
                     newCreateList.append("		<div class=\"plumContainer\" id=\"plumContainer" + str(plumContainerCounter) +"\" >\n")
                     newCreateList.append("			<div class=\"lineElements\">\n")
@@ -495,6 +502,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             
             talkAreaType = "normal"
             talkAreaMargin = "left"
+            iconInsert = False
             
             if re.search("@@@カット@@@",textOriginalLine):
                 talkAreaType = "cut"
@@ -531,15 +539,20 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                 talkAreaType = talkAreaTypeBefore
                 talkAreaMargin = talkAreaMarginBefore
                 repeatFlg = 1
-            if re.search("@@@アイコン@@@",textOriginalLine):
+            if re.search("@@@アイコン表示@@@",textOriginalLine):
                 displayNameBefore = ""
                 talkAreaTypeBefore = ""
                 talkAreaMarginBefore = ""
+            if re.search("@@@アイコン変更@@@",textOriginalLine):
+                displayNameBefore = ""
+                talkAreaTypeBefore = ""
+                talkAreaMarginBefore = ""
+                iconInsert = True
             
             if displayName == "":
                 displayName = re.sub("@@@左左左*","",textOriginalLine)
                 displayName = re.sub("@@@右右右*","",displayName)
-                displayName = displayName.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@返信","").replace("@@@追加","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@リピート","").replace("@@@カット","").replace("@@@スペース","").replace("@@@アイコン","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
+                displayName = displayName.replace("@@@画像","").replace("@@@左","").replace("@@@右","").replace("@@@返信","").replace("@@@追加","").replace("@@@ラベル","").replace("@@@絆ストーリー","").replace("@@@リピート","").replace("@@@カット","").replace("@@@スペース","").replace("@@@アイコン表示","").replace("@@@アイコンチェンジ","").replace("@@@","").replace("　","").replace(" ","").replace("\n","")
 
             if displayName == "":
                 displayName = "？"
@@ -587,18 +600,26 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                 newCreateList.append("					<div class=\"textfield2\">\n")
             else:
                 newCreateList.append("					<figure>\n")
-                if repeatFlg == 0:
-                    try:            
-                        root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
-                        with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
-                            src = base64.b64encode(f.read()).decode('utf-8')
-                    except:
-                        iconFileName = npcObjectIconFileName
-                        root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
-                        with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
-                            src = base64.b64encode(f.read()).decode('utf-8')
+                if iconInsert == False:
+                    if repeatFlg == 0:
+                        try:            
+                            root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
+                            with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
+                                src = base64.b64encode(f.read()).decode('utf-8')
+                        except:
+                            iconFileName = npcObjectIconFileName
+                            root, ext = os.path.splitext("./" + iconFileLocation + iconFileName)
+                            with open("./" + iconFileLocation + iconFileName, mode='rb') as f:
+                                src = base64.b64encode(f.read()).decode('utf-8')
 
-                newCreateList.append("						<img src=\"data:image/" + ext.replace(".","") + ";base64," + src + "\" />\n")
+                    newCreateList.append("						<img src=\"data:image/" + ext.replace(".","") + ";base64," + src + "\" />\n")
+                else:
+                    imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
+                    newCreateList.append("								" + imageAreaCounterStr)
+                    newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像<br>　選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertIcon( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
+                    newCreateList.append("								</div>\n")
+                    imageAreaCounter += 1
+
                 newCreateList.append("					</figure>\n")
                 newCreateList.append("					<solid>\n")
                 newCreateList.append("					</solid>\n")
@@ -614,9 +635,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                 newCreateList.append("							<div>\n")
                 imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
                 newCreateList.append("								" + imageAreaCounterStr)
-                newCreateList.append("									<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
-                newCreateList.append("									<p><br></p>\n")
-                newCreateList.append("									<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+                newCreateList.append("									<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
                 newCreateList.append("								</div>\n")                        
                 newCreateList.append("							</div>\n")
                 imageAreaCounter += 1
@@ -775,9 +794,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             imageAreaCounterStr = "<div id=" + "\"imageArea" + str(imageAreaCounter) + "\" >\n"
             newCreateList.append("					" + imageAreaCounterStr)
             newCreateList.append("						<div id=\"img\">\n")
-            newCreateList.append("							<p><input type=\"file\" class=\"form-control me-2\" id=\"uploadImage\" /></p>\n")
-            newCreateList.append("							<p><br></p>\n")
-            newCreateList.append("							<p><button type=\"button\" class=\"btn btn-primary form-control w-25\" onclick=\"insertImage(" + str(imageAreaCounter) + ")\" >画像を挿入</button></p>\n")
+            newCreateList.append("							<p><label for=\"file_upload(" + str(imageAreaCounter) + ")\">▼画像選択<input type=\"file\" id=\"file_upload(" + str(imageAreaCounter) + ")\"  onchange=\"insertImage( this ," + str(imageAreaCounter) + ");\"/></label></p>\n")
             newCreateList.append("						</div>\n")
             newCreateList.append("					</div>\n")                                            
             newCreateList.append("				</div>\n")
@@ -816,7 +833,8 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
 @app.route("/")
 def hello():
    input_from_python = []
-   return render_template('index.html',input_from_python=input_from_python)
+   textLineOriginal = []
+   return render_template('index.html',input_from_python=input_from_python,textLineOriginal=textLineOriginal)
 
 @app.route('/convertHtml', methods=['POST'])
 def convertHtml():
@@ -828,22 +846,19 @@ def convertHtml():
     elif plumtalk_rabelCheck == "on":
         plumtalk_rabelCheck = True
 
-#    titleName = ""
-#    createrName = ""
     textLineOriginal = request.form['createTalk']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
-    newHtmlLine = ''.join(newHtmlLine)    
+    newHtmlLine = ''.join(newHtmlLine)
 
 #    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
 #        for newHtmlSentence in newHtmlLine:
 #            f.write(newHtmlSentence)
     
-    return render_template('index.html',input_from_python=newHtmlLine)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
 
-
-
+    
 @app.route('/convertHtml_sumple1', methods=['POST'])
 def convertHtml_sumple1():
     titleName = ""
@@ -855,11 +870,7 @@ def convertHtml_sumple1():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-#    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
-#        for newHtmlSentence in newHtmlLine:
-#            f.write(newHtmlSentence)
-    
-    return render_template('index.html',input_from_python=newHtmlLine)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
 
 @app.route('/convertHtml_sumple2', methods=['POST'])
 def convertHtml_sumple2():
@@ -872,11 +883,7 @@ def convertHtml_sumple2():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-#    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
-#        for newHtmlSentence in newHtmlLine:
-#            f.write(newHtmlSentence)
-    
-    return render_template('index.html',input_from_python=newHtmlLine)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
 
 @app.route('/convertHtml_sumple3', methods=['POST'])
 def convertHtml_sumple3():
@@ -889,11 +896,7 @@ def convertHtml_sumple3():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-#    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
-#        for newHtmlSentence in newHtmlLine:
-#            f.write(newHtmlSentence)
-    
-    return render_template('index.html',input_from_python=newHtmlLine)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
 
 @app.route('/convertHtml_sumple4', methods=['POST'])
 def convertHtml_sumple4():
@@ -906,11 +909,7 @@ def convertHtml_sumple4():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-#    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
-#        for newHtmlSentence in newHtmlLine:
-#            f.write(newHtmlSentence)
-    
-    return render_template('index.html',input_from_python=newHtmlLine)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
 
 @app.route('/convertHtml_sumple5', methods=['POST'])
 def convertHtml_sumple5():
@@ -923,11 +922,7 @@ def convertHtml_sumple5():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-#    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
-#        for newHtmlSentence in newHtmlLine:
-#            f.write(newHtmlSentence)
-    
-    return render_template('index.html',input_from_python=newHtmlLine)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
 
 @app.route('/convertHtml_sumple6', methods=['POST'])
 def convertHtml_sumple6():
@@ -940,12 +935,8 @@ def convertHtml_sumple6():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-#    with open("./templates/" + "newCreate_sumple.html",'w', encoding="utf-8") as f:
-#        for newHtmlSentence in newHtmlLine:
-#            f.write(newHtmlSentence)
-    
-    return render_template('index.html',input_from_python=newHtmlLine)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
 
 if __name__ == '__main__':
-    app.run(debug=False, threaded=False, host='0.0.0.0', port=80)
-#    app.run(debug=True, threaded=False, host='localhost', port=5000)
+   app.run(debug=False, threaded=False, host='0.0.0.0', port=80)
+#   app.run(debug=True, threaded=False, host='localhost', port=5000)
