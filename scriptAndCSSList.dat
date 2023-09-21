@@ -383,25 +383,18 @@
 			
 			function insertImage(inputElement,num) {
 				var file = inputElement.files[0];
-				
-				const reader = new FileReader();
-
-				reader.onload = (event) => {
-					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " style=\" width:50vw; \" />";
-					document.getElementById("imageArea" + String(num)).innerHTML = base64;
-				};
-				reader.readAsDataURL(file);
+				var blob = new Blob([file], { type: 'image/*' });
+				var blobUrl = URL.createObjectURL(blob);
+				const insertUrl = "<img id=\"img\" src=" + blobUrl + " style=\" width:50vw; \" />";
+				document.getElementById("imageArea" + String(num)).innerHTML = insertUrl;
 			}
 			
 			function insertIcon(inputElement,num) {
 				var file = inputElement.files[0];
-
-				const reader = new FileReader();
-				reader.onload = (event) => {
-					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " style=\" width:12.1vw; height:12.1vw; \" />";
-					document.getElementById("imageArea" + String(num)).innerHTML = base64;
-				};
-				reader.readAsDataURL(file);
+				var blob = new Blob([file], { type: 'image/*' });
+				var blobUrl = URL.createObjectURL(blob);
+				const insertUrl = "<img id=\"img\" src=" + blobUrl + " style=\" width:12.1vw; height:12.1vw; \" />";
+				document.getElementById("imageArea" + String(num)).innerHTML = insertUrl;
 			}
 			
 			function pngDounload(num){
@@ -409,7 +402,7 @@
 					const name = "PlumTalk" + num + ".png";
 					const a = document.createElement('a');
 					a.href = canvas.toDataURL();
-					a.style = "display: none;
+					a.style = "display: none;";
 					a.download = name;
 					a.click();
 				});
