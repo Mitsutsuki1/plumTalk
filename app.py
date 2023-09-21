@@ -970,5 +970,5 @@ def convertHtml_sumple6():
     return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=request.form.get('plumtalk_rabelCheck'))
 
 if __name__ == '__main__':
-#   app.run(debug=True, threaded=False, host='0.0.0.0', port=80)
-   app.run(debug=True, threaded=False, host='localhost', port=5000)
+   app.run(debug=True, threaded=False, host='0.0.0.0', port=80)
+#   app.run(debug=True, threaded=False, host='localhost', port=5000)
