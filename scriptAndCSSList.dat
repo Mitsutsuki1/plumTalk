@@ -402,7 +402,7 @@
 					const name = "PlumTalk" + num;
 					const a = document.createElement('a');
 					a.href = canvas.toDataURL();
-					a.style = "display: none;";
+					a.style = "display: none;
 					a.download = name;
 					a.click();
 				});
