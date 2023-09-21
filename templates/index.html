@@ -68,6 +68,7 @@
     							<p><font size="3">※入力方法は下「チュートリアル」をご確認ください。</font></p>
     						</div>
     						<div class="text">
+    							<a class="btn_main" onclick="textCopy()" style="text-decoration:none;"><font size="2"><b>▼テキストコピー</b></font></a>
     							<p><textarea name="createTalk" id="createTalk"></textarea></p>
     							<p><br></p>
     							<a class="btn_main" href="javascript:mainForm.submit()" style="text-decoration:none;"><font size="3"><b>▼HTMLプレビュー</b></font></a>
@@ -769,6 +770,13 @@ PlumTalk Creator WEB版実装(ベータ)
 					const scrollPoint = document.getElementById("createTalk");
 					scrollPoint.scrollIntoView();
 				}          
+			}
+			
+			function textCopy() {
+				var copyText = document.getElementById("createTalk");
+				copyText.select();
+				document.execCommand("Copy");
+				alert("テキストをコピーしました");
 			}
 		</script>
 	</body>
