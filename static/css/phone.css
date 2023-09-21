@@ -10,12 +10,12 @@
 		margin-top: 0px;
 		margin-bottom: 0px;
 		font-size:25px;
-		font-weight:600;
+		font-weight:normal;
 	}
 	textarea {
 		resize: none;
 		font-size: 25px;
-		font-weight:600;
+		font-weight:normal;
 		letter-spacing:0px;
 		padding: 10px;
 		width: 75vw;
@@ -30,7 +30,7 @@
 	textarea.sumple {
 		background-color: #faebd7;
 		font-size: 25px;
-		font-weight:600;
+		font-weight:normal;
 		color: #5f9ea0;
 		letter-spacing:0px;
 		padding: 10px;
@@ -66,7 +66,7 @@
 		margin-left:0%;
 		text-align: center;
 		clear: both;
-		font-weight:600;
+		font-weight:bolder;
 		line-height: 2.5;
 		color: #ffffff;
 	}
