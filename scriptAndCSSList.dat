@@ -406,7 +406,7 @@
 			
 			function pngDounload(num){
 				html2canvas(document.getElementById("plumContainer" + num ),{width: 850, windowWidth: 850,}).then(canvas => {
-					const name = "PlumTalk" + num + ".jpeg";
+					const name = "PlumTalk" + num + ".png";
 					const a = document.createElement('a');
 					a.href = canvas.toDataURL();
 					a.style = "display: none;";
