@@ -9,13 +9,13 @@
 	p{
 		margin-top: 0px;
 		margin-bottom: 0px;
-		font-size:25px;
-		font-weight:normal;
+		font-size:5vw;
+		font-weight:bolder;
 	}
 	textarea {
 		resize: none;
-		font-size: 25px;
-		font-weight:normal;
+		font-size: 5vw;
+		font-weight:bolder;
 		letter-spacing:0px;
 		padding: 10px;
 		width: 75vw;
@@ -29,8 +29,8 @@
 	}
 	textarea.sumple {
 		background-color: #faebd7;
-		font-size: 25px;
-		font-weight:normal;
+		font-size: 5vw;
+		font-weight:bolder;
 		color: #5f9ea0;
 		letter-spacing:0px;
 		padding: 10px;
