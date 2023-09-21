@@ -387,7 +387,7 @@
 				const reader = new FileReader();
 
 				reader.onload = (event) => {
-					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " style=\" width:480px; \" />";
+					const base64 = "<img id=\"img\" src=" + event.currentTarget.result + " style=\" width:50vw; \" />";
 					document.getElementById("imageArea" + String(num)).innerHTML = base64;
 				};
 				reader.readAsDataURL(file);
