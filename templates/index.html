@@ -37,7 +37,7 @@
         			<div class="centerTable">
     					<div class="textfield_mini">
     						<div class="name">
-    							<p><font size="3">生成HTMLにPlumTalkのラベルを付けますか？</font></p>
+    							<p><font size="3">生成HTMLにPlumTalkのラベルを付けますか？</font><font size="1">※サンプルHTMLは全てYES扱いで出力します。</font></p>
     						</div>
     						<label class="toggle-button">
      							<input type="checkbox" name="plumtalk_rabelCheck"></input>
@@ -751,9 +751,15 @@ PlumTalk Creator WEB版実装(ベータ)
 			window.onload = function(){
 				const strData = {{ input_from_python | tojson }};
 				const originLine = {{ textLineOriginal | tojson }};
+				const rabelCheck = {{ plumtalk_rabelCheck | tojson }};
 				if (strData == ""){
 					;
 				}else{
+					if(rabelCheck == "on"){
+						let element = document.getElementsByName("plumtalk_rabelCheck");
+						element[0].checked = true;
+					}
+
 					document.getElementById("createTalk").value = originLine;
 					
 					const iframe = document.getElementById("htmlFrame");

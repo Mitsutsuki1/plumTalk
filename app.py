@@ -841,7 +841,8 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
 def hello():
    input_from_python = []
    textLineOriginal = []
-   return render_template('index.html',input_from_python=input_from_python,textLineOriginal=textLineOriginal)
+   plumtalk_rabelCheck = []
+   return render_template('index.html',input_from_python=input_from_python,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=plumtalk_rabelCheck)
 
 @app.route('/convertHtml', methods=['POST'])
 def convertHtml():
@@ -863,7 +864,7 @@ def convertHtml():
 #        for newHtmlSentence in newHtmlLine:
 #            f.write(newHtmlSentence)
     
-    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=request.form.get('plumtalk_rabelCheck'))
 
     
 @app.route('/convertHtml_sumple1', methods=['POST'])
@@ -881,7 +882,7 @@ def convertHtml_sumple1():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=request.form.get('plumtalk_rabelCheck'))
 
 @app.route('/convertHtml_sumple2', methods=['POST'])
 def convertHtml_sumple2():
@@ -898,7 +899,7 @@ def convertHtml_sumple2():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=request.form.get('plumtalk_rabelCheck'))
 
 @app.route('/convertHtml_sumple3', methods=['POST'])
 def convertHtml_sumple3():
@@ -915,7 +916,7 @@ def convertHtml_sumple3():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=request.form.get('plumtalk_rabelCheck'))
 
 @app.route('/convertHtml_sumple4', methods=['POST'])
 def convertHtml_sumple4():
@@ -932,7 +933,7 @@ def convertHtml_sumple4():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=request.form.get('plumtalk_rabelCheck'))
 
 @app.route('/convertHtml_sumple5', methods=['POST'])
 def convertHtml_sumple5():
@@ -949,7 +950,7 @@ def convertHtml_sumple5():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=request.form.get('plumtalk_rabelCheck'))
 
 @app.route('/convertHtml_sumple6', methods=['POST'])
 def convertHtml_sumple6():
@@ -966,8 +967,8 @@ def convertHtml_sumple6():
     newHtmlLine = htmlCreater(textLineOriginal,titleName,createrName,plumtalk_rabelCheck)
     newHtmlLine = ''.join(newHtmlLine)
     
-    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal)
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=request.form.get('plumtalk_rabelCheck'))
 
 if __name__ == '__main__':
-   app.run(debug=True, threaded=False, host='0.0.0.0', port=80)
-#   app.run(debug=True, threaded=False, host='localhost', port=5000)
+#   app.run(debug=True, threaded=False, host='0.0.0.0', port=80)
+   app.run(debug=True, threaded=False, host='localhost', port=5000)
