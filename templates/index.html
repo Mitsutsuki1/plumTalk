@@ -24,6 +24,8 @@
 					const html = document.documentElement.innerHTML;
 					const blob = new Blob([strData], { type: 'text/html' });
 					iframe.src = URL.createObjectURL(blob);
+					const scrollPoint = document.getElementById("createTalk");
+					scrollPoint.scrollIntoView();
 				}          
 			}
 		</script>
