@@ -162,6 +162,7 @@
 				background-color: #4d5b70;
 			}
 			.plumContainer .lineElements .leftTable .textfield2 {
+				margin-top: 1.0vw;
 				margin-left: 15.5vw;
 				width: 69.3vw;
 				word-break: break-all
@@ -232,6 +233,7 @@
 				background-color: #5484c4;
 			}
 			.plumContainer .lineElements .rightTable .textfield2 {
+				margin-top: 1.0vw;
 				margin-right: 15.5vw;
 				width: 69.3vw;
 				word-break: break-all
@@ -245,6 +247,7 @@
 				background-color: #5484c4;
 			}
 			.plumContainer .lineElements .rightTable .textfield1_hidden {
+				margin-top: 1.0vw;
 				margin-left: 15.6vw;
 				margin-right: -14.2vw;
 				width:fit-content;
@@ -265,7 +268,7 @@
 				margin-top: 1.5vw;
 				text-align: left;
 				border-radius: 1.38vw;
-				width: 70.9vw;
+				width: 73.7vw;
 				
 				/*　！！編集禁止！！　*/
 				background: #dce6e9 url(images/Popup_Img_Deco_2.webp) no-repeat right top;
@@ -278,6 +281,7 @@
 			.plumContainer .lineElements .rightTable .textfield3 u {
 				line-height: 0;
 				color: #aaaabb;
+				margin-left:2vw;
 			}
 			.plumContainer .lineElements .rightTable .textfield3 .text {
 				box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
@@ -287,7 +291,7 @@
 				background-color: #ffffff;
 				color: #4d5b70;
 				font-size: 4vw;
-				margin: 2.7vw 1.38vw -1.0vw 2.7vw;
+				margin: 3.7vw -2.7vw -2vw 1.7vw;
 				left: 0px;
 				word-break: break-all
 			}
@@ -295,7 +299,7 @@
 				padding: 1.38vw 5.5vw 5vw 1.38vw;
 				margin-top: 1.5vw;
 				text-align: left;
-				width: 70.9vw;
+				width: 73.7vw;
 				border-radius: 1.38vw;
 
 				/*　！！編集禁止！！*/
@@ -310,17 +314,18 @@
 			.plumContainer .lineElements .rightTable .textfield4 u {
 				line-height: 0;
 				color: #aaaabb;
+				margin-left:2vw;
 			}
 			.plumContainer .lineElements .rightTable .textfield4 .text {
 				box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
-				padding: 1.7vw 2.7vw;
+				padding-top:1.6vw;
+				padding-bottom:1.6vw;
 				border-radius: 1.38vw;
 				text-align: center;
 				background-color: #f092a4;
 				color: #ffffff;
 				font-size: 4vw;
-				margin: 2.7vw 1.38vw -3vw 2.7vw;
-				left: 0px;
+				margin: 3.7vw -2.7vw -2vw 1.7vw;
 				word-break: break-all
 			}
 			.plumContainer .lineElements .centerTable {
@@ -388,7 +393,7 @@
 				const insertUrl = "<img id=\"img\" src=" + blobUrl + " style=\" width:50vw; \" />";
 				document.getElementById("imageArea" + String(num)).innerHTML = insertUrl;
 			}
-			
+
 			function insertIcon(inputElement,num) {
 				var file = inputElement.files[0];
 				var blob = new Blob([file], { type: 'image/*' });
