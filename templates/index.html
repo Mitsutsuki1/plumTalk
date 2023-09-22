@@ -773,6 +773,8 @@ PlumTalk Creator WEB版実装(ベータ)
 			window.onload = function(){
 				const strData = {{ input_from_python | tojson }};
 				const originLine = {{ textLineOriginal | tojson }};
+				const titleName = {{ titleName | tojson }};
+				const createrName = {{ createrName | tojson }};
 				const rabelCheck = {{ plumtalk_rabelCheck | tojson }};
 				if (strData == ""){
 					;
@@ -783,6 +785,12 @@ PlumTalk Creator WEB版実装(ベータ)
 					}
 
 					document.getElementById("createTalk").value = originLine;
+					
+					let element = document.getElementsByName("titleName");
+						element[0].value = titleName;
+						
+					let element = document.getElementsByName("createrName");
+						element[0].value = createrName;	
 					
 					const iframe = document.getElementById("htmlFrame");
 					const html = document.documentElement.innerHTML;
