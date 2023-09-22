@@ -131,6 +131,7 @@
 		background-color: #ffdab9;
 	}
 	.plumContainer .lineElements .centerTable .textfield_main {
+		font-size: 3.74vw;
 		margin-left:auto;
 		margin-right:auto;
 		width: 75vw;
@@ -148,6 +149,7 @@
 		background-color: #4d5b70;
 	}
 	.plumContainer .lineElements .centerTable .textfield_main .previewHTML {
+		font-size: 3.74vw;
 		width: 75.0vw;
 		margin-left:auto;
 		margin-right:auto;
