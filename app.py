@@ -285,7 +285,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                             newCreateList.append("				<div class=\"rightTable\">\n")
                             newCreateList.append("					<div class=\"textfield3\">\n")
                             newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
-                            newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+                            newCreateList.append("                      <p><hr></p>\n")
                             newCreateList.append("						<div class=\"text\">\n")
    
                             if newCreateTextLine == []:
@@ -311,7 +311,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                             newCreateList.append("				<div class=\"rightTable\">\n")
                             newCreateList.append("					<div class=\"textfield3\">\n")
                             newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
-                            newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+                            newCreateList.append("                      <p><hr></p>\n")
                             newCreateList.append("						<div class=\"text\">\n")
    
                             if newCreateTextLine == []:
@@ -381,7 +381,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     newCreateList.append("				<div class=\"rightTable\">\n")
                     newCreateList.append("					<div class=\"textfield3\">\n")
                     newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
-                    newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+                    newCreateList.append("                      <p><hr></p>\n")
                     newCreateList.append("						<div class=\"text\">\n")
 
    
@@ -426,7 +426,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     newCreateList.append("				<div class=\"rightTable\">\n")
                     newCreateList.append("					<div class=\"textfield4\">\n")
                     newCreateList.append("                      <p><font color=#FF5192>|</font>絆イベント</p>\n")
-                    newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+                    newCreateList.append("                      <p><hr></p>\n")
                     newCreateList.append("						<div class=\"text\">\n")
                     newCreateList.append(                           "<p>" + displayName + "の絆ストーリーへ</p>\n")
                     newCreateList.append("						</div>\n")
@@ -660,7 +660,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     newCreateList.append("				<div class=\"rightTable\">\n")
                     newCreateList.append("					<div class=\"textfield3\">\n")
                     newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
-                    newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+                    newCreateList.append("                      <p><hr></p>\n")
                     newCreateList.append("						<div class=\"text\">\n")
 
                     for text in newCreateTextLine:
@@ -683,7 +683,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     newCreateList.append("				<div class=\"rightTable\">\n")
                     newCreateList.append("					<div class=\"textfield3\">\n")
                     newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
-                    newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+                    newCreateList.append("                      <p><hr></p>\n")
                     newCreateList.append("						<div class=\"text\">\n")
 
                     for text in newCreateTextLine:
@@ -744,7 +744,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             newCreateList.append("				<div class=\"rightTable\">\n")
             newCreateList.append("					<div class=\"textfield3\">\n")
             newCreateList.append("                      <p><font color=#84c4f4>|</font> 返信する</p>\n")
-            newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+            newCreateList.append("                      <p><hr></p>\n")
             newCreateList.append("						<div class=\"text\">\n")
 
    
@@ -784,7 +784,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
             newCreateList.append("				<div class=\"rightTable\">\n")
             newCreateList.append("					<div class=\"textfield4\">\n")
             newCreateList.append("                      <p><font color=#FF5192>|</font>絆イベント</p>\n")
-            newCreateList.append("                      <p><u>　　　　　　　　　　　　　　　　　　　　　</u></p>\n")
+            newCreateList.append("                      <p><hr></p>\n")
             newCreateList.append("						<div class=\"text\">\n")
             newCreateList.append("							<p>" + displayName + "の絆ストーリーへ</p>\n")
             newCreateList.append("						</div>\n")
