@@ -91,11 +91,11 @@
 								～使い方～<br>
 								<br>
 								１：テキスト入力エリアに所定の形式でテキストを入力してください。<br>
-								※入力方法は下にある『タグ一覧』および『チュートリアル』をご確認ください。<br>
+								※入力方法は下にある『タグ一覧』および『～チュートリアル～』をご確認ください。<br>
 								<br>
-								２：入力エリア下の『▼HTMLプレビュー』を押下。表示を確認してください。添付画像がある場合はプレビューエリア内にて画像の添付作業を行なってください。<br>
+								２：入力エリア下の『▼HTMLプレビュー』を押下。表示を確認してください。<br>
 								<br>
-								３：プレビューエリアにて生成されている『ＰＮＧダウンロード』の窓を押下して完成です！<br>
+								３：添付画像がある場合はプレビューエリア内にて画像の添付作業を行なってください。最後に『ＰＮＧダウンロード』を押下して完成です！<br>
 								<br>
 								<br>
 								※３：ウインドウの縦横比によってHTMLプレビューのレイアウトが乱れたり、端が切れたりする事がありますが画像生成には影響ありません。
@@ -104,7 +104,7 @@
 					</div>
 				</div>
 				<div class="centerTable">
-					<div class="textfield_sumple">
+					<div class="textfield_sumple" style="display:block;">
 						<div class="name">
 							<p>タグ一覧</p>
 						</div>
@@ -482,6 +482,31 @@
    					</div>
 				</div>
 				<div class="centerTable">
+					<div class="textfield_mini">
+						<div class="text">
+							<p><font size="2"><b>
+								～チュートリアル～<br>
+								<br>
+								１：左右のキャラトーク　<a class="btn_main" href="javascript:sumpleForm1.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプル表示</b></font></a>
+								<br><br>
+								２：右アイコン無しトーク(モモトーク風)　<a class="btn_main" href="javascript:sumpleForm2.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプル表示</b></font></a>
+								<br><br>
+								３：ラベル、絆ストーリー　<a class="btn_main" href="javascript:sumpleForm3.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプル表示</b></font></a>
+								<br><br>
+								４：返信風ウインドウ　<a class="btn_main" href="javascript:sumpleForm4.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプル表示</b></font></a>
+								<br><br>
+								５：画像添付　<a class="btn_main" href="javascript:sumpleForm5.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプル表示</b></font></a>
+								<br><br>
+								応用１：テキスト強調・前回タグのリピート・スペース　<a class="btn_main" href="javascript:sumpleForm6.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプル表示</b></font></a>
+								<br><br>
+								応用２：トーク分割・クロスオーバー・その他　<a class="btn_main" href="javascript:sumpleForm7.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプル表示</b></font></a>
+								<br><br>
+								【注】『▼サンプル表示』はテキスト入力エリアをサンプルテキストで上書き・HTML生成を行ないます。
+							</b></font></p>
+						</div>
+					</div>
+				</div>
+				<div class="centerTable">
 					<div class="textfield_sumple">
 						<div class="name">
 							<p>チュートリアル１</p>
@@ -493,22 +518,15 @@
 ん、テストだよ。
 左表示がデフォルトだよ。
 
-「サンプルHTML生成」を押してテキストエリアと見比べてみてね。
+@@@ホシノ@@@ @@@右@@@
+「サンプルHTML生成」を押してテキストエリアと見比べてみてね～。
 
 @@@先生@@@
 先生もデフォルトは左表示です
 
-@@@先生@@@
-同じ種類のタグが連投された場合にはアイコンが非表示になります。
-
-@@@シロコ@@@ @@@右@@@
-ん、右表示だよ。
-
-@@@先生@@@右@@@
-こういう書き方でもＯＫです。
-タグを書く際は左右を必ず@×３で閉じるようにしてください。
-
-ちなみに「@」は全角半角どちらでも可です。
+@@@シロコ@@@右@@@
+こういう書き方でもＯＫ。
+タグを書く際は左右を必ず@×３で閉じるようにしてね。
 </textarea></p>
     							<a class="btn_sumple" href="javascript:sumpleForm1.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプルHTML生成</b></font></a><p><font size="3" color="#008080"><b>【注】トーク入力エリアをサンプルテキストで上書き、HTML生成を行ないます。</b></font></a>
     						</div>
@@ -525,10 +543,13 @@
 右右でアイコン非表示の右詰めトークを作成できるよ～
 
 @@@ホシノ@@@ @@@右右@@@
-こんな感じだね～
+こんな感じだよ～
 
-@@@ホシノ@@@ @@@左左@@@
-ちなみに左左の場合はただのアイコン付トークになるよ～
+@@@ノノミ@@@ @@@左左@@@
+ちなみに左左の場合はただのアイコン付トークになります！
+
+@@@ノノミ@@@左左@@@
+ちなみにタグはこういう書き方でも大丈夫です☆
 </textarea></p>
     							<a class="btn_sumple" href="javascript:sumpleForm2.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプルHTML生成</b></font></a>
     						</div>
@@ -541,14 +562,17 @@
 						<form action="/convertHtml_sumple3" method="POST" name="sumpleForm3">
     						<div class="text">
     							<p><textarea class="sumple" name="sumpleTalk3" readonly>
+@@@アヤネ@@@
+ラベルタグで説明文などを記載するスペースを作成出来ます。
+
 @@@ラベル@@@
-説明文などを記載するスペースを作成出来ます。
+サンプル表示です。
 
 @@@アヤネ@@@
-生徒名＋絆ストーリーで記載した生徒名の絆ストーリー窓を作成出来ます。絆ストーリータグ内に記載されたテキストは全て無視されます。
+生徒名＋絆ストーリーで特定生徒の絆ストーリーの窓を作成出来ます。
 
 @@@アヤネ@@@絆ストーリー@@@
-この文言は表示されません。
+絆ストーリータグ内に記載されたテキストは全て無視されます。
 </textarea></p>
     							<a class="btn_sumple" href="javascript:sumpleForm3.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプルHTML生成</b></font></a>
     						</div>
@@ -568,7 +592,7 @@
 モモトークの返信風の窓を作成出来ます。
 
 @@@返信@@@ @@@追加@@@
-『追加』のタグがついた返信の要素が連投され続ける限り、選択肢を追加し続けます。
+『追加』のタグが連投され続ける限り、選択肢を追加し続けます。
 
 @@@返信@@@ @@@追加@@@
 『追加』の記載がない場合は、単一の返信窓になります。
@@ -587,29 +611,26 @@
 						<form action="/convertHtml_sumple5" method="POST" name="sumpleForm5">
     						<div class="text">
     							<p><textarea class="sumple" name="sumpleTalk5" readonly>
-@@@ノノミ@@@
-画像を添付する場合は、下記のような形でトークを作成してください。
-生成したHTMLの中に画像の添付エリアが作成されます。
+@@@セリカ@@@
+画像タグで添付エリアを作成出来るわ。
+それぞれ表示を確認してみてね。
 
 @@@画像@@@
 
-@@@セリカ@@@
-キャラ名＋画像でキャラクタートークとして添付エリアを作成出来るわ。
-ちなみに全てのタグで共通なんだけど、キャラ名が無い場合はノンネーム判定でモブ扱いになるので注意してね。
-
-それぞれ表示を確認してみてね。
+@@@セリカ@@@ @@@画像@@@
 
 @@@セリカ@@@ @@@右@@@ @@@画像@@@
 
-@@@セリカ@@@ @@@画像@@@ @@@左@@@
-
-@@@セリカ@@@ @@@画像@@@ @@@右右@@@
-
-@@@画像@@@
+@@@画像@@@ @@@右@@@
 
 @@@画像@@@ @@@左@@@
 
+@@@セリカ@@@ @@@画像@@@ @@@右右@@@
+
 @@@画像@@@ @@@右右@@@
+
+@@@セリカ@@@
+画像を添付したあとに▼ＰＮＧダウンロードを押せば、画像付きの会話を生成する事が出来るわ。
 </textarea></p>
     							<a class="btn_sumple" href="javascript:sumpleForm5.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプルHTML生成</b></font></a>
     						</div>
@@ -622,9 +643,18 @@
 						<form action="/convertHtml_sumple6" method="POST" name="sumpleForm6">
     						<div class="text">
     							<p><textarea class="sumple" name="sumpleTalk6" readonly>
-@@@右@@@画像@@@先生@@@
-タグの順番は順不同で構いません。
-この場合は右向きのキャラクタートーク(先生)として画像添付エリアを生成します。
+@@@ユウカ@@@
+照れ、赤字タグを使う事で文字色を変える事が出来ます。
+
+<照れ>先生・・・</照れ>、<赤字>先生・・・</赤字>といった感じです。
+照れは<blush>blushタグ</blush>、赤字は<red>red</red>と書いても大丈夫です。
+
+@@@ユウカ@@@
+文字を強調したい時には強調タグです。
+
+<強調>先生～～！</強調>
+
+<b>bタグ</b>や、<strong>strongタグ</strong>でも同じ事が出来ます。「< > /」は半角文字限定なので注意してくださいね。
 
 @@@先生@@@右@@@
 リピートタグで同じタグを繰り返す事が出来ます。
@@ -637,30 +667,16 @@
 
 タグを書く際に適宜リピートを使う事で、タグ記述を簡略化する事が出来ます。
 
-@@@ユウカ@@@左@@@
-同じタグを繰り返す場合は原則アイコンが隠れますが、アイコンタグを記載してアイコンを表示させる事が出来ます。
-
-@@@ユウカ@@@左@@@
-アイコンが隠れます。
-
-@@@ユウカ@@@左@@@アイコン表示@@@
-アイコンを表示出来ます。
-
-@@@ユウカ@@@左@@@アイコン変更@@@
-アイコン画像の挿入エリアを生成出来ます。
-
-@@@ノア@@@右@@@
+@@@ノア@@@
 スペースタグで間隔を広げる事が出来ます。
 
 @@@スペース@@@
 
-@@@スペース@@@
-
-@@@ノア@@@右@@@
+@@@ノア@@@
 スペースタグは前回タグとして認識されないので、この場合はノア＋右が前回タグとなります。
 つまりこの場合、連投扱いとしてアイコンが隠れます。
 
-@@@ノア@@@左@@@
+@@@先生@@@右@@@
 下記のようにリピートする場合も同様です。
 
 @@@スペース@@@
@@ -668,39 +684,54 @@
 @@@スペース@@@
 
 @@@リピート@@@
-スペースタグは前回タグとして認識されないので、この場合のリピートはノア＋右を繰り返す判定になります。
+スペースタグは前回タグとして認識されないので、この場合のリピートは先生＋右を繰り返す判定になります。
 つまりスペースタグは、リピートタグで繰り返す事が出来ません。
+</textarea></p>
+    							<a class="btn_sumple" href="javascript:sumpleForm6.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプルHTML生成</b></font></a>
+    						</div>
+						</form>
+					</div>
+					<div class="textfield_sumple">
+						<div class="name">
+							<p>チュートリアル６(応用編)</p>
+						</div>
+						<form action="/convertHtml_sumple7" method="POST" name="sumpleForm7">
+    						<div class="text">
+    							<p><textarea class="sumple" name="sumpleTalk7" readonly>
+@@@ユウカ@@@左@@@
+同じタグを繰り返す場合は原則アイコンが隠れますが、アイコン表示タグで表示出来ます。
+
+@@@ユウカ@@@左@@@アイコン表示@@@
+アイコンが表示されます。
+
+@@@ユウカ@@@左@@@アイコン変更@@@
+アイコン画像の挿入エリアを生成出来ます。
+アスペクト比1：1の画像を推奨します。
 
 @@@カット@@@
 カットタグの前後でトークを分割する事が出来ます。(※生成HTMLを別々に画像化する事が出来ます)
 
-@@@ユウカ@@@左@@@
-照れ、赤字タグを使う事で文字色を変える事が出来ます。
+@@@ノア@@@
+キャラクター用タグに合致する名前が無い場合は『？』あるいはタグ要素にある文字列を参照して名前判定を行います。
 
-<照れ>先生・・・</照れ>、<赤字>先生・・・</赤字>といった感じです。
-照れは<blush>blushタグ</blush>、赤字は<red>red</red>と書いても大丈夫です。
-
-文字を強調したい時には強調タグです。
-
-<強調>先生～～！</強調>
-
-<b>bタグ</b>や、<strong>strongタグ</strong>でも同じ事が出来ます。「< > /」は半角文字限定なので注意してくださいね。
-
-@@@コユキ@@@
-キャラクター用タグに合致する名前が無かった場合は『？』あるいはタグ要素にある文字列を参照して名前判定を行います。
+アイコン画像はモブ用の汎用画像となります。
 
 @@@右@@@
 名前を判別する要素が無いため、？となります。
 
-@@@サヤカ@@@右@@@
+@@@サヤカ@@@左@@@
 サヤカをキャラ名として抽出します。
 
 ぶるー@@@右@@@アーカイブ
 「ぶるー」と「アーカイブ」を抽出、「ぶるーアーカイブ」がキャラ名として設定されます。
 
-ぶるー@@@右@@@アイコン変更@@@アーカイブ
-「ぶるー」と「アーカイブ」を抽出、「ぶるーアーカイブ」がキャラ名として設定されます。
-その状態でアイコン変更が行なえるようになります。(実質的なクロスオーバー対応です)
+サヤカ@@@左@@@アイコン変更@@@
+キャラ名として抽出した『サヤカ』のアイコン変更を行なう事で、実質的なクロスオーバー対応となります。
+
+@@@カット@@@
+
+@@@左@@@先生@@@
+タグの順番は順不同です。
 
 @@@先生@@@
 複数のタグがバッティングした場合には以下の強弱判定に従って強い方が優先されます。
@@ -711,20 +742,22 @@
 この場合はリピートが最優先になります。
 つまり前回タグが繰り返され、先生の左表示トークとなります。
 </textarea></p>
-    							<a class="btn_sumple" href="javascript:sumpleForm6.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプルHTML生成</b></font></a>
+    							<a class="btn_sumple" href="javascript:sumpleForm7.submit()" style="text-decoration:none;"><font size="3"><b>▼サンプルHTML生成</b></font></a>
     						</div>
 						</form>
 					</div>
 				</div>
 				<div class="centerTable">
-					<div class="textfield_sumple">
+					<div class="textfield_sumple" style="display:block;">
 						<div class="name">
 							<p>更新履歴</p>
 						</div>
 						<div class="text">
 							<p><textarea class="sumple" readonly>
 -----2023/9/22-----
+チュートリアルの仕様を変更しました。
 
+-----2023/9/22-----
 画面のレイアウト調整を行いました。
 画像生成時の軽微な不具合を修正しました。
 

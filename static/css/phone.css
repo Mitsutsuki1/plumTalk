@@ -114,6 +114,7 @@
 		background-color: #4d5b70;
 	}
 	.plumContainer .lineElements .centerTable .textfield_sumple {
+		display: none;
 		margin-left:auto;
 		margin-right:auto;
 		width: 75vw;
@@ -178,13 +179,6 @@
 	.btn_sumple:hover{
 		color: #d2b48c;
 		border-bottom:2px solid #d2b48c;
-	}
-	.btn_base64{
-		color: #f0e68c;
-		top:-10vw;
-	}
-	.btn_base64:hover{
-		color: #ffffe0;
 	}
 	.toggle-button {
 	    display: flex;

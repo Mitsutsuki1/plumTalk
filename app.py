@@ -971,6 +971,23 @@ def convertHtml_sumple6():
     
     return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=request.form.get('plumtalk_rabelCheck'),titleName=titleName,creatorName=creatorName)
 
+@app.route('/convertHtml_sumple7', methods=['POST'])
+def convertHtml_sumple7():
+    titleName = ""
+    creatorName = ""
+    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
+    if plumtalk_rabelCheck == None:
+        plumtalk_rabelCheck = False
+    elif plumtalk_rabelCheck == "on":
+        plumtalk_rabelCheck = True
+    textLineOriginal = request.form['sumpleTalk7']
+    textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
+    
+    newHtmlLine = htmlCreater(textLineOriginal,titleName,creatorName,plumtalk_rabelCheck)
+    newHtmlLine = ''.join(newHtmlLine)
+    
+    return render_template('index.html',input_from_python=newHtmlLine,textLineOriginal=textLineOriginal,plumtalk_rabelCheck=request.form.get('plumtalk_rabelCheck'),titleName=titleName,creatorName=creatorName)
+
 if __name__ == '__main__':
    app.run(debug=True, threaded=False, host='0.0.0.0', port=80)
 #   app.run(debug=True, threaded=False, host='localhost', port=5000)
