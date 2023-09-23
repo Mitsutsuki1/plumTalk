@@ -450,11 +450,13 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                     talkAreaType = talkAreaTypeBefore
                     talkAreaMargin = talkAreaMarginBefore
                 elif talkAreaType == "cut" and not talkAreaTypeBefore == "cut":
+                    newCreateList.append("				<div class=\"centerTable\">\n")
+                    newCreateList.append("				    <p><br></p>\n")
+                    newCreateList.append("				</div>\n")
                     newCreateList.append("			</div>\n")
                     newCreateList.append("		</div>\n")
                     plumContainerCounter += 1
                     newCreateList.append("		<div name=\"pngDownload_Area\">\n")
-                    newCreateList.append("			<p style=\"background-color:#FFFFFF;\"><br></p>\n")
                     newCreateList.append("			<p style=\"background-color:#4d5b70;\"><a class=\"btn_main\" onclick=\"pngDounload(" + str(plumContainerCounter) + ")\"><font size=\"1\"><b>▼PNGダウンロード(" + str(plumContainerCounter) + ")</b></font></a></p>\n")
                     newCreateList.append("		</div>\n")
                     newCreateList.append("		<div class=\"plumContainer\" id=\"plumContainer" + str(plumContainerCounter) +"\" >\n")
