@@ -152,7 +152,7 @@
 			.plumContainer .lineElements .leftTable .textfield1 {
 				margin-left: 15.5vw;
 				width: 76.0vw;
-				word-break: break-all
+				word-break: break-word;
 			}
 			
 			.plumContainer .lineElements .leftTable .textfield1 .name {
@@ -169,7 +169,7 @@
 				margin-top: 1.0vw;
 				margin-left: 15.5vw;
 				width: 76.0vw;
-				word-break: break-all
+				word-break: break-word;
 			}
 			.plumContainer .lineElements .leftTable .textfield2 .text {
 				width: fit-content;
@@ -221,7 +221,7 @@
 			.plumContainer .lineElements .rightTable .textfield1 {
 				margin-right: 15.5vw;
 				width: 76.0vw;
-				word-break: break-all
+				word-break: break-word;
 			}
 			.plumContainer .lineElements .rightTable .textfield1 .name {
 				text-align: right;
@@ -240,7 +240,7 @@
 				margin-top: 0.5vw;
 				margin-right: 15.5vw;
 				width: 76.0vw;
-				word-break: break-all
+				word-break: break-word;
 			}
 			.plumContainer .lineElements .rightTable .textfield2 .text {
 				float:right;
@@ -264,7 +264,7 @@
 				border-radius: 1.94vw;
 				width: fit-content;
 				background-color: #5484c4;
-				word-break: break-all
+				word-break: break-word;
 				clear: both;
 			}
 			.plumContainer .lineElements .rightTable .textfield3 {
@@ -300,7 +300,7 @@
 				background-color: #ffffff;
 				color: #4d5b70;
 				font-size: 4vw;
-				word-break: break-all
+				word-break: break-word;
 			}
 			.plumContainer .lineElements .rightTable .textfield4 {
 				float:right;
@@ -336,7 +336,7 @@
 				background-color: #f092a4;
 				color: #ffffff;
 				font-size: 4vw;
-				word-break: break-all
+				word-break: break-word;
 			}
 			.plumContainer .lineElements .centerTable {
 				display: block;
@@ -356,7 +356,7 @@
 				font-size: 3.3vw;
 				text-align: center;
 				padding: 1.60vw;
-				word-break: break-all
+				word-break: break-word;
 			}
 			.btn_main{
 				color: #f0e68c;
