@@ -33,7 +33,7 @@
 					</div>
 				</div>
     			<form action="/convertHtml" method="POST" name="mainForm">
-        			<div class="centerTable">
+<!--        			<div class="centerTable">
     					<div class="textfield_mini">
     						<div class="name">
 								<p><br></p>
@@ -43,7 +43,7 @@
      							<input type="checkbox" name="plumtalk_rabelCheck"></input>
     						</label>
     					</div>
-    				</div>
+    				</div>-->
     				<div class="centerTable">
     					<div class="textfield_mini">
     						<div class="name">
@@ -772,6 +772,12 @@
 						</div>
 						<div class="text">
 							<p><textarea class="sumple" readonly>
+-----2023/10/3-----
+『…』などの記号が文末に来た場合に改行が乱れる不具合を修正
+
+Plumtalkラベルの廃止
+モブアイコンのタグセットの追加変更
+
 -----2023/9/22-----
 チュートリアルの仕様を変更しました。
 
@@ -831,14 +837,14 @@ PlumTalk Creator WEB版実装(ベータ)
 				const originLine = {{ textLineOriginal | tojson }};
 				const titleName = {{ titleName | tojson }};
 				const creatorName = {{ creatorName | tojson }};
-				const rabelCheck = {{ plumtalk_rabelCheck | tojson }};
+//				const rabelCheck = {{ plumtalk_rabelCheck | tojson }};
 				if (strData == ""){
 					;
 				}else{
-					if(rabelCheck == "on"){
-						let element = document.getElementsByName("plumtalk_rabelCheck");
-						element[0].checked = true;
-					}
+//					if(rabelCheck == "on"){
+//						let element = document.getElementsByName("plumtalk_rabelCheck");
+//						element[0].checked = true;
+//					}
 
 					document.getElementById("createTalk").value = originLine;
 					

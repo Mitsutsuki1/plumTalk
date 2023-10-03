@@ -852,11 +852,12 @@ def hello():
 def convertHtml():
     titleName = request.form['titleName']
     creatorName = request.form['creatorName']
-    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
-    if plumtalk_rabelCheck == None:
-        plumtalk_rabelCheck = False
-    elif plumtalk_rabelCheck == "on":
-        plumtalk_rabelCheck = True
+    plumtalk_rabelCheck = True
+#    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
+#    if plumtalk_rabelCheck == None:
+#        plumtalk_rabelCheck = False
+#    elif plumtalk_rabelCheck == "on":
+#        plumtalk_rabelCheck = True
 
     textLineOriginal = request.form['createTalk']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
@@ -875,11 +876,12 @@ def convertHtml():
 def convertHtml_sumple1():
     titleName = ""
     creatorName = ""
-    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
-    if plumtalk_rabelCheck == None:
-        plumtalk_rabelCheck = False
-    elif plumtalk_rabelCheck == "on":
-        plumtalk_rabelCheck = True
+    plumtalk_rabelCheck = True
+#    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
+#    if plumtalk_rabelCheck == None:
+#        plumtalk_rabelCheck = False
+#    elif plumtalk_rabelCheck == "on":
+#        plumtalk_rabelCheck = True
     textLineOriginal = request.form['sumpleTalk1']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
@@ -892,11 +894,12 @@ def convertHtml_sumple1():
 def convertHtml_sumple2():
     titleName = ""
     creatorName = ""
-    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
-    if plumtalk_rabelCheck == None:
-        plumtalk_rabelCheck = False
-    elif plumtalk_rabelCheck == "on":
-        plumtalk_rabelCheck = True
+    plumtalk_rabelCheck = True
+#    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
+#    if plumtalk_rabelCheck == None:
+#        plumtalk_rabelCheck = False
+#    elif plumtalk_rabelCheck == "on":
+#        plumtalk_rabelCheck = True
     textLineOriginal = request.form['sumpleTalk2']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
@@ -909,11 +912,12 @@ def convertHtml_sumple2():
 def convertHtml_sumple3():
     titleName = ""
     creatorName = ""
-    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
-    if plumtalk_rabelCheck == None:
-        plumtalk_rabelCheck = False
-    elif plumtalk_rabelCheck == "on":
-        plumtalk_rabelCheck = True
+    plumtalk_rabelCheck = True
+#    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
+#    if plumtalk_rabelCheck == None:
+#        plumtalk_rabelCheck = False
+#    elif plumtalk_rabelCheck == "on":
+#        plumtalk_rabelCheck = True
     textLineOriginal = request.form['sumpleTalk3']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
@@ -926,11 +930,12 @@ def convertHtml_sumple3():
 def convertHtml_sumple4():
     titleName = ""
     creatorName = ""
-    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
-    if plumtalk_rabelCheck == None:
-        plumtalk_rabelCheck = False
-    elif plumtalk_rabelCheck == "on":
-        plumtalk_rabelCheck = True
+    plumtalk_rabelCheck = True
+#    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
+#    if plumtalk_rabelCheck == None:
+#        plumtalk_rabelCheck = False
+#    elif plumtalk_rabelCheck == "on":
+#        plumtalk_rabelCheck = True
     textLineOriginal = request.form['sumpleTalk4']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
@@ -943,11 +948,12 @@ def convertHtml_sumple4():
 def convertHtml_sumple5():
     titleName = ""
     creatorName = ""
-    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
-    if plumtalk_rabelCheck == None:
-        plumtalk_rabelCheck = False
-    elif plumtalk_rabelCheck == "on":
-        plumtalk_rabelCheck = True
+    plumtalk_rabelCheck = True
+#    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
+#    if plumtalk_rabelCheck == None:
+#        plumtalk_rabelCheck = False
+#    elif plumtalk_rabelCheck == "on":
+#        plumtalk_rabelCheck = True
     textLineOriginal = request.form['sumpleTalk5']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
@@ -960,11 +966,12 @@ def convertHtml_sumple5():
 def convertHtml_sumple6():
     titleName = ""
     creatorName = ""
-    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
-    if plumtalk_rabelCheck == None:
-        plumtalk_rabelCheck = False
-    elif plumtalk_rabelCheck == "on":
-        plumtalk_rabelCheck = True
+    plumtalk_rabelCheck = True
+#    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
+#    if plumtalk_rabelCheck == None:
+#        plumtalk_rabelCheck = False
+#    elif plumtalk_rabelCheck == "on":
+#        plumtalk_rabelCheck = True
     textLineOriginal = request.form['sumpleTalk6']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
@@ -977,11 +984,12 @@ def convertHtml_sumple6():
 def convertHtml_sumple7():
     titleName = ""
     creatorName = ""
-    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
-    if plumtalk_rabelCheck == None:
-        plumtalk_rabelCheck = False
-    elif plumtalk_rabelCheck == "on":
-        plumtalk_rabelCheck = True
+    plumtalk_rabelCheck = True
+#    plumtalk_rabelCheck = request.form.get('plumtalk_rabelCheck')
+#    if plumtalk_rabelCheck == None:
+#        plumtalk_rabelCheck = False
+#    elif plumtalk_rabelCheck == "on":
+#        plumtalk_rabelCheck = True
     textLineOriginal = request.form['sumpleTalk7']
     textLineOriginal = textLineOriginal.replace("\n","").replace("\r","\n")
     
