@@ -98,7 +98,8 @@
 		margin-left:auto;
 		margin-right:auto;
 		width: 75vw;
-		word-break: break-all
+		line-break: anywhere;
+		word-break: break-word;
 	}
 	.plumContainer .lineElements .centerTable .textfield_mini .name {
 		font-size: 3.74vw;
@@ -116,7 +117,8 @@
 		margin-left:auto;
 		margin-right:auto;
 		width: 75vw;
-		word-break: break-all
+		line-break: anywhere;
+		word-break: break-word;
 	}
 	.plumContainer .lineElements .centerTable .textfield_sumple .name {
 		font-size: 3.74vw;
@@ -136,7 +138,8 @@
 		float:left;
 		clear:both;
 		width: 90vw;
-		word-break: break-all
+		line-break: anywhere;
+		word-break: break-word;
 	}
 	.plumContainer .lineElements .centerTable .textfield_main .name {
 		color: #4d5b70;
