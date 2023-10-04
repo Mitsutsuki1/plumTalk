@@ -315,11 +315,19 @@ No029_2_tagElement:@@@ハルナ正月@@@
 No029_2_displayName:ハルナ(正月)
 No029_2_iconFile:gehenna_haruna_newyear.webp
 
+No029_3_tagElement:@@@ハルナ体操服@@@
+No029_3_displayName:ハルナ(体操服)
+No029_3_iconFile:gehenna_haruna_sports.webp
+
 鰐渕アカリ
 
 No030_1_tagElement:@@@アカリ@@@
 No030_1_displayName:アカリ
 No030_1_iconFile:gehenna_akari.webp
+
+No030_2_tagElement:@@@アカリ正月@@@
+No030_2_displayName:アカリ(正月)
+No030_2_iconFile:gehenna_akari_newyear.webp
 
 獅子堂イズミ
 
@@ -330,6 +338,10 @@ No031_1_iconFile:gehenna_izumi.webp
 No031_2_tagElement:@@@イズミ水着@@@
 No031_2_displayName:イズミ(水着)
 No031_2_iconFile:gehenna_izumi_summer.webp
+
+No031_3_tagElement:@@@イズミ正月@@@
+No031_3_displayName:イズミ(正月)
+No031_3_iconFile:gehenna_izumi_newyear.webp
 
 赤司ジュンコ
 
@@ -616,7 +628,11 @@ No064_1_tagElement:@@@レイサ@@@
 No064_1_displayName:レイサ
 No064_1_iconFile:trinity_reisa.webp
 
+-------------------------------------
+-------------------------------------
 百鬼夜行連合学院
+-------------------------------------
+-------------------------------------
 
 陰陽部
 
@@ -782,7 +798,11 @@ No085_2_tagElement:@@@サヤ私服@@@
 No085_2_displayName:サヤ(私服)
 No085_2_iconFile:shanhaijing_saya_street.webp
 
+-------------------------------------
+-------------------------------------
 ミレニアムサイエンススクール
+-------------------------------------
+-------------------------------------
 
 セミナー
 
@@ -808,6 +828,10 @@ No088_1_tagElement:@@@コユキ@@@
 No088_1_displayName:コユキ
 No088_1_iconFile:millennium_koyuki.webp
 
+No088_2_tagElement:@@@コユキバニー@@@
+No088_2_displayName:コユキ(バニー)
+No088_2_iconFile:millennium_koyuki_bunny.webp
+
 調月リオ
 
 No089_1_tagElement:@@@リオ@@@
@@ -832,11 +856,19 @@ No091_1_tagElement:@@@モモイ@@@
 No091_1_displayName:モモイ
 No091_1_iconFile:millennium_momoi.webp
 
+No091_2_tagElement:@@@モモイメイド@@@
+No091_2_displayName:モモイ(メイド)
+No091_2_iconFile:millennium_momoi_maid.webp
+
 才羽ミドリ
 
 No092_1_tagElement:@@@ミドリ@@@
 No092_1_displayName:ミドリ
 No092_1_iconFile:millennium_midori.webp
+
+No092_2_tagElement:@@@ミドリメイド@@@
+No092_2_displayName:ミドリ(メイド)
+No092_2_iconFile:millennium_midori_maid.webp
 
 天童アリス
 
@@ -984,7 +1016,11 @@ No109_1_tagElement:@@@エイミ@@@
 No109_1_displayName:エイミ
 No109_1_iconFile:millennium_eimi.webp
 
+-------------------------------------
+-------------------------------------
 レッドウィンター連邦学園
+-------------------------------------
+-------------------------------------
 
 レッドウィンター事務局
 
@@ -1028,6 +1064,10 @@ No114_1_tagElement:@@@シグレ@@@
 No114_1_displayName:シグレ
 No114_1_iconFile:redwinter_sigure.webp
 
+No114_2_tagElement:@@@シグレ温泉@@@
+No114_2_displayName:シグレ(温泉)
+No114_2_iconFile:redwinter_sigure_hotspring.webp
+
 知識開放戦線
 
 姫木メル
@@ -1035,6 +1075,10 @@ No114_1_iconFile:redwinter_sigure.webp
 No115_1_tagElement:@@@メル@@@
 No115_1_displayName:メル
 No115_1_iconFile:redwinter_meru.webp
+
+No115_2_tagElement:@@@メル温泉@@@
+No115_2_displayName:メル(温泉)
+No115_2_iconFile:redwinter_meru_hotspring.webp
 
 秋泉モミジ
 
@@ -1064,7 +1108,11 @@ No119_1_tagElement:@@@ヤクモ@@@
 No119_1_displayName:ヤクモ
 No119_1_iconFile:redwinter_yakumo.webp
 
+-------------------------------------
+-------------------------------------
 連邦生徒会
+-------------------------------------
+-------------------------------------
 
 連邦生徒会長
 
@@ -1114,7 +1162,11 @@ No127_1_tagElement:@@@スモモ@@@
 No127_1_displayName:スモモ
 No127_1_iconFile:general_sumomo.webp
 
+-------------------------------------
+-------------------------------------
 SRT特殊学園
+-------------------------------------
+-------------------------------------
 
 FOX小隊
 
@@ -1170,6 +1222,10 @@ No134_1_tagElement:@@@モエ@@@
 No134_1_displayName:モエ
 No134_1_iconFile:srt_moe.webp
 
+No134_2_tagElement:@@@モエ水着@@@
+No134_2_displayName:モエ(水着)
+No134_2_iconFile:srt_moe_summer.webp
+
 霞沢ミユ
 
 No135_1_tagElement:@@@ミユ@@@
@@ -1180,7 +1236,11 @@ No135_2_tagElement:@@@ミユ水着@@@
 No135_2_displayName:ミユ(水着)
 No135_2_iconFile:srt_miyu_summer.webp
 
+-------------------------------------
+-------------------------------------
 OTHERS
+-------------------------------------
+-------------------------------------
 
 ジャブジャブヘルメット団
 
@@ -1479,4 +1539,3 @@ No169_2_iconFile:sibaShopkeeper.webp
 No170_1_tagElement:@@@一般市民@@@
 No170_1_displayName:一般市民
 No170_1_iconFile:citizen.webp
-
