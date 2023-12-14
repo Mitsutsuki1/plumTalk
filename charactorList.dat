@@ -7,11 +7,12 @@ MEMO
 アイコン画像は「images\charactor_iconSets」に追加してください。
 
 tagElement：編集テキスト内で用いる事が出来るタグの内容を設定します。
-displayName:生成トーク内で表示する名前を設定します。
-iconFile:フォルダ場所と共に該当アイコンファイルの名前を指定します。
+displayName:生成トーク内で表示する名前を設定します。(省略可)
+iconFile:フォルダ場所と共に該当アイコンファイルの名前を指定します。(省略可)
 
 注１：プログラムが上から読み取るので、tagElement→displayName→iconFileの順番に配置してください。それぞれの要素には必ず改行を挟んでください。
 注２：複数の生徒で同じ『tagElement』を用いる事は出来ません。
+注３：要素のアットマークは必ず半角の「@」を用いてください。
 
 
 -------------------------------------
@@ -666,77 +667,109 @@ No068_1_tagElement:@@@ナグサ@@@
 No068_1_displayName:ナグサ
 No068_1_iconFile:hyakki_nagusa.webp
 
+桐生キキョウ
+
+No069_1_tagElement:@@@キキョウ@@@
+No069_1_displayName:キキョウ
+No069_1_iconFile:hyakki_kikyo.webp
+
+不破レンゲ
+
+No070_1_tagElement:@@@レンゲ@@@
+No070_1_displayName:レンゲ
+No070_1_iconFile:hyakki_renge.webp
+
+勘解由小路ユカリ
+
+No071_1_tagElement:@@@ユカリ@@@
+No071_1_displayName:ユカリ
+No071_1_iconFile:hyakki_yukari.webp
+
 お祭り運営委員会
 
 河和シズコ
 
-No069_1_tagElement:@@@シズコ@@@
-No069_1_displayName:シズコ
-No069_1_iconFile:hyakki_shizuko.webp
+No072_1_tagElement:@@@シズコ@@@
+No072_1_displayName:シズコ
+No072_1_iconFile:hyakki_shizuko.webp
 
-No069_2_tagElement:@@@シズコ水着@@@
-No069_2_displayName:シズコ(水着)
-No069_2_iconFile:hyakki_shizuko_summer.webp
+No072_2_tagElement:@@@シズコ水着@@@
+No072_2_displayName:シズコ(水着)
+No072_2_iconFile:hyakki_shizuko_summer.webp
 
 朝比奈フィーナ
 
-No070_1_tagElement:@@@フィーナ@@@
-No070_1_displayName:フィーナ
-No070_1_iconFile:hyakki_fina.webp
+No073_1_tagElement:@@@フィーナ@@@
+No073_1_displayName:フィーナ
+No073_1_iconFile:hyakki_fina.webp
 
 ウミカ
 
-No071_1_tagElement:@@@ウミカ@@@
-No071_1_displayName:ウミカ
-No071_1_iconFile:hyakki_umika.webp
+No074_1_tagElement:@@@ウミカ@@@
+No074_1_displayName:ウミカ
+No074_1_iconFile:hyakki_umika.webp
 
 忍術研究部
 
 千鳥ミチル
 
-No072_1_tagElement:@@@ミチル@@@
-No072_1_displayName:ミチル
-No072_1_iconFile:hyakki_michiru.webp
+No075_1_tagElement:@@@ミチル@@@
+No075_1_displayName:ミチル
+No075_1_iconFile:hyakki_michiru.webp
 
 大野ツクヨ
 
-No073_1_tagElement:@@@ツクヨ@@@
-No073_1_displayName:ツクヨ
-No073_1_iconFile:hyakki_tsukuyo.webp
+No076_1_tagElement:@@@ツクヨ@@@
+No076_1_displayName:ツクヨ
+No076_1_iconFile:hyakki_tsukuyo.webp
 
 久田イズナ
 
-No074_1_tagElement:@@@イズナ@@@
-No074_1_displayName:イズナ
-No074_1_iconFile:hyakki_izuna.webp
+No077_1_tagElement:@@@イズナ@@@
+No077_1_displayName:イズナ
+No077_1_iconFile:hyakki_izuna.webp
 
-No074_2_tagElement:@@@イズナ水着@@@
-No074_2_displayName:イズナ(水着)
-No074_2_iconFile:hyakki_izuna_summer.webp
+No077_2_tagElement:@@@イズナ水着@@@
+No077_2_displayName:イズナ(水着)
+No077_2_iconFile:hyakki_izuna_summer.webp
 
 修行部
 
 春日ツバキ
 
-No075_1_tagElement:@@@ツバキ@@@
-No075_1_displayName:ツバキ
-No075_1_iconFile:hyakki_tsubaki.webp
+No078_1_tagElement:@@@ツバキ@@@
+No078_1_displayName:ツバキ
+No078_1_iconFile:hyakki_tsubaki.webp
 
 水羽ミモリ
 
-No076_1_tagElement:@@@ミモリ@@@
-No076_1_displayName:ミモリ
-No076_1_iconFile:hyakki_mimori.webp
+No079_1_tagElement:@@@ミモリ@@@
+No079_1_displayName:ミモリ
+No079_1_iconFile:hyakki_mimori.webp
 
-No076_2_tagElement:@@@ミモリ水着@@@
-No076_2_displayName:ミモリ(水着)
-No076_2_iconFile:hyakki_mimori_summer.webp
+No079_2_tagElement:@@@ミモリ水着@@@
+No079_2_displayName:ミモリ(水着)
+No079_2_iconFile:hyakki_mimori_summer.webp
 
 勇美カエデ
 
-No078_1_tagElement:@@@カエデ@@@
-No078_1_displayName:カエデ
-No078_1_iconFile:hyakki_kaede.webp
+No080_1_tagElement:@@@カエデ@@@
+No080_1_displayName:カエデ
+No080_1_iconFile:hyakki_kaede.webp
+
+花鳥風月部
+
+コクリコ
+
+No081_1_tagElement:@@@コクリコ@@@
+No081_1_displayName:コクリコ
+No081_1_iconFile:hyakki_kokuriko.webp
+
+箭吹シュロ
+
+No082_1_tagElement:@@@シュロ@@@
+No082_1_displayName:シュロ
+No082_1_iconFile:hyakki_shuro.webp
 
 山海経高級中学校
 
@@ -744,59 +777,59 @@ No078_1_iconFile:hyakki_kaede.webp
 
 龍華キサキ
 
-No079_1_tagElement:@@@キサキ@@@
-No079_1_displayName:キサキ
-No079_1_iconFile:shanhaijing_kisaki.webp
+No083_1_tagElement:@@@キサキ@@@
+No083_1_displayName:キサキ
+No083_1_iconFile:shanhaijing_kisaki.webp
 
 近衛ミナ
 
-No080_1_tagElement:@@@ミナ@@@
-No080_1_displayName:ミナ
-No080_1_iconFile:shanhaijing_mina.webp
+No084_1_tagElement:@@@ミナ@@@
+No084_1_displayName:ミナ
+No084_1_iconFile:shanhaijing_mina.webp
 
 玄武商会
 
 朱城ルミ
 
-No081_1_tagElement:@@@ルミ@@@
-No081_1_displayName:ルミ
-No081_1_iconFile:shanhaijing_rumi.webp
+No085_1_tagElement:@@@ルミ@@@
+No085_1_displayName:ルミ
+No085_1_iconFile:shanhaijing_rumi.webp
 
 鹿山レイジョ
 
-No082_1_tagElement:@@@レイジョ@@@
-No082_1_displayName:レイジョ
-No082_1_iconFile:shanhaijing_reijo.webp
+No086_1_tagElement:@@@レイジョ@@@
+No086_1_displayName:レイジョ
+No086_1_iconFile:shanhaijing_reijo.webp
 
 梅花園
 
 春原シュン
 
-No083_1_tagElement:@@@シュン@@@
-No083_1_displayName:シュン
-No083_1_iconFile:shanhaijing_shun.webp
+No087_1_tagElement:@@@シュン@@@
+No087_1_displayName:シュン
+No087_1_iconFile:shanhaijing_shun.webp
 
-No083_2_tagElement:@@@シュン幼女@@@
-No083_2_displayName:シュン(幼女)
-No083_2_iconFile:shanhaijing_shun_child.webp
+No087_2_tagElement:@@@シュン幼女@@@
+No087_2_displayName:シュン(幼女)
+No087_2_iconFile:shanhaijing_shun_child.webp
 
 春原ココナ
 
-No084_1_tagElement:@@@ココナ@@@
-No084_1_displayName:ココナ
-No084_1_iconFile:shanhaijing_kokona.webp
+No088_1_tagElement:@@@ココナ@@@
+No088_1_displayName:ココナ
+No088_1_iconFile:shanhaijing_kokona.webp
 
 錬丹術研究会
 
 薬師サヤ
 
-No085_1_tagElement:@@@サヤ@@@
-No085_1_displayName:サヤ
-No085_1_iconFile:shanhaijing_saya.webp
+No089_1_tagElement:@@@サヤ@@@
+No089_1_displayName:サヤ
+No089_1_iconFile:shanhaijing_saya.webp
 
-No085_2_tagElement:@@@サヤ私服@@@
-No085_2_displayName:サヤ(私服)
-No085_2_iconFile:shanhaijing_saya_street.webp
+No089_2_tagElement:@@@サヤ私服@@@
+No089_2_displayName:サヤ(私服)
+No089_2_iconFile:shanhaijing_saya_street.webp
 
 -------------------------------------
 -------------------------------------
@@ -808,213 +841,213 @@ No085_2_iconFile:shanhaijing_saya_street.webp
 
 早瀬ユウカ
 
-No086_1_tagElement:@@@ユウカ@@@
-No086_1_displayName:ユウカ
-No086_1_iconFile:millennium_yuka.webp
+No090_1_tagElement:@@@ユウカ@@@
+No090_1_displayName:ユウカ
+No090_1_iconFile:millennium_yuka.webp
 
-No086_2_tagElement:@@@ユウカ体操服@@@
-No086_2_displayName:ユウカ(体操服)
-No086_2_iconFile:millennium_yuka_sports.webp
+No090_2_tagElement:@@@ユウカ体操服@@@
+No090_2_displayName:ユウカ(体操服)
+No090_2_iconFile:millennium_yuka_sports.webp
 
 生塩ノア
 
-No087_1_tagElement:@@@ノア@@@
-No087_1_displayName:ノア
-No087_1_iconFile:millennium_noa.webp
+No091_1_tagElement:@@@ノア@@@
+No091_1_displayName:ノア
+No091_1_iconFile:millennium_noa.webp
 
 黒崎コユキ
 
-No088_1_tagElement:@@@コユキ@@@
-No088_1_displayName:コユキ
-No088_1_iconFile:millennium_koyuki.webp
+No092_1_tagElement:@@@コユキ@@@
+No092_1_displayName:コユキ
+No092_1_iconFile:millennium_koyuki.webp
 
-No088_2_tagElement:@@@コユキバニー@@@
-No088_2_displayName:コユキ(バニー)
-No088_2_iconFile:millennium_koyuki_bunny.webp
+No092_2_tagElement:@@@コユキバニー@@@
+No092_2_displayName:コユキ(バニー)
+No092_2_iconFile:millennium_koyuki_bunny.webp
 
 調月リオ
 
-No089_1_tagElement:@@@リオ@@@
-No089_1_displayName:リオ
-No089_1_iconFile:millennium_rio.webp
+No093_1_tagElement:@@@リオ@@@
+No093_1_displayName:リオ
+No093_1_iconFile:millennium_rio.webp
 
 ゲーム開発部
 
 花岡ユズ
 
-No090_1_tagElement:@@@ユズ@@@
-No090_1_displayName:ユズ
-No090_1_iconFile:millennium_yuzu.webp
+No094_1_tagElement:@@@ユズ@@@
+No094_1_displayName:ユズ
+No094_1_iconFile:millennium_yuzu.webp
 
-No090_2_tagElement:@@@ユズメイド@@@
-No090_2_displayName:ユズ(メイド)
-No090_2_iconFile:millennium_yuzu_maid.webp
+No094_2_tagElement:@@@ユズメイド@@@
+No094_2_displayName:ユズ(メイド)
+No094_2_iconFile:millennium_yuzu_maid.webp
 
 才羽モモイ
 
-No091_1_tagElement:@@@モモイ@@@
-No091_1_displayName:モモイ
-No091_1_iconFile:millennium_momoi.webp
+No095_1_tagElement:@@@モモイ@@@
+No095_1_displayName:モモイ
+No095_1_iconFile:millennium_momoi.webp
 
-No091_2_tagElement:@@@モモイメイド@@@
-No091_2_displayName:モモイ(メイド)
-No091_2_iconFile:millennium_momoi_maid.webp
+No095_2_tagElement:@@@モモイメイド@@@
+No095_2_displayName:モモイ(メイド)
+No095_2_iconFile:millennium_momoi_maid.webp
 
 才羽ミドリ
 
-No092_1_tagElement:@@@ミドリ@@@
-No092_1_displayName:ミドリ
-No092_1_iconFile:millennium_midori.webp
+No096_1_tagElement:@@@ミドリ@@@
+No096_1_displayName:ミドリ
+No096_1_iconFile:millennium_midori.webp
 
-No092_2_tagElement:@@@ミドリメイド@@@
-No092_2_displayName:ミドリ(メイド)
-No092_2_iconFile:millennium_midori_maid.webp
+No096_2_tagElement:@@@ミドリメイド@@@
+No096_2_displayName:ミドリ(メイド)
+No096_2_iconFile:millennium_midori_maid.webp
 
 天童アリス
 
-No093_1_tagElement:@@@アリス@@@
-No093_1_displayName:アリス
-No093_1_iconFile:millennium_alice.webp
+No097_1_tagElement:@@@アリス@@@
+No097_1_displayName:アリス
+No097_1_iconFile:millennium_alice.webp
 
-No093_2_tagElement:@@@アリスメイド@@@
-No093_2_displayName:アリス(メイド)
-No093_2_iconFile:millennium_alice_maid.webp
+No097_2_tagElement:@@@アリスメイド@@@
+No097_2_displayName:アリス(メイド)
+No097_2_iconFile:millennium_alice_maid.webp
 
-No093_3_tagElement:@@@ケイ@@@
-No093_3_displayName:ケイ
-No093_3_iconFile:others_key.webp
+No097_3_tagElement:@@@ケイ@@@
+No097_3_displayName:ケイ
+No097_3_iconFile:others_key.webp
 
 C&C
 
 美甘ネル
 
-No094_1_tagElement:@@@ネル@@@
-No094_1_displayName:ネル
-No094_1_iconFile:millennium_neru.webp
+No098_1_tagElement:@@@ネル@@@
+No098_1_displayName:ネル
+No098_1_iconFile:millennium_neru.webp
 
-No094_2_tagElement:@@@ネルバニー@@@
-No094_2_displayName:ネル(バニー)
-No094_2_iconFile:millennium_neru_bunny.webp
+No098_2_tagElement:@@@ネルバニー@@@
+No098_2_displayName:ネル(バニー)
+No098_2_iconFile:millennium_neru_bunny.webp
 
 一ノ瀬アスナ
 
-No095_1_tagElement:@@@アスナ@@@
-No095_1_displayName:アスナ
-No095_1_iconFile:millennium_asuna.webp
+No099_1_tagElement:@@@アスナ@@@
+No099_1_displayName:アスナ
+No099_1_iconFile:millennium_asuna.webp
 
-No095_2_tagElement:@@@アスナバニー@@@
-No095_2_displayName:アスナ(バニー)
-No095_2_iconFile:millennium_asuna_bunny.webp
+No099_2_tagElement:@@@アスナバニー@@@
+No099_2_displayName:アスナ(バニー)
+No099_2_iconFile:millennium_asuna_bunny.webp
 
 角舘カリン
 
-No096_1_tagElement:@@@カリン@@@
-No096_1_displayName:カリン
-No096_1_iconFile:millennium_karin.webp
+No100_1_tagElement:@@@カリン@@@
+No100_1_displayName:カリン
+No100_1_iconFile:millennium_karin.webp
 
-No096_2_tagElement:@@@カリンバニー@@@
-No096_2_displayName:カリン(バニー)
-No096_2_iconFile:millennium_karin_bunny.webp
+No100_2_tagElement:@@@カリンバニー@@@
+No100_2_displayName:カリン(バニー)
+No100_2_iconFile:millennium_karin_bunny.webp
 
 室笠アカネ
 
-No097_1_tagElement:@@@アカネ@@@
-No097_1_displayName:アカネ
-No097_1_iconFile:millennium_akane.webp
+No101_1_tagElement:@@@アカネ@@@
+No101_1_displayName:アカネ
+No101_1_iconFile:millennium_akane.webp
 
-No097_2_tagElement:@@@アカネバニー@@@
-No097_2_displayName:アカネ(バニー)
-No097_2_iconFile:millennium_akane_bunny.webp
+No101_2_tagElement:@@@アカネバニー@@@
+No101_2_displayName:アカネ(バニー)
+No101_2_iconFile:millennium_akane_bunny.webp
 
 飛鳥馬トキ
 
-No098_1_tagElement:@@@トキ@@@
-No098_1_displayName:トキ
-No098_1_iconFile:millennium_toki.webp
+No102_1_tagElement:@@@トキ@@@
+No102_1_displayName:トキ
+No102_1_iconFile:millennium_toki.webp
 
-No098_2_tagElement:@@@トキバニー@@@
-No098_2_displayName:トキ(バニー)
-No098_2_iconFile:millennium_toki_bunny.webp
+No102_2_tagElement:@@@トキバニー@@@
+No102_2_displayName:トキ(バニー)
+No102_2_iconFile:millennium_toki_bunny.webp
 
 エンジニア部
 
 白石ウタハ
 
-No099_1_tagElement:@@@ウタハ@@@
-No099_1_displayName:ウタハ
-No099_1_iconFile:millennium_utaha.webp
+No103_1_tagElement:@@@ウタハ@@@
+No103_1_displayName:ウタハ
+No103_1_iconFile:millennium_utaha.webp
 
-No099_2_tagElement:@@@ウタハ応援団@@@
-No099_2_displayName:ウタハ(応援団)
-No099_2_iconFile:millennium_utaha_cheer.webp
+No103_2_tagElement:@@@ウタハ応援団@@@
+No103_2_displayName:ウタハ(応援団)
+No103_2_iconFile:millennium_utaha_cheer.webp
 
 猫塚ヒビキ
 
-No100_1_tagElement:@@@ヒビキ@@@
-No100_1_displayName:ヒビキ
-No100_1_iconFile:millennium_hibiki.webp
+No104_1_tagElement:@@@ヒビキ@@@
+No104_1_displayName:ヒビキ
+No104_1_iconFile:millennium_hibiki.webp
 
-No100_2_tagElement:@@@ヒビキ応援団@@@
-No100_2_displayName:ヒビキ(応援団)
-No100_2_iconFile:millennium_hibiki_cheer.webp
+No104_2_tagElement:@@@ヒビキ応援団@@@
+No104_2_displayName:ヒビキ(応援団)
+No104_2_iconFile:millennium_hibiki_cheer.webp
 
 豊見コトリ
 
-No101_1_tagElement:@@@コトリ@@@
-No101_1_displayName:コトリ
-No101_1_iconFile:millennium_kotori.webp
+No105_1_tagElement:@@@コトリ@@@
+No105_1_displayName:コトリ
+No105_1_iconFile:millennium_kotori.webp
 
-No102_2_tagElement:@@@コトリ応援団@@@
-No102_2_displayName:コトリ(応援団)
-No102_2_iconFile:millennium_kotori_cheer.webp
+No105_2_tagElement:@@@コトリ応援団@@@
+No105_2_displayName:コトリ(応援団)
+No105_2_iconFile:millennium_kotori_cheer.webp
 
 ヴェリタス
 
 各務チヒロ
 
-No103_1_tagElement:@@@チヒロ@@@
-No103_1_displayName:チヒロ
-No103_1_iconFile:millennium_chihiro.webp
+No106_1_tagElement:@@@チヒロ@@@
+No106_1_displayName:チヒロ
+No106_1_iconFile:millennium_chihiro.webp
 
 小鈎ハレ
 
-No104_1_tagElement:@@@ハレ@@@
-No104_1_displayName:ハレ
-No104_1_iconFile:millennium_hare.webp
+No107_1_tagElement:@@@ハレ@@@
+No107_1_displayName:ハレ
+No107_1_iconFile:millennium_hare.webp
 
 音瀬コタマ
 
-No105_1_tagElement:@@@コタマ@@@
-No105_1_displayName:コタマ
-No105_1_iconFile:millennium_kotama.webp
+No108_1_tagElement:@@@コタマ@@@
+No108_1_displayName:コタマ
+No108_1_iconFile:millennium_kotama.webp
 
 小塗マキ
 
-No106_1_tagElement:@@@マキ@@@
-No106_1_displayName:マキ
-No106_1_iconFile:millennium_maki.webp
+No109_1_tagElement:@@@マキ@@@
+No109_1_displayName:マキ
+No109_1_iconFile:millennium_maki.webp
 
 トレーニング部
 
 乙花スミレ
 
-No107_1_tagElement:@@@スミレ@@@
-No107_1_displayName:スミレ
-No107_1_iconFile:millennium_sumire.webp
+No110_1_tagElement:@@@スミレ@@@
+No110_1_displayName:スミレ
+No110_1_iconFile:millennium_sumire.webp
 
 特異現象捜査部
 
 明星ヒマリ
 
-No108_1_tagElement:@@@ヒマリ@@@
-No108_1_displayName:ヒマリ
-No108_1_iconFile:millennium_himari.webp
+No111_1_tagElement:@@@ヒマリ@@@
+No111_1_displayName:ヒマリ
+No111_1_iconFile:millennium_himari.webp
 
 和泉元エイミ
 
-No109_1_tagElement:@@@エイミ@@@
-No109_1_displayName:エイミ
-No109_1_iconFile:millennium_eimi.webp
+No112_1_tagElement:@@@エイミ@@@
+No112_1_displayName:エイミ
+No112_1_iconFile:millennium_eimi.webp
 
 -------------------------------------
 -------------------------------------
@@ -1026,87 +1059,87 @@ No109_1_iconFile:millennium_eimi.webp
 
 連河チェリノ
 
-No110_1_tagElement:@@@チェリノ@@@
-No110_1_displayName:チェリノ
-No110_1_iconFile:redwinter_cherino.webp
+No113_1_tagElement:@@@チェリノ@@@
+No113_1_displayName:チェリノ
+No113_1_iconFile:redwinter_cherino.webp
 
-No110_2_tagElement:@@@チェリノ温泉@@@
-No110_2_displayName:チェリノ(温泉)
-No110_2_iconFile:redwinter_cherino_hotspring.webp
+No113_2_tagElement:@@@チェリノ温泉@@@
+No113_2_displayName:チェリノ(温泉)
+No113_2_iconFile:redwinter_cherino_hotspring.webp
 
 池倉マリナ
 
-No111_1_tagElement:@@@マリナ@@@
-No111_1_displayName:マリナ
-No111_1_iconFile:redwinter_marina.webp
+No114_1_tagElement:@@@マリナ@@@
+No114_1_displayName:マリナ
+No114_1_iconFile:redwinter_marina.webp
 
 佐城トモエ
 
-No112_1_tagElement:@@@トモエ@@@
-No112_1_displayName:トモエ
-No112_1_iconFile:redwinter_tomoe.webp
+No115_1_tagElement:@@@トモエ@@@
+No115_1_displayName:トモエ
+No115_1_iconFile:redwinter_tomoe.webp
 
 227号特別クラス
 
 天見ノドカ
 
-No113_1_tagElement:@@@ノドカ@@@
-No113_1_displayName:ノドカ
-No113_1_iconFile:redwinter_nodoka.webp
+No116_1_tagElement:@@@ノドカ@@@
+No116_1_displayName:ノドカ
+No116_1_iconFile:redwinter_nodoka.webp
 
-No113_2_tagElement:@@@ノドカ温泉@@@
-No113_2_displayName:ノドカ(温泉)
-No113_2_iconFile:redwinter_nodoka_hotspring.webp
+No116_2_tagElement:@@@ノドカ温泉@@@
+No116_2_displayName:ノドカ(温泉)
+No116_2_iconFile:redwinter_nodoka_hotspring.webp
 
 間宵シグレ
 
-No114_1_tagElement:@@@シグレ@@@
-No114_1_displayName:シグレ
-No114_1_iconFile:redwinter_sigure.webp
+No117_1_tagElement:@@@シグレ@@@
+No117_1_displayName:シグレ
+No117_1_iconFile:redwinter_sigure.webp
 
-No114_2_tagElement:@@@シグレ温泉@@@
-No114_2_displayName:シグレ(温泉)
-No114_2_iconFile:redwinter_sigure_hotspring.webp
+No117_2_tagElement:@@@シグレ温泉@@@
+No117_2_displayName:シグレ(温泉)
+No117_2_iconFile:redwinter_sigure_hotspring.webp
 
 知識開放戦線
 
 姫木メル
 
-No115_1_tagElement:@@@メル@@@
-No115_1_displayName:メル
-No115_1_iconFile:redwinter_meru.webp
+No118_1_tagElement:@@@メル@@@
+No118_1_displayName:メル
+No118_1_iconFile:redwinter_meru.webp
 
-No115_2_tagElement:@@@メル温泉@@@
-No115_2_displayName:メル(温泉)
-No115_2_iconFile:redwinter_meru_hotspring.webp
+No118_2_tagElement:@@@メル温泉@@@
+No118_2_displayName:メル(温泉)
+No118_2_iconFile:redwinter_meru_hotspring.webp
 
 秋泉モミジ
 
-No116_1_tagElement:@@@モミジ@@@
-No116_1_displayName:モミジ
-No116_1_iconFile:redwinter_momiji.webp
+No119_1_tagElement:@@@モミジ@@@
+No119_1_displayName:モミジ
+No119_1_iconFile:redwinter_momiji.webp
 
 公務部
 
 安守ミノリ
 
-No117_1_tagElement:@@@ミノリ@@@
-No117_1_displayName:ミノリ
-No117_1_iconFile:redwinter_minori.webp
+No120_1_tagElement:@@@ミノリ@@@
+No120_1_displayName:ミノリ
+No120_1_iconFile:redwinter_minori.webp
 
 出版部
 
 三善タカネ
 
-No118_1_tagElement:@@@タカネ@@@
-No118_1_displayName:タカネ
-No118_1_iconFile:redwinter_takane.webp
+No121_1_tagElement:@@@タカネ@@@
+No121_1_displayName:タカネ
+No121_1_iconFile:redwinter_takane.webp
 
 荒槇ヤクモ
 
-No119_1_tagElement:@@@ヤクモ@@@
-No119_1_displayName:ヤクモ
-No119_1_iconFile:redwinter_yakumo.webp
+No122_1_tagElement:@@@ヤクモ@@@
+No122_1_displayName:ヤクモ
+No122_1_iconFile:redwinter_yakumo.webp
 
 -------------------------------------
 -------------------------------------
@@ -1116,51 +1149,51 @@ No119_1_iconFile:redwinter_yakumo.webp
 
 連邦生徒会長
 
-No120_1_tagElement:@@@連邦生徒会長@@@
-No120_1_displayName:連邦生徒会長
-No120_1_iconFile:general_president.webp
+No123_1_tagElement:@@@連邦生徒会長@@@
+No123_1_displayName:連邦生徒会長
+No123_1_iconFile:general_president.webp
 
 七神リン
 
-No121_1_tagElement:@@@リン@@@
-No121_1_displayName:リン
-No121_1_iconFile:general_rin.webp
+No124_1_tagElement:@@@リン@@@
+No124_1_displayName:リン
+No124_1_iconFile:general_rin.webp
 
 由良木モモカ
 
-No122_1_tagElement:@@@モモカ@@@
-No122_1_displayName:モモカ
-No122_1_iconFile:general_momoka.webp
+No125_1_tagElement:@@@モモカ@@@
+No125_1_displayName:モモカ
+No125_1_iconFile:general_momoka.webp
 
 不知火カヤ
 
-No123_1_tagElement:@@@カヤ@@@
-No123_1_displayName:カヤ
-No123_1_iconFile:general_kaya.webp
+No126_1_tagElement:@@@カヤ@@@
+No126_1_displayName:カヤ
+No126_1_iconFile:general_kaya.webp
 
 扇喜アオイ
 
-No124_1_tagElement:@@@アオイ@@@
-No124_1_displayName:アオイ
-No124_1_iconFile:general_aoi.webp
+No127_1_tagElement:@@@アオイ@@@
+No127_1_displayName:アオイ
+No127_1_iconFile:general_aoi.webp
 
 岩櫃アユム
 
-No125_1_tagElement:@@@アユム@@@
-No125_1_displayName:アユム
-No125_1_iconFile:general_ayumu.webp
+No128_1_tagElement:@@@アユム@@@
+No128_1_displayName:アユム
+No128_1_iconFile:general_ayumu.webp
 
 ハイネ
 
-No126_1_tagElement:@@@ハイネ@@@
-No126_1_displayName:ハイネ
-No126_1_iconFile:general_haine.webp
+No129_1_tagElement:@@@ハイネ@@@
+No129_1_displayName:ハイネ
+No129_1_iconFile:general_haine.webp
 
 スモモ
 
-No127_1_tagElement:@@@スモモ@@@
-No127_1_displayName:スモモ
-No127_1_iconFile:general_sumomo.webp
+No130_1_tagElement:@@@スモモ@@@
+No130_1_displayName:スモモ
+No130_1_iconFile:general_sumomo.webp
 
 -------------------------------------
 -------------------------------------
@@ -1172,69 +1205,69 @@ FOX小隊
 
 七度ユキノ
 
-No128_1_tagElement:@@@ユキノ@@@
-No128_1_displayName:ユキノ
-No128_1_iconFile:srt_yukino.webp
+No131_1_tagElement:@@@ユキノ@@@
+No131_1_displayName:ユキノ
+No131_1_iconFile:srt_yukino.webp
 
 ニコ
 
-No129_1_tagElement:@@@ニコ@@@
-No129_1_displayName:ニコ
-No129_1_iconFile:srt_niko.webp
+No132_1_tagElement:@@@ニコ@@@
+No132_1_displayName:ニコ
+No132_1_iconFile:srt_niko.webp
 
 クルミ
 
-No130_1_tagElement:@@@クルミ@@@
-No130_1_displayName:クルミ
-No130_1_iconFile:srt_kurumi.webp
+No133_1_tagElement:@@@クルミ@@@
+No133_1_displayName:クルミ
+No133_1_iconFile:srt_kurumi.webp
 
 オトギ
 
-No131_1_tagElement:@@@オトギ@@@
-No131_1_displayName:オトギ
-No131_1_iconFile:srt_otogi.webp
+No134_1_tagElement:@@@オトギ@@@
+No134_1_displayName:オトギ
+No134_1_iconFile:srt_otogi.webp
 
 RABBIT小隊
 
 月雪ミヤコ
 
-No132_1_tagElement:@@@ミヤコ@@@
-No132_1_displayName:ミヤコ
-No132_1_iconFile:srt_miyako.webp
+No135_1_tagElement:@@@ミヤコ@@@
+No135_1_displayName:ミヤコ
+No135_1_iconFile:srt_miyako.webp
 
-No132_2_tagElement:@@@ミヤコ水着@@@
-No132_2_displayName:ミヤコ(水着)
-No132_2_iconFile:srt_miyako_summer.webp
+No135_2_tagElement:@@@ミヤコ水着@@@
+No135_2_displayName:ミヤコ(水着)
+No135_2_iconFile:srt_miyako_summer.webp
 
 空井サキ
 
-No133_1_tagElement:@@@サキ@@@
-No133_1_displayName:サキ
-No133_1_iconFile:srt_saki.webp
+No136_1_tagElement:@@@サキ@@@
+No136_1_displayName:サキ
+No136_1_iconFile:srt_saki.webp
 
-No133_2_tagElement:@@@サキ水着@@@
-No133_2_displayName:サキ(水着)
-No133_2_iconFile:srt_saki_summer.webp
+No136_2_tagElement:@@@サキ水着@@@
+No136_2_displayName:サキ(水着)
+No136_2_iconFile:srt_saki_summer.webp
 
 風倉モエ
 
-No134_1_tagElement:@@@モエ@@@
-No134_1_displayName:モエ
-No134_1_iconFile:srt_moe.webp
+No137_1_tagElement:@@@モエ@@@
+No137_1_displayName:モエ
+No137_1_iconFile:srt_moe.webp
 
-No134_2_tagElement:@@@モエ水着@@@
-No134_2_displayName:モエ(水着)
-No134_2_iconFile:srt_moe_summer.webp
+No137_2_tagElement:@@@モエ水着@@@
+No137_2_displayName:モエ(水着)
+No137_2_iconFile:srt_moe_summer.webp
 
 霞沢ミユ
 
-No135_1_tagElement:@@@ミユ@@@
-No135_1_displayName:ミユ
-No135_1_iconFile:srt_miyu.webp
+No138_1_tagElement:@@@ミユ@@@
+No138_1_displayName:ミユ
+No138_1_iconFile:srt_miyu.webp
 
-No135_2_tagElement:@@@ミユ水着@@@
-No135_2_displayName:ミユ(水着)
-No135_2_iconFile:srt_miyu_summer.webp
+No138_2_tagElement:@@@ミユ水着@@@
+No138_2_displayName:ミユ(水着)
+No138_2_iconFile:srt_miyu_summer.webp
 
 -------------------------------------
 -------------------------------------
@@ -1246,296 +1279,296 @@ OTHERS
 
 河駒風ラブ
 
-No136_1_tagElement:@@@ラブ@@@
-No136_1_displayName:ラブ
-No136_1_iconFile:helmet_lab.webp
+No139_1_tagElement:@@@ラブ@@@
+No139_1_displayName:ラブ
+No139_1_iconFile:helmet_lab.webp
 
 七囚人
 
 狐坂ワカモ
 
-No137_1_tagElement:@@@ワカモ@@@
-No137_1_displayName:ワカモ
-No137_1_iconFile:sevenPrisoners_wakamo.webp
+No140_1_tagElement:@@@ワカモ@@@
+No140_1_displayName:ワカモ
+No140_1_iconFile:sevenPrisoners_wakamo.webp
 
-No137_2_tagElement:@@@ワカモ水着@@@
-No137_2_displayName:ワカモ(水着)
-No137_2_iconFile:sevenPrisoners_wakamo_summer.webp
+No140_2_tagElement:@@@ワカモ水着@@@
+No140_2_displayName:ワカモ(水着)
+No140_2_iconFile:sevenPrisoners_wakamo_summer.webp
 
 清澄アキラ
 
-No138_1_tagElement:@@@アキラ@@@
-No138_1_displayName:アキラ
-No138_1_iconFile:sevenPrisoners_akira.webp
+No141_1_tagElement:@@@アキラ@@@
+No141_1_displayName:アキラ
+No141_1_iconFile:sevenPrisoners_akira.webp
 
 申谷カイ
 
-No139_1_tagElement:@@@カイ@@@
-No139_1_displayName:カイ
-No139_1_iconFile:sevenPrisoners_kai.webp
+No142_1_tagElement:@@@カイ@@@
+No142_1_displayName:カイ
+No142_1_iconFile:sevenPrisoners_kai.webp
 
 ？？
 
 初音ミク
 
-No140_1_tagElement:@@@ミク@@@
-No140_1_displayName:ミク
-No140_1_iconFile:others_miku.webp
+No143_1_tagElement:@@@ミク@@@
+No143_1_displayName:ミク
+No143_1_iconFile:others_miku.webp
 
 クズノハ
 
-No141_1_tagElement:@@@クズノハ@@@
-No141_1_displayName:クズノハ
-No141_1_iconFile:others_kuzunoha.webp
+No144_1_tagElement:@@@クズノハ@@@
+No144_1_displayName:クズノハ
+No144_1_iconFile:others_kuzunoha.webp
 
 シッテムの箱
 
 アロナ
 
-No142_1_tagElement:@@@アロナ@@@
-No142_1_displayName:アロナ
-No142_1_iconFile:ARONA.webp
+No145_1_tagElement:@@@アロナ@@@
+No145_1_displayName:アロナ
+No145_1_iconFile:ARONA.webp
 
 プラナ
 
-No143_1_tagElement:@@@プラナ@@@
-No143_1_displayName:プラナ
-No143_1_iconFile:PRANA.webp
+No146_1_tagElement:@@@プラナ@@@
+No146_1_displayName:プラナ
+No146_1_iconFile:PRANA.webp
 
 各校モブ
 
 ヴァルキューレモブ
 
-No144_1_tagElement:@@@ヴァルキューレ生徒@@@
-No144_1_displayName:ヴァルキューレ生徒
-No144_1_iconFile:valkyrie_student.webp
+No147_1_tagElement:@@@ヴァルキューレ生徒@@@
+No147_1_displayName:ヴァルキューレ生徒
+No147_1_iconFile:valkyrie_student.webp
 
 ゲヘナモブ
 
-No145_1_tagElement:@@@ゲヘナ生徒１@@@
-No145_1_displayName:ゲヘナ生徒
-No145_1_iconFile:gehenna_student.webp
+No148_1_tagElement:@@@ゲヘナ生徒１@@@
+No148_1_displayName:ゲヘナ生徒
+No148_1_iconFile:gehenna_student.webp
 
-No145_2_tagElement:@@@ゲヘナ生徒２@@@
-No145_2_displayName:風紀委員会生徒
-No145_2_iconFile:gehenna_student2.webp
+No148_2_tagElement:@@@ゲヘナ生徒２@@@
+No148_2_displayName:風紀委員会生徒
+No148_2_iconFile:gehenna_student2.webp
 
-No145_3_tagElement:@@@ゲヘナ生徒３@@@
-No145_3_displayName:救急医療部生徒
-No145_3_iconFile:gehenna_student3.webp
+No148_3_tagElement:@@@ゲヘナ生徒３@@@
+No148_3_displayName:救急医療部生徒
+No148_3_iconFile:gehenna_student3.webp
 
-No145_4_tagElement:@@@ゲヘナ生徒４@@@
-No145_4_displayName:温泉開発部生徒
-No145_4_iconFile:gehenna_student4.webp
+No148_4_tagElement:@@@ゲヘナ生徒４@@@
+No148_4_displayName:温泉開発部生徒
+No148_4_iconFile:gehenna_student4.webp
 
-No145_5_tagElement:@@@ゲヘナ生徒５@@@
-No145_5_displayName:万魔殿生徒
-No145_5_iconFile:gehenna_student5.webp
+No148_5_tagElement:@@@ゲヘナ生徒５@@@
+No148_5_displayName:万魔殿生徒
+No148_5_iconFile:gehenna_student5.webp
 
 トリニティモブ
 
-No146_1_tagElement:@@@トリニティ生徒１@@@
-No146_1_displayName:トリニティ生徒
-No146_1_iconFile:trinity_student.webp
+No149_1_tagElement:@@@トリニティ生徒１@@@
+No149_1_displayName:トリニティ生徒
+No149_1_iconFile:trinity_student.webp
 
-No146_2_tagElement:@@@トリニティ生徒２@@@
-No146_2_displayName:ティーパーティー生徒
-No146_2_iconFile:trinity_student2.webp
+No149_2_tagElement:@@@トリニティ生徒２@@@
+No149_2_displayName:ティーパーティー生徒１
+No149_2_iconFile:trinity_student2.webp
 
-No146_3_tagElement:@@@トリニティ生徒３@@@
-No146_3_displayName:ティーパーティー生徒
-No146_3_iconFile:trinity_student3.webp
+No149_3_tagElement:@@@トリニティ生徒３@@@
+No149_3_displayName:ティーパーティー生徒２
+No149_3_iconFile:trinity_student3.webp
 
-No146_4_tagElement:@@@トリニティ生徒４@@@
-No146_4_displayName:正義実現委員会生徒
-No146_4_iconFile:trinity_student4.webp
+No149_4_tagElement:@@@トリニティ生徒４@@@
+No149_4_displayName:正義実現委員会生徒
+No149_4_iconFile:trinity_student4.webp
 
-No146_5_tagElement:@@@トリニティ生徒５@@@
-No146_5_displayName:シスターフッド生徒
-No146_5_iconFile:trinity_student5.webp
+No149_5_tagElement:@@@トリニティ生徒５@@@
+No149_5_displayName:シスターフッド生徒
+No149_5_iconFile:trinity_student5.webp
 
 ミレニアムモブ
 
-No147_1_tagElement:@@@ミレニアム生徒１@@@
-No147_1_displayName:ミレニアム生徒
-No147_1_iconFile:millennium_student.webp
+No150_1_tagElement:@@@ミレニアム生徒１@@@
+No150_1_displayName:ミレニアム生徒
+No150_1_iconFile:millennium_student.webp
 
-No147_2_tagElement:@@@ミレニアム生徒２@@@
-No147_2_displayName:ミレニアム生徒
-No147_2_iconFile:millennium_student2.webp
+No150_2_tagElement:@@@ミレニアム生徒２@@@
+No150_2_displayName:ミレニアム生徒
+No150_2_iconFile:millennium_student2.webp
 
 レッドウィンターモブ
 
-No148_1_tagElement:@@@レッドウィンター生徒１@@@
-No148_1_displayName:親衛隊生徒
-No148_1_iconFile:redwinter_student.webp
+No151_1_tagElement:@@@レッドウィンター生徒１@@@
+No151_1_displayName:親衛隊生徒
+No151_1_iconFile:redwinter_student.webp
 
-No148_2_tagElement:@@@レッドウィンター生徒２@@@
-No148_2_displayName:公務部生徒
-No148_2_iconFile:redwinter_student2.webp
+No151_2_tagElement:@@@レッドウィンター生徒２@@@
+No151_2_displayName:公務部生徒
+No151_2_iconFile:redwinter_student2.webp
 
 玄龍門モブ
 
-No149_1_tagElement:@@@山海経生徒１@@@
-No149_1_displayName:玄龍門生徒
-No149_1_iconFile:shanhaijing_student1.webp
+No152_1_tagElement:@@@山海経生徒１@@@
+No152_1_displayName:玄龍門生徒
+No152_1_iconFile:shanhaijing_student1.webp
 
 玄武商会モブ
 
-No150_1_tagElement:@@@山海経生徒２@@@
-No150_1_displayName:玄武商会生徒
-No150_1_iconFile:shanhaijing_student2.webp
+No153_1_tagElement:@@@山海経生徒２@@@
+No153_1_displayName:玄武商会生徒
+No153_1_iconFile:shanhaijing_student2.webp
 
 ハイランダー鉄道学園
 
-No151_1_tagElement:@@@乗務員１@@@
-No151_1_displayName:乗務員
-No151_1_iconFile:hilander_student.webp
+No154_1_tagElement:@@@乗務員１@@@
+No154_1_displayName:乗務員
+No154_1_iconFile:hilander_student.webp
 
-No151_1_tagElement:@@@乗務員２@@@
-No151_1_displayName:乗務員
-No151_1_iconFile:hilander_student2.webp
+No154_1_tagElement:@@@乗務員２@@@
+No154_1_displayName:乗務員
+No154_1_iconFile:hilander_student2.webp
 
-No151_1_tagElement:@@@乗務員３@@@
-No151_1_displayName:乗務員
-No151_1_iconFile:hilander_student3.webp
+No154_1_tagElement:@@@乗務員３@@@
+No154_1_displayName:乗務員
+No154_1_iconFile:hilander_student3.webp
 
 スケバン
 
 スケバン１
 
-No152_1_tagElement:@@@スケバン１@@@
-No152_1_displayName:スケバン１
-No152_1_iconFile:sukeban1.webp
+No155_1_tagElement:@@@スケバン１@@@
+No155_1_displayName:スケバン１
+No155_1_iconFile:sukeban1.webp
 
 スケバン２
 
-No153_1_tagElement:@@@スケバン２@@@
-No153_1_displayName:スケバン２
-No153_1_iconFile:sukeban2.webp
+No156_1_tagElement:@@@スケバン２@@@
+No156_1_displayName:スケバン２
+No156_1_iconFile:sukeban2.webp
 
 スケバン３
 
-No154_1_tagElement:@@@スケバン３@@@
-No154_1_displayName:スケバン３
-No154_1_iconFile:sukeban3.webp
+No157_1_tagElement:@@@スケバン３@@@
+No157_1_displayName:スケバン３
+No157_1_iconFile:sukeban3.webp
 
 エンジェル２４
 
 ソラ
 
-No155_1_tagElement:@@@ソラ@@@
-No155_1_displayName:ソラ
-No155_1_iconFile:angels24_sora.webp
+No158_1_tagElement:@@@ソラ@@@
+No158_1_displayName:ソラ
+No158_1_iconFile:angels24_sora.webp
 
 カイテンジャー
 
 カイテンレッド
 
-No156_1_tagElement:@@@カイテンレッド@@@
-No156_1_displayName:カイテンレッド
-No156_1_iconFile:kaiten_red.webp
+No159_1_tagElement:@@@カイテンレッド@@@
+No159_1_displayName:カイテンレッド
+No159_1_iconFile:kaiten_red.webp
 
 カイテンブラック
 
-No157_1_tagElement:@@@カイテンブラック@@@
-No157_1_displayName:カイテンブラック
-No157_1_iconFile:kaiten_black.webp
+No160_1_tagElement:@@@カイテンブラック@@@
+No160_1_displayName:カイテンブラック
+No160_1_iconFile:kaiten_black.webp
 
 カイテングリーン
 
-No158_1_tagElement:@@@カイテングリーン@@@
-No158_1_displayName:カイテングリーン
-No158_1_iconFile:kaiten_green.webp
+No161_1_tagElement:@@@カイテングリーン@@@
+No161_1_displayName:カイテングリーン
+No161_1_iconFile:kaiten_green.webp
 
 カイテンイエロー
 
-No159_1_tagElement:@@@カイテンイエロー@@@
-No159_1_displayName:カイテンイエロー
-No159_1_iconFile:kaiten_yellow.webp
+No162_1_tagElement:@@@カイテンイエロー@@@
+No162_1_displayName:カイテンイエロー
+No162_1_iconFile:kaiten_yellow.webp
 
 カイテンピンク
 
-No160_1_tagElement:@@@カイテンピンク@@@
-No160_1_displayName:カイテンピンク
-No160_1_iconFile:kaiten_pink.webp
+No163_1_tagElement:@@@カイテンピンク@@@
+No163_1_displayName:カイテンピンク
+No163_1_iconFile:kaiten_pink.webp
 
 エネミー
 
 カイザーPMC理事
 
-No161_1_tagElement:@@@カイザー理事@@@
-No161_1_displayName:カイザーＰＭＣ理事
-No161_1_iconFile:kaiser_president.webp
+No164_1_tagElement:@@@カイザー理事@@@
+No164_1_displayName:カイザーＰＭＣ理事
+No164_1_iconFile:kaiser_president.webp
 
-No161_2_tagElement:@@@カイザーPMC理事@@@
-No161_2_displayName:カイザーＰＭＣ理事
-No161_2_iconFile:kaiser_president.webp
+No164_2_tagElement:@@@カイザーPMC理事@@@
+No164_2_displayName:カイザーＰＭＣ理事
+No164_2_iconFile:kaiser_president.webp
 
 黒服
 
-No162_1_tagElement:@@@黒服@@@
-No162_1_displayName:黒服
-No162_1_iconFile:gematoria_blacksuit.webp
+No165_1_tagElement:@@@黒服@@@
+No165_1_displayName:黒服
+No165_1_iconFile:gematoria_blacksuit.webp
 
 マエストロ
 
-No163_1_tagElement:@@@マエストロ@@@
-No163_1_displayName:マエストロ
-No163_1_iconFile:gematoria_maestro.webp
+No166_1_tagElement:@@@マエストロ@@@
+No166_1_displayName:マエストロ
+No166_1_iconFile:gematoria_maestro.webp
 
 ゴルゴンダ＆デカルコマニー
 
-No164_1_tagElement:@@@ゴルゴンダ＆デカルコマニー@@@
-No164_1_displayName:ゴルゴンダ＆デカルコマニー
-No164_1_iconFile:gematoria_gorugonda_dekarukomany.webp
+No167_1_tagElement:@@@ゴルゴンダ＆デカルコマニー@@@
+No167_1_displayName:ゴルゴンダ＆デカルコマニー
+No167_1_iconFile:gematoria_gorugonda_dekarukomany.webp
 
-No164_1_tagElement:@@@ゴルゴンダ@@@
-No164_1_displayName:ゴルゴンダ
-No164_1_iconFile:gematoria_gorugonda_dekarukomany.webp
+No167_1_tagElement:@@@ゴルゴンダ@@@
+No167_1_displayName:ゴルゴンダ
+No167_1_iconFile:gematoria_gorugonda_dekarukomany.webp
 
-No164_1_tagElement:@@@デカルコマニー@@@
-No164_1_displayName:デカルコマニー
-No164_1_iconFile:gematoria_gorugonda_dekarukomany.webp
+No167_1_tagElement:@@@デカルコマニー@@@
+No167_1_displayName:デカルコマニー
+No167_1_iconFile:gematoria_gorugonda_dekarukomany.webp
 
 ベアトリーチェ
 
-No165_1_tagElement:@@@ベアトリーチェ@@@
-No165_1_displayName:ベアトリーチェ
-No165_1_iconFile:gematoria_bea.webp
+No168_1_tagElement:@@@ベアトリーチェ@@@
+No168_1_displayName:ベアトリーチェ
+No168_1_iconFile:gematoria_bea.webp
 
 フランシス
 
-No166_1_tagElement:@@@フランシス@@@
-No166_1_displayName:フランシス
-No166_1_iconFile:gematoria_fransis.webp
+No169_1_tagElement:@@@フランシス@@@
+No169_1_displayName:フランシス
+No169_1_iconFile:gematoria_fransis.webp
 
 無名の司祭
 
-No167_1_tagElement:@@@無名の司祭@@@
-No167_1_displayName:無名の司祭
-No167_1_iconFile:nonamepriest.webp
+No170_1_tagElement:@@@無名の司祭@@@
+No170_1_displayName:無名の司祭
+No170_1_iconFile:nonamepriest.webp
 
 一般モブ
 
 ペロロ
 
-No168_1_tagElement:@@@ペロロ@@@
-No168_1_displayName:ペロロ
-No168_1_iconFile:peroro.webp
+No171_1_tagElement:@@@ペロロ@@@
+No171_1_displayName:ペロロ
+No171_1_iconFile:peroro.webp
 
 柴大将
 
-No169_1_tagElement:@@@柴大将@@@
-No169_1_displayName:柴大将
-No169_1_iconFile:sibaShopkeeper.webp
+No172_1_tagElement:@@@柴大将@@@
+No172_1_displayName:柴大将
+No172_1_iconFile:sibaShopkeeper.webp
 
-No169_2_tagElement:@@@柴関@@@
-No169_2_displayName:柴大将
-No169_2_iconFile:sibaShopkeeper.webp
+No172_2_tagElement:@@@柴関@@@
+No172_2_displayName:柴大将
+No172_2_iconFile:sibaShopkeeper.webp
 
 一般市民
 
-No170_1_tagElement:@@@一般市民@@@
-No170_1_displayName:一般市民
-No170_1_iconFile:citizen.webp
+No173_1_tagElement:@@@一般市民@@@
+No173_1_displayName:一般市民
+No173_1_iconFile:citizen.webp
