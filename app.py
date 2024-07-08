@@ -62,7 +62,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
     
     for charactorLineDat in charactorListDat:
         if startFlg == 1:
-            if re.search("No[\d]{3}_[\d]{1}_tagElement:", charactorLineDat):
+            if re.search("No[\d]{3}_[\d]{3}_tagElement:", charactorLineDat):
                 if displayNameCounter < tagElementCounter:
                     while tagElementCounter > displayNameCounter:
                         displayNameList.append(None)
@@ -73,7 +73,7 @@ def htmlCreater(textOriginalList,titleName,creatorName,plumtalk_rabelCheck):
                         iconFileList.append(None)
                         iconFileCounter += 1
                 
-                charactorId = re.search("No[\d]{3}_[\d]{1}", charactorLineDat)
+                charactorId = re.search("No[\d]{3}_[\d]{3}", charactorLineDat)
                 charactorId = charactorId.group()
                 tagElement = re.sub("[@＠][@＠][@＠]","@@@",charactorLineDat)
                 tagElement = charactorLineDat.replace(charactorId +"_tagElement:","").replace("\n","")
